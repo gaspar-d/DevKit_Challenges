@@ -44,7 +44,7 @@
 		EB4BBFFF284BF17400B6460D = {
 			isa = PBXGroup;
 			children = (
-				EB4BC00A284BF17400B6460D /* Creatiing a List */,
+				EB4BC00A284BF17400B6460D /* Creatiing_a_List */,
 				EB4BC009284BF17400B6460D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,14 +57,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EB4BC00A284BF17400B6460D /* Creatiing a List */ = {
+		EB4BC00A284BF17400B6460D /* Creatiing_a_List */ = {
 			isa = PBXGroup;
 			children = (
 				EBE117FD284E8ADF00326C62 /* App */,
 				EBE117FE284E8AF600326C62 /* Model */,
 				EB4BC021284C0ED200B6460D /* Main */,
 			);
-			path = "Creatiing a List";
+			path = Creatiing_a_List;
 			sourceTree = "<group>";
 		};
 		EB4BC021284C0ED200B6460D /* Main */ = {

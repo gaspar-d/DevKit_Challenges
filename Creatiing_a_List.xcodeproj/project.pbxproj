@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EB4BC008284BF17400B6460D /* Creatiing a List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Creatiing a List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB4BC008284BF17400B6460D /* Creatiing_a_List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Creatiing_a_List.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4BC00B284BF17400B6460D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB4BC00D284BF17400B6460D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EB4BC00F284BF17400B6460D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 		EB4BBFFF284BF17400B6460D = {
 			isa = PBXGroup;
 			children = (
-				EB4BC00A284BF17400B6460D /* Creatiing a List */,
+				EB4BC00A284BF17400B6460D /* Creatiing_a_List */,
 				EB4BC009284BF17400B6460D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,19 +52,19 @@
 		EB4BC009284BF17400B6460D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EB4BC008284BF17400B6460D /* Creatiing a List.app */,
+				EB4BC008284BF17400B6460D /* Creatiing_a_List.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EB4BC00A284BF17400B6460D /* Creatiing a List */ = {
+		EB4BC00A284BF17400B6460D /* Creatiing_a_List */ = {
 			isa = PBXGroup;
 			children = (
 				EBE117FD284E8ADF00326C62 /* App */,
 				EBE117FE284E8AF600326C62 /* Model */,
 				EB4BC021284C0ED200B6460D /* Main */,
 			);
-			path = "Creatiing a List";
+			path = Creatiing_a_List;
 			sourceTree = "<group>";
 		};
 		EB4BC021284C0ED200B6460D /* Main */ = {
@@ -100,9 +100,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EB4BC007284BF17400B6460D /* Creatiing a List */ = {
+		EB4BC007284BF17400B6460D /* Creatiing_a_List */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EB4BC01C284BF17500B6460D /* Build configuration list for PBXNativeTarget "Creatiing a List" */;
+			buildConfigurationList = EB4BC01C284BF17500B6460D /* Build configuration list for PBXNativeTarget "Creatiing_a_List" */;
 			buildPhases = (
 				EB4BC004284BF17400B6460D /* Sources */,
 				EB4BC005284BF17400B6460D /* Frameworks */,
@@ -112,9 +112,9 @@
 			);
 			dependencies = (
 			);
-			name = "Creatiing a List";
+			name = Creatiing_a_List;
 			productName = "Creatiing a List";
-			productReference = EB4BC008284BF17400B6460D /* Creatiing a List.app */;
+			productReference = EB4BC008284BF17400B6460D /* Creatiing_a_List.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -132,7 +132,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EB4BC003284BF17400B6460D /* Build configuration list for PBXProject "Creatiing a List" */;
+			buildConfigurationList = EB4BC003284BF17400B6460D /* Build configuration list for PBXProject "Creatiing_a_List" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -145,7 +145,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EB4BC007284BF17400B6460D /* Creatiing a List */,
+				EB4BC007284BF17400B6460D /* Creatiing_a_List */,
 			);
 		};
 /* End PBXProject section */
@@ -361,7 +361,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EB4BC003284BF17400B6460D /* Build configuration list for PBXProject "Creatiing a List" */ = {
+		EB4BC003284BF17400B6460D /* Build configuration list for PBXProject "Creatiing_a_List" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EB4BC01A284BF17500B6460D /* Debug */,
@@ -370,7 +370,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EB4BC01C284BF17500B6460D /* Build configuration list for PBXNativeTarget "Creatiing a List" */ = {
+		EB4BC01C284BF17500B6460D /* Build configuration list for PBXNativeTarget "Creatiing_a_List" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EB4BC01D284BF17500B6460D /* Debug */,

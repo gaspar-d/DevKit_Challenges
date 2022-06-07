@@ -10,7 +10,6 @@ import UIKit
 final class MainViewModel: NSObject {
 	
 	private let model: Model
-	var tableView: UITableView?
 	
 	init(model: Model) {
 		self.model = model

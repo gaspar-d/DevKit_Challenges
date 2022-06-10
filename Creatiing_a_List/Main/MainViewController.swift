@@ -12,8 +12,8 @@ class MainViewController: UIViewController {
 	@IBOutlet weak var mainTableView: UITableView!
 	private let viewModel: MainViewModelProtocol
 	
-	var tableViewDelegate: TableViewDelegate?
-	var tableviewDataSource: TableViewDataSource?
+	private var tableViewDelegate: TableViewDelegate?
+	private var tableviewDataSource: TableViewDataSource?
 	
 	init(viewModel: MainViewModelProtocol) {
 		self.viewModel = viewModel
@@ -32,11 +32,11 @@ class MainViewController: UIViewController {
 	}
 	
 	private func setupTableView() {
-		self.tableViewDelegate = TableViewDelegate(withDelegate: self)
-		self.tableviewDataSource = TableViewDataSource(withData: viewModel.getNames)
+		tableViewDelegate = TableViewDelegate(withDelegate: self)
+		tableviewDataSource = TableViewDataSource(withData: viewModel.getNames)
 		
-		self.mainTableView.delegate = self.tableViewDelegate
-		self.mainTableView.dataSource = self.tableviewDataSource
+		mainTableView.delegate = tableViewDelegate
+		mainTableView.dataSource = tableviewDataSource
 		
 		mainTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 	}

@@ -15,7 +15,7 @@ struct Model {
 		"TableView",
 		"UIKit",
 		"DevKit",
-		"iOs",
+		"iOS",
 		"Swift",
 		"SOLID",
 		"Clean Code",

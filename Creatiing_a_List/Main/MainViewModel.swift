@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol MainViewModelProtocol: AnyObject {
+	var getNames: [String] { get }
+}
+
 final class MainViewModel: NSObject {
 	
 	private let model: Model
@@ -14,8 +18,10 @@ final class MainViewModel: NSObject {
 	init(model: Model) {
 		self.model = model
 	}
-	
-	public var getNames: [String] {
+}
+
+extension MainViewModel: MainViewModelProtocol {
+	var getNames: [String] {
 		model.names
 	}
 }

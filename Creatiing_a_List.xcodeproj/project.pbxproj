@@ -13,6 +13,8 @@
 		EB4BC015284BF17500B6460D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4BC014284BF17500B6460D /* Assets.xcassets */; };
 		EB4BC018284BF17500B6460D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB4BC016284BF17500B6460D /* LaunchScreen.storyboard */; };
 		EB4BC020284C0ECD00B6460D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4BC01F284C0ECD00B6460D /* MainViewController.xib */; };
+		EBA140982853C99900653227 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA140972853C99900653227 /* TableViewDataSource.swift */; };
+		EBA1409A2853C9D600653227 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA140992853C9D600653227 /* TableViewDelegate.swift */; };
 		EBE117FA284E7A0E00326C62 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE117F9284E7A0E00326C62 /* MainViewModel.swift */; };
 		EBE117FC284E7A3700326C62 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE117FB284E7A3700326C62 /* Model.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +28,8 @@
 		EB4BC017284BF17500B6460D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB4BC019284BF17500B6460D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB4BC01F284C0ECD00B6460D /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		EBA140972853C99900653227 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		EBA140992853C9D600653227 /* TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
 		EBE117F9284E7A0E00326C62 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		EBE117FB284E7A3700326C62 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +67,7 @@
 				EBE117FD284E8ADF00326C62 /* App */,
 				EBE117FE284E8AF600326C62 /* Model */,
 				EB4BC021284C0ED200B6460D /* Main */,
+				EBA140962853C8A500653227 /* Components */,
 			);
 			path = Creatiing_a_List;
 			sourceTree = "<group>";
@@ -75,6 +80,15 @@
 				EB4BC01F284C0ECD00B6460D /* MainViewController.xib */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		EBA140962853C8A500653227 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EBA140972853C99900653227 /* TableViewDataSource.swift */,
+				EBA140992853C9D600653227 /* TableViewDelegate.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		EBE117FD284E8ADF00326C62 /* App */ = {
@@ -168,6 +182,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBA1409A2853C9D600653227 /* TableViewDelegate.swift in Sources */,
+				EBA140982853C99900653227 /* TableViewDataSource.swift in Sources */,
 				EBE117FC284E7A3700326C62 /* Model.swift in Sources */,
 				EB4BC010284BF17400B6460D /* MainViewController.swift in Sources */,
 				EB4BC00C284BF17400B6460D /* AppDelegate.swift in Sources */,

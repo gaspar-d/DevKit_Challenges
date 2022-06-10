@@ -10,9 +10,12 @@ import UIKit
 class MainViewController: UIViewController {
 	
 	@IBOutlet weak var mainTableView: UITableView!
-	private let viewModel: MainViewModel
+	private let viewModel: MainViewModelProtocol
 	
-	init(viewModel: MainViewModel) {
+	var tableViewDelegate: TableViewDelegate?
+	var tableviewDataSource: TableViewDataSource?
+	
+	init(viewModel: MainViewModelProtocol) {
 		self.viewModel = viewModel
 		super.init(nibName: nil, bundle: nil)
 	}
@@ -24,12 +27,17 @@ class MainViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		title = "Table View"
+		
 		setupTableView()
 	}
 	
 	private func setupTableView() {
-		mainTableView.delegate = self
-		mainTableView.dataSource = self
+		self.tableViewDelegate = TableViewDelegate(withDelegate: self)
+		self.tableviewDataSource = TableViewDataSource(withData: viewModel.getNames)
+		
+		self.mainTableView.delegate = self.tableViewDelegate
+		self.mainTableView.dataSource = self.tableviewDataSource
+		
 		mainTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 	}
 	
@@ -45,22 +53,9 @@ class MainViewController: UIViewController {
 	}
 }
 
-extension MainViewController: UITableViewDataSource, UITableViewDelegate {
-	
-	// MARK: - DataSource
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return viewModel.getNames.count
-	}
-
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-		cell.textLabel?.text = viewModel.getNames[indexPath.item]
-		return cell
-	}
-	
-	// MARK: - Delegate
-	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let name = viewModel.getNames[indexPath.item]
+extension MainViewController: ViewControllerDelegate {
+	func selectedCell(item: Int) {
+		let name = viewModel.getNames[item]
 		didTapCell(name: name)
 	}
 }

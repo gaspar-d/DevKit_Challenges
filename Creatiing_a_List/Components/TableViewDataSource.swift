@@ -9,7 +9,7 @@ import UIKit
 
 final class TableViewDataSource: NSObject, UITableViewDataSource {
 	
-	var data: [String] = []
+	private var data: [String] = []
 	
 	init(withData data: [String]) {
 		self.data = data
@@ -20,12 +20,9 @@ final class TableViewDataSource: NSObject, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 		cell.textLabel?.text = data[indexPath.item]
 		
 		return cell
 	}
-	
-	
 }

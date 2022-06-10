@@ -28,7 +28,6 @@ class MainViewController: UIViewController {
 		super.viewDidLoad()
 		title = "Table View"
 		
-		
 		setupTableView()
 	}
 	
@@ -39,9 +38,6 @@ class MainViewController: UIViewController {
 		self.mainTableView.delegate = self.tableViewDelegate
 		self.mainTableView.dataSource = self.tableviewDataSource
 		
-		
-//		mainTableView.delegate = self
-//		mainTableView.dataSource = self
 		mainTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 	}
 	

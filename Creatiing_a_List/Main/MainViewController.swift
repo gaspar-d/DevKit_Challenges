@@ -11,7 +11,6 @@ class MainViewController: UIViewController {
 	
 	@IBOutlet weak var mainTableView: UITableView!
 	private let viewModel: MainViewModelProtocol
-	
 	private var tableViewDelegate: TableViewDelegate?
 	private var tableviewDataSource: TableViewDataSource?
 	
@@ -53,6 +52,7 @@ class MainViewController: UIViewController {
 	}
 }
 
+// MARK: - TableViewDelegate
 extension MainViewController: ViewControllerDelegate {
 	func selectedCell(item: Int) {
 		let name = viewModel.getNames[item]

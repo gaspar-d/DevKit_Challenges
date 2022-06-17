@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB269E5F285CDCE700B91825 /* InputIMCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E5E285CDCE700B91825 /* InputIMCViewController.swift */; };
+		EB269E61285CDCF100B91825 /* ResultIMCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E60285CDCF100B91825 /* ResultIMCViewController.swift */; };
+		EB269E64285CDE1B00B91825 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E63285CDE1B00B91825 /* Coordinator.swift */; };
+		EB269E66285CE0D000B91825 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E65285CE0D000B91825 /* MainCoordinator.swift */; };
+		EB269E68285CE35800B91825 /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E67285CE35700B91825 /* MainFactory.swift */; };
 		EB4BC00C284BF17400B6460D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4BC00B284BF17400B6460D /* AppDelegate.swift */; };
 		EB4BC00E284BF17400B6460D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4BC00D284BF17400B6460D /* SceneDelegate.swift */; };
 		EB4BC010284BF17400B6460D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4BC00F284BF17400B6460D /* MainViewController.swift */; };
@@ -20,6 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB269E5E285CDCE700B91825 /* InputIMCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputIMCViewController.swift; sourceTree = "<group>"; };
+		EB269E60285CDCF100B91825 /* ResultIMCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultIMCViewController.swift; sourceTree = "<group>"; };
+		EB269E63285CDE1B00B91825 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		EB269E65285CE0D000B91825 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		EB269E67285CE35700B91825 /* MainFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
 		EB4BC008284BF17400B6460D /* Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4BC00B284BF17400B6460D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB4BC00D284BF17400B6460D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +55,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB269E5C285CDC0E00B91825 /* IMC */ = {
+			isa = PBXGroup;
+			children = (
+				EB269E5E285CDCE700B91825 /* InputIMCViewController.swift */,
+				EB269E60285CDCF100B91825 /* ResultIMCViewController.swift */,
+			);
+			path = IMC;
+			sourceTree = "<group>";
+		};
+		EB269E5D285CDC1B00B91825 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EB4BC021284C0ED200B6460D /* Main */,
+				EB269E5C285CDC0E00B91825 /* IMC */,
+				EBA140962853C8A500653227 /* Components */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EB269E62285CDDFF00B91825 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				EB269E63285CDE1B00B91825 /* Coordinator.swift */,
+				EB269E65285CE0D000B91825 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		EB4BBFFF284BF17400B6460D = {
 			isa = PBXGroup;
 			children = (
@@ -66,8 +104,8 @@
 			children = (
 				EBE117FD284E8ADF00326C62 /* App */,
 				EBE117FE284E8AF600326C62 /* Model */,
-				EB4BC021284C0ED200B6460D /* Main */,
-				EBA140962853C8A500653227 /* Components */,
+				EB269E5D285CDC1B00B91825 /* Scenes */,
+				EB269E62285CDDFF00B91825 /* Coordinator */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -77,6 +115,7 @@
 			children = (
 				EB4BC00F284BF17400B6460D /* MainViewController.swift */,
 				EBE117F9284E7A0E00326C62 /* MainViewModel.swift */,
+				EB269E67285CE35700B91825 /* MainFactory.swift */,
 				EB4BC01F284C0ECD00B6460D /* MainViewController.xib */,
 			);
 			path = Main;
@@ -183,10 +222,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBA1409A2853C9D600653227 /* TableViewDelegate.swift in Sources */,
+				EB269E68285CE35800B91825 /* MainFactory.swift in Sources */,
 				EBA140982853C99900653227 /* TableViewDataSource.swift in Sources */,
+				EB269E64285CDE1B00B91825 /* Coordinator.swift in Sources */,
+				EB269E5F285CDCE700B91825 /* InputIMCViewController.swift in Sources */,
 				EBE117FC284E7A3700326C62 /* Model.swift in Sources */,
+				EB269E66285CE0D000B91825 /* MainCoordinator.swift in Sources */,
 				EB4BC010284BF17400B6460D /* MainViewController.swift in Sources */,
 				EB4BC00C284BF17400B6460D /* AppDelegate.swift in Sources */,
+				EB269E61285CDCF100B91825 /* ResultIMCViewController.swift in Sources */,
 				EB4BC00E284BF17400B6460D /* SceneDelegate.swift in Sources */,
 				EBE117FA284E7A0E00326C62 /* MainViewModel.swift in Sources */,
 			);

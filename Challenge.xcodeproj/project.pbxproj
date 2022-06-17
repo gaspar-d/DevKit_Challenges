@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EB4BC008284BF17400B6460D /* Creatiing_a_List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Creatiing_a_List.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB4BC008284BF17400B6460D /* Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4BC00B284BF17400B6460D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB4BC00D284BF17400B6460D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EB4BC00F284BF17400B6460D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		EB4BBFFF284BF17400B6460D = {
 			isa = PBXGroup;
 			children = (
-				EB4BC00A284BF17400B6460D /* Creatiing_a_List */,
+				EB4BC00A284BF17400B6460D /* Challenge */,
 				EB4BC009284BF17400B6460D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,12 +56,12 @@
 		EB4BC009284BF17400B6460D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EB4BC008284BF17400B6460D /* Creatiing_a_List.app */,
+				EB4BC008284BF17400B6460D /* Challenge.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EB4BC00A284BF17400B6460D /* Creatiing_a_List */ = {
+		EB4BC00A284BF17400B6460D /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
 				EBE117FD284E8ADF00326C62 /* App */,
@@ -69,7 +69,7 @@
 				EB4BC021284C0ED200B6460D /* Main */,
 				EBA140962853C8A500653227 /* Components */,
 			);
-			path = Creatiing_a_List;
+			path = Challenge;
 			sourceTree = "<group>";
 		};
 		EB4BC021284C0ED200B6460D /* Main */ = {
@@ -114,9 +114,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EB4BC007284BF17400B6460D /* Creatiing_a_List */ = {
+		EB4BC007284BF17400B6460D /* Challenge */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EB4BC01C284BF17500B6460D /* Build configuration list for PBXNativeTarget "Creatiing_a_List" */;
+			buildConfigurationList = EB4BC01C284BF17500B6460D /* Build configuration list for PBXNativeTarget "Challenge" */;
 			buildPhases = (
 				EB4BC004284BF17400B6460D /* Sources */,
 				EB4BC005284BF17400B6460D /* Frameworks */,
@@ -126,9 +126,9 @@
 			);
 			dependencies = (
 			);
-			name = Creatiing_a_List;
+			name = Challenge;
 			productName = "Creatiing a List";
-			productReference = EB4BC008284BF17400B6460D /* Creatiing_a_List.app */;
+			productReference = EB4BC008284BF17400B6460D /* Challenge.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -146,7 +146,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EB4BC003284BF17400B6460D /* Build configuration list for PBXProject "Creatiing_a_List" */;
+			buildConfigurationList = EB4BC003284BF17400B6460D /* Build configuration list for PBXProject "Challenge" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -159,7 +159,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EB4BC007284BF17400B6460D /* Creatiing_a_List */,
+				EB4BC007284BF17400B6460D /* Challenge */,
 			);
 		};
 /* End PBXProject section */
@@ -329,7 +329,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VG68TYQ5GK;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Creatiing_a_List/App/Info.plist;
+				INFOPLIST_FILE = Challenge/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Challenge;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -339,7 +340,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostlabz.Creatiing-a-List";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghostlabz.Challenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -356,7 +357,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VG68TYQ5GK;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Creatiing_a_List/App/Info.plist;
+				INFOPLIST_FILE = Challenge/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Challenge;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -366,7 +368,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ghostlabz.Creatiing-a-List";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghostlabz.Challenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -377,7 +379,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EB4BC003284BF17400B6460D /* Build configuration list for PBXProject "Creatiing_a_List" */ = {
+		EB4BC003284BF17400B6460D /* Build configuration list for PBXProject "Challenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EB4BC01A284BF17500B6460D /* Debug */,
@@ -386,7 +388,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EB4BC01C284BF17500B6460D /* Build configuration list for PBXNativeTarget "Creatiing_a_List" */ = {
+		EB4BC01C284BF17500B6460D /* Build configuration list for PBXNativeTarget "Challenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EB4BC01D284BF17500B6460D /* Debug */,

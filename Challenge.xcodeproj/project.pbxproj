@@ -82,7 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				EB4BC021284C0ED200B6460D /* Main */,
-				EB269E5C285CDC0E00B91825 /* IMC */,
+				EBDB3E4F285D9FB300FE40D0 /* Challenge01 */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -173,6 +173,14 @@
 				EBA140992853C9D600653227 /* TableViewDelegate.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		EBDB3E4F285D9FB300FE40D0 /* Challenge01 */ = {
+			isa = PBXGroup;
+			children = (
+				EB269E5C285CDC0E00B91825 /* IMC */,
+			);
+			path = Challenge01;
 			sourceTree = "<group>";
 		};
 		EBE117FD284E8ADF00326C62 /* App */ = {

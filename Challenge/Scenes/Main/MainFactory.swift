@@ -9,9 +9,10 @@ import Foundation
 
 enum MainFactory {
 	
-	static func make() -> MainViewController {
+	static func make(coordinator: MainCoordinator) -> MainViewController {
 		let model = Model()
 		let vm = MainViewModel(model: model)
+		vm.coordinator = coordinator
 		let vc = MainViewController(viewModel: vm)
 		
 		return vc

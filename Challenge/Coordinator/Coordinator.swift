@@ -5,15 +5,21 @@
 //  Created by Diogo Gaspar on 17/06/22.
 //
 
-import Foundation
 import UIKit
 
 enum Scene {
-	case IMC
+	case resultIMC
 }
 
 protocol Coordinator: AnyObject {
-	var navigate: UINavigationController { get set }
-	func navigate(to scene: Scene)
+	var navigation: UINavigationController { get set }
 	func start()
+	func navigateTo(sceneIndex: Int)
+	func navigateToIMC()
 }
+
+// TODO: - I need to change all
+// var coordinator: Coordinator?
+// from the main flow to
+// var coordinator: MainCoordinator?
+// and the same with the parameter from the factories

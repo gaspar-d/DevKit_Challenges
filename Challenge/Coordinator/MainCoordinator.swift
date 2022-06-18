@@ -8,18 +8,35 @@
 import UIKit
 
 final class MainCoordinator: Coordinator {
-	var navigate: UINavigationController
 	
-	init(navigate: UINavigationController) {
-		self.navigate = navigate
-	}
+	var navigation: UINavigationController
 	
-	func navigate(to scene: Scene) {
-		
+	init(navigation: UINavigationController) {
+		self.navigation = navigation
 	}
 	
 	func start() {
-		let vc = MainFactory.make()
-		navigate.pushViewController(vc, animated: true)
+		let vc = MainFactory.make(coordinator: self)
+		navigation.pushViewController(vc, animated: true)
+	}
+	
+	// MARK: - Handle MainVC navigation
+	func navigateTo(sceneIndex: Int) {
+		
+		switch sceneIndex {
+		case 0:
+			let vc = InputIMCFactory.make(coordinator: self)
+			navigation.pushViewController(vc, animated: true)
+			
+		default:
+			print("Cell index not found")
+		}
+	}
+	
+	// MARK: - Handle IMC challenge navigation
+	func navigateToIMC() {
+		let vc = ResultIMCFactory.make(coordinator: self)
+		
+		navigation.pushViewController(vc, animated: true)
 	}
 }

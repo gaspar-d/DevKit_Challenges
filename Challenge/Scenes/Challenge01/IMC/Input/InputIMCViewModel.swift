@@ -9,7 +9,6 @@ import UIKit
 
 protocol InputIMCViewModelProtocol: AnyObject {
 	func navigateToResult()
-	func didFinishInput()
 }
 
 final class InputIMCViewModel: NSObject {
@@ -18,19 +17,6 @@ final class InputIMCViewModel: NSObject {
 
 extension InputIMCViewModel: InputIMCViewModelProtocol {
 	func navigateToResult() {
-//		coordinator?.navigateToIMC()
-		
-//		coordinator?.navigate(to: 1)
-		
-		print("Pressed", #line)
-		
-		coordinator?.navigateToResult()
-
-		
+		coordinator?.navigateToIMC()
 	}
-	
-	func didFinishInput() {
-		coordinator?.didFinishInput()
-	}
-
 }

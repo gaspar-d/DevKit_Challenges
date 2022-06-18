@@ -10,7 +10,6 @@ import UIKit
 final class InputMVCCoordinator: Coordinator {
 	var childCoordinators: [Coordinator] = []
 	var navigation: UINavigationController
-	weak var parentCoordinator: MainCoordinator?
 	
 	init(navigation: UINavigationController) {
 		self.navigation = navigation
@@ -18,28 +17,11 @@ final class InputMVCCoordinator: Coordinator {
 	
 	func start() {
 		let vc = InputIMCFactory.make(coordinator: self)
-		
 		navigation.pushViewController(vc, animated: true)
 	}
 	
-	func didFinishInput() {
-		parentCoordinator?.childDidFinish(self)
-	}
-	
-	
-	
-	
-	func navigateToResult() {
+	func navigateToIMC() {
 		let vc = ResultIMCFactory.make(coordinator: self)
-		
 		navigation.pushViewController(vc, animated: true)
 	}
-	
-	
-//	func navigateToIMC() {
-//		let vc = ResultIMCFactory.make(coordinator: self)
-//
-//		navigation.pushViewController(vc, animated: true)
-//	}
-	
 }

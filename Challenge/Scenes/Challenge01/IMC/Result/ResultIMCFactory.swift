@@ -9,7 +9,7 @@ import Foundation
 
 enum ResultIMCFactory {
 	
-	static func make(coordinator: Coordinator) -> ResultIMCViewController {
+	static func make(coordinator: InputMVCCoordinator) -> ResultIMCViewController {
 		let vm = ResultIMCViewModel()
 		vm.coordinator = coordinator
 		let vc = ResultIMCViewController(viewModel: vm)

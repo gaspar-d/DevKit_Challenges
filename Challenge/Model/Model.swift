@@ -10,7 +10,7 @@ import Foundation
 struct Model {
 	
 	public let names: [String] = [
-		"Design Patterns",
+		"IMC",
 		"MVVM",
 		"TableView",
 		"UIKit",

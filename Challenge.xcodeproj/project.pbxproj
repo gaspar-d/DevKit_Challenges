@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB11D532285E4698007F0F15 /* InputMVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11D531285E4698007F0F15 /* InputMVCCoordinator.swift */; };
+		EB269E5F285CDCE700B91825 /* InputIMCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E5E285CDCE700B91825 /* InputIMCViewController.swift */; };
+		EB269E61285CDCF100B91825 /* ResultIMCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E60285CDCF100B91825 /* ResultIMCViewController.swift */; };
+		EB269E64285CDE1B00B91825 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E63285CDE1B00B91825 /* Coordinator.swift */; };
+		EB269E66285CE0D000B91825 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E65285CE0D000B91825 /* MainCoordinator.swift */; };
+		EB269E68285CE35800B91825 /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E67285CE35700B91825 /* MainFactory.swift */; };
+		EB269E6A285D219D00B91825 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E69285D219D00B91825 /* InputView.swift */; };
+		EB269E6F285D247900B91825 /* ViewCodeTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E6E285D247900B91825 /* ViewCodeTemplate.swift */; };
+		EB269E73285D338300B91825 /* InputIMCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E72285D338300B91825 /* InputIMCViewModel.swift */; };
+		EB269E75285D342300B91825 /* ResultIMCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E74285D342300B91825 /* ResultIMCView.swift */; };
+		EB269E77285D3E5E00B91825 /* InputIMCFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E76285D3E5E00B91825 /* InputIMCFactory.swift */; };
+		EB269E80285D8E2200B91825 /* ResultIMCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E7F285D8E2200B91825 /* ResultIMCViewModel.swift */; };
+		EB269E82285D8F1E00B91825 /* ResultIMCFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E81285D8F1E00B91825 /* ResultIMCFactory.swift */; };
 		EB4BC00C284BF17400B6460D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4BC00B284BF17400B6460D /* AppDelegate.swift */; };
 		EB4BC00E284BF17400B6460D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4BC00D284BF17400B6460D /* SceneDelegate.swift */; };
 		EB4BC010284BF17400B6460D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4BC00F284BF17400B6460D /* MainViewController.swift */; };
@@ -20,6 +33,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB11D531285E4698007F0F15 /* InputMVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMVCCoordinator.swift; sourceTree = "<group>"; };
+		EB269E5E285CDCE700B91825 /* InputIMCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputIMCViewController.swift; sourceTree = "<group>"; };
+		EB269E60285CDCF100B91825 /* ResultIMCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultIMCViewController.swift; sourceTree = "<group>"; };
+		EB269E63285CDE1B00B91825 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		EB269E65285CE0D000B91825 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		EB269E67285CE35700B91825 /* MainFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
+		EB269E69285D219D00B91825 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		EB269E6E285D247900B91825 /* ViewCodeTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeTemplate.swift; sourceTree = "<group>"; };
+		EB269E72285D338300B91825 /* InputIMCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputIMCViewModel.swift; sourceTree = "<group>"; };
+		EB269E74285D342300B91825 /* ResultIMCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultIMCView.swift; sourceTree = "<group>"; };
+		EB269E76285D3E5E00B91825 /* InputIMCFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputIMCFactory.swift; sourceTree = "<group>"; };
+		EB269E7F285D8E2200B91825 /* ResultIMCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultIMCViewModel.swift; sourceTree = "<group>"; };
+		EB269E81285D8F1E00B91825 /* ResultIMCFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultIMCFactory.swift; sourceTree = "<group>"; };
 		EB4BC008284BF17400B6460D /* Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4BC00B284BF17400B6460D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB4BC00D284BF17400B6460D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +71,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB269E5C285CDC0E00B91825 /* IMC */ = {
+			isa = PBXGroup;
+			children = (
+				EB269E6B285D21A200B91825 /* Input */,
+				EB269E6C285D21AD00B91825 /* Result */,
+			);
+			path = IMC;
+			sourceTree = "<group>";
+		};
+		EB269E5D285CDC1B00B91825 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EB4BC021284C0ED200B6460D /* Main */,
+				EBDB3E4F285D9FB300FE40D0 /* Challenge01 */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EB269E62285CDDFF00B91825 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				EB269E63285CDE1B00B91825 /* Coordinator.swift */,
+				EB269E65285CE0D000B91825 /* MainCoordinator.swift */,
+				EB11D531285E4698007F0F15 /* InputMVCCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		EB269E6B285D21A200B91825 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				EB269E5E285CDCE700B91825 /* InputIMCViewController.swift */,
+				EB269E69285D219D00B91825 /* InputView.swift */,
+				EB269E76285D3E5E00B91825 /* InputIMCFactory.swift */,
+				EB269E72285D338300B91825 /* InputIMCViewModel.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		EB269E6C285D21AD00B91825 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				EB269E60285CDCF100B91825 /* ResultIMCViewController.swift */,
+				EB269E74285D342300B91825 /* ResultIMCView.swift */,
+				EB269E81285D8F1E00B91825 /* ResultIMCFactory.swift */,
+				EB269E7F285D8E2200B91825 /* ResultIMCViewModel.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		EB269E6D285D245E00B91825 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EB269E6E285D247900B91825 /* ViewCodeTemplate.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		EB4BBFFF284BF17400B6460D = {
 			isa = PBXGroup;
 			children = (
@@ -64,10 +148,11 @@
 		EB4BC00A284BF17400B6460D /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				EB269E6D285D245E00B91825 /* Utils */,
 				EBE117FD284E8ADF00326C62 /* App */,
 				EBE117FE284E8AF600326C62 /* Model */,
-				EB4BC021284C0ED200B6460D /* Main */,
-				EBA140962853C8A500653227 /* Components */,
+				EB269E5D285CDC1B00B91825 /* Scenes */,
+				EB269E62285CDDFF00B91825 /* Coordinator */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -76,8 +161,10 @@
 			isa = PBXGroup;
 			children = (
 				EB4BC00F284BF17400B6460D /* MainViewController.swift */,
+				EB269E67285CE35700B91825 /* MainFactory.swift */,
 				EBE117F9284E7A0E00326C62 /* MainViewModel.swift */,
 				EB4BC01F284C0ECD00B6460D /* MainViewController.xib */,
+				EBA140962853C8A500653227 /* Components */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -89,6 +176,14 @@
 				EBA140992853C9D600653227 /* TableViewDelegate.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		EBDB3E4F285D9FB300FE40D0 /* Challenge01 */ = {
+			isa = PBXGroup;
+			children = (
+				EB269E5C285CDC0E00B91825 /* IMC */,
+			);
+			path = Challenge01;
 			sourceTree = "<group>";
 		};
 		EBE117FD284E8ADF00326C62 /* App */ = {
@@ -182,13 +277,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB269E6A285D219D00B91825 /* InputView.swift in Sources */,
+				EB269E82285D8F1E00B91825 /* ResultIMCFactory.swift in Sources */,
 				EBA1409A2853C9D600653227 /* TableViewDelegate.swift in Sources */,
+				EB269E68285CE35800B91825 /* MainFactory.swift in Sources */,
 				EBA140982853C99900653227 /* TableViewDataSource.swift in Sources */,
+				EB269E64285CDE1B00B91825 /* Coordinator.swift in Sources */,
+				EB269E5F285CDCE700B91825 /* InputIMCViewController.swift in Sources */,
+				EB269E75285D342300B91825 /* ResultIMCView.swift in Sources */,
+				EB269E80285D8E2200B91825 /* ResultIMCViewModel.swift in Sources */,
+				EB269E73285D338300B91825 /* InputIMCViewModel.swift in Sources */,
 				EBE117FC284E7A3700326C62 /* Model.swift in Sources */,
+				EB269E66285CE0D000B91825 /* MainCoordinator.swift in Sources */,
 				EB4BC010284BF17400B6460D /* MainViewController.swift in Sources */,
 				EB4BC00C284BF17400B6460D /* AppDelegate.swift in Sources */,
+				EB269E61285CDCF100B91825 /* ResultIMCViewController.swift in Sources */,
+				EB269E6F285D247900B91825 /* ViewCodeTemplate.swift in Sources */,
 				EB4BC00E284BF17400B6460D /* SceneDelegate.swift in Sources */,
 				EBE117FA284E7A0E00326C62 /* MainViewModel.swift in Sources */,
+				EB11D532285E4698007F0F15 /* InputMVCCoordinator.swift in Sources */,
+				EB269E77285D3E5E00B91825 /* InputIMCFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

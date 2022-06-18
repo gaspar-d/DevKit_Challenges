@@ -22,5 +22,6 @@ final class TableViewDelegate: NSObject, UITableViewDelegate {
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		self.delegate?.selectedCell(item: indexPath.item)
+		
 	}
 }

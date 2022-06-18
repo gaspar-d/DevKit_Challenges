@@ -9,10 +9,12 @@ import UIKit
 
 protocol MainViewModelProtocol: AnyObject {
 	var getNames: [String] { get }
+	func didTapCell(index: Int)
 }
 
 final class MainViewModel: NSObject {
 	
+	public var coordinator: MainCoordinator?
 	private let model: Model
 	
 	init(model: Model) {
@@ -23,5 +25,9 @@ final class MainViewModel: NSObject {
 extension MainViewModel: MainViewModelProtocol {
 	var getNames: [String] {
 		model.names
+	}
+	
+	func didTapCell(index: Int) {
+		coordinator?.navigateTo(sceneIndex: index)
 	}
 }

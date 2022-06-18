@@ -9,19 +9,28 @@ import UIKit
 
 protocol InputIMCViewModelProtocol: AnyObject {
 	func navigateToResult()
+	func didFinishInput()
 }
 
 final class InputIMCViewModel: NSObject {
-	var coordinator: Coordinator?
+	var coordinator: InputMVCCoordinator?
 }
 
 extension InputIMCViewModel: InputIMCViewModelProtocol {
 	func navigateToResult() {
-		coordinator?.navigateToIMC()
+//		coordinator?.navigateToIMC()
 		
 //		coordinator?.navigate(to: 1)
 		
 		print("Pressed", #line)
+		
+		coordinator?.navigateToResult()
 
+		
 	}
+	
+	func didFinishInput() {
+		coordinator?.didFinishInput()
+	}
+
 }

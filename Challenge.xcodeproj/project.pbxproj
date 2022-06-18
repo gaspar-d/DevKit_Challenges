@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB11D530285E3161007F0F15 /* InputMVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11D52F285E3161007F0F15 /* InputMVCCoordinator.swift */; };
 		EB269E5F285CDCE700B91825 /* InputIMCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E5E285CDCE700B91825 /* InputIMCViewController.swift */; };
 		EB269E61285CDCF100B91825 /* ResultIMCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E60285CDCF100B91825 /* ResultIMCViewController.swift */; };
 		EB269E64285CDE1B00B91825 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E63285CDE1B00B91825 /* Coordinator.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB11D52F285E3161007F0F15 /* InputMVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMVCCoordinator.swift; sourceTree = "<group>"; };
 		EB269E5E285CDCE700B91825 /* InputIMCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputIMCViewController.swift; sourceTree = "<group>"; };
 		EB269E60285CDCF100B91825 /* ResultIMCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultIMCViewController.swift; sourceTree = "<group>"; };
 		EB269E63285CDE1B00B91825 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			children = (
 				EB269E63285CDE1B00B91825 /* Coordinator.swift */,
 				EB269E65285CE0D000B91825 /* MainCoordinator.swift */,
+				EB11D52F285E3161007F0F15 /* InputMVCCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				EB269E6F285D247900B91825 /* ViewCodeTemplate.swift in Sources */,
 				EB4BC00E284BF17400B6460D /* SceneDelegate.swift in Sources */,
 				EBE117FA284E7A0E00326C62 /* MainViewModel.swift in Sources */,
+				EB11D530285E3161007F0F15 /* InputMVCCoordinator.swift in Sources */,
 				EB269E77285D3E5E00B91825 /* InputIMCFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

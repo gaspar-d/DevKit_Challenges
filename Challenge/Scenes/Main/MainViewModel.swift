@@ -28,6 +28,7 @@ extension MainViewModel: MainViewModelProtocol {
 	}
 	
 	func didTapCell(index: Int) {
-		coordinator?.navigateTo(sceneIndex: index)
+//		coordinator?.navigateTo(sceneIndex: index)
+		coordinator?.navigateToInput()
 	}
 }

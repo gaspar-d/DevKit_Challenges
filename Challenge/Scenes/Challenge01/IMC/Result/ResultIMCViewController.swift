@@ -33,6 +33,5 @@ final class ResultIMCViewController: UIViewController {
 		view = customView
 		
 		title = "Seu IMC"
-		navigationController?.navigationBar.prefersLargeTitles = true
 	}
 }

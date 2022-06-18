@@ -7,15 +7,13 @@
 
 import UIKit
 
-enum Scene {
-	case resultIMC
-}
-
 protocol Coordinator: AnyObject {
+	var childCoordinators: [Coordinator] { get set }
 	var navigation: UINavigationController { get set }
 	func start()
-	func navigateTo(sceneIndex: Int)
-	func navigateToIMC()
+//	func navigateTo(sceneIndex: Int)
+//	func navigateToIMC()
+	
 }
 
 // TODO: - I need to change all

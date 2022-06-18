@@ -33,7 +33,6 @@ final class InputIMCViewController: UIViewController {
 		view = customView
 		
 		title = "IMC Calculator"
-		navigationController?.navigationBar.prefersLargeTitles = true
 	}
 	
 	private func didTapButton() {

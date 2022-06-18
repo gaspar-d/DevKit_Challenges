@@ -9,6 +9,6 @@ import Foundation
 
 final class ResultIMCViewModel: NSObject {
 	
-	var coordinator: Coordinator?
+	weak var coordinator: Coordinator?
 	
 }

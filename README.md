@@ -1,3 +1,10 @@
-# TableView
+# 10 Challenges from DevKit Mentorship program
+---
 
-- A simple tableview lesson for devkit
+## Requirements
+- MVVM-C
+- SOLID principles
+- Clean Code
+- NO third part libs
+
+### #01 - IMC Calculator

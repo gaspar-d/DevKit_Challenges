@@ -20,7 +20,7 @@ final class MainCoordinator: Coordinator {
 		navigation.pushViewController(vc, animated: true)
 	}
 	
-	// MARK: - Handle MainVC navigation
+	// MARK: - Handle MainVC table navigation
 	func navigateTo(sceneIndex: Int) {
 		switch sceneIndex {
 		case 0:

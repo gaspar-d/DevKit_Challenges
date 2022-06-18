@@ -26,6 +26,7 @@ final class ResultIMCViewController: UIViewController {
 		super.viewDidLoad()
 		
 		setupView()
+		setupButtonAction()
 	}
 	
 	private func setupView() {
@@ -35,4 +36,21 @@ final class ResultIMCViewController: UIViewController {
 		title = "Seu IMC"
 		navigationController?.navigationBar.prefersLargeTitles = true
 	}
+	
+	private func setupButtonAction() {
+		customView?.closeButtonAction(target: self,
+									  action: #selector(didTapCloseButton))
+		
+		customView?.recalculateButtonAction(target: self,
+											action: #selector( didTaRecalculateButton))
+	}
+	
+	@objc private func didTapCloseButton() {
+		navigationController?.popToRootViewController(animated: true)
+	}
+	
+	@objc private func didTaRecalculateButton() {
+		navigationController?.popViewController(animated: true)
+	}
+	
 }

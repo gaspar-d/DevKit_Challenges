@@ -11,7 +11,6 @@ class MainViewController: UIViewController {
 	
 	@IBOutlet weak var mainTableView: UITableView!
 	private let viewModel: MainViewModelProtocol
-	
 	private var tableViewDelegate: TableViewDelegate?
 	private var tableviewDataSource: TableViewDataSource?
 	
@@ -26,7 +25,8 @@ class MainViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		title = "Table View"
+		navigationController?.navigationBar.prefersLargeTitles = true
+		title = "DevKit Challenges"
 		
 		setupTableView()
 	}
@@ -48,14 +48,14 @@ class MainViewController: UIViewController {
 		alert.setValue(messageString, forKey: "attributedMessage")
 		let dismiss = UIAlertAction(title: "dismiss", style: .default)
 		alert.addAction(dismiss)
-		
+
 		present(alert, animated: true)
 	}
 }
 
+// MARK: - TableViewDelegate
 extension MainViewController: ViewControllerDelegate {
 	func selectedCell(item: Int) {
-		let name = viewModel.getNames[item]
-		didTapCell(name: name)
+		viewModel.didTapCell(index: item)
 	}
 }

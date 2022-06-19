@@ -17,10 +17,6 @@ final class InputIMCViewModel: NSObject {
 
 extension InputIMCViewModel: InputIMCViewModelProtocol {
 	
-	func setData() {
-		
-	}
-	
 	func navigateToResult(result: ResultIMCModel) {
 		coordinator?.navigateToResultIMC(result: result)
 	}

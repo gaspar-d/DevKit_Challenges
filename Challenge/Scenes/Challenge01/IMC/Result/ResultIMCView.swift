@@ -9,8 +9,6 @@ import UIKit
 
 final class ResultIMCView: UIView {
 	
-	let width = UIScreen.main.bounds.width
-	
 	private lazy var imcImage: UIImageView = {
 		let image = UIImageView()
 		image.translatesAutoresizingMaskIntoConstraints = false
@@ -84,8 +82,17 @@ final class ResultIMCView: UIView {
 		recalculateButton.addTarget(target, action: action, for: .touchUpInside)
 	}
 	
-	public func setNumberLabel(result: Float) {
-		numberLabel.text = String(format: "%.1f", result)
+	public func setNumberLabel(result: String) {
+		numberLabel.text = result
+	}
+	
+	public func setImageColor(to result: UIColor) {
+		imcImage.tintColor = result
+	}
+	
+	public func setClassificationLabel(with result: String, and color: UIColor) {
+		classificationLabel.text = result
+		classificationLabel.textColor = color
 	}
 }
 
@@ -99,7 +106,7 @@ extension ResultIMCView: ViewCodeTemplate {
 	func setupConstraints() {
 		NSLayoutConstraint.activate([
 			imcImage.heightAnchor.constraint(equalToConstant: 260),
-			imcImage.widthAnchor.constraint(equalToConstant: 260),
+			imcImage.widthAnchor.constraint(equalToConstant: 280),
 			
 			stackContainer.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
 			stackContainer.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -107,7 +114,6 @@ extension ResultIMCView: ViewCodeTemplate {
 			stackContainer.trailingAnchor.constraint(equalTo: trailingAnchor),
 			
 			recalculateButton.heightAnchor.constraint(equalToConstant: 80),
-			recalculateButton.topAnchor.constraint(equalTo: stackContainer.bottomAnchor),
 			recalculateButton.leadingAnchor.constraint(equalTo: leadingAnchor),
 			recalculateButton.trailingAnchor.constraint(equalTo: trailingAnchor),
 			recalculateButton.bottomAnchor.constraint(equalTo: closeButton.topAnchor),

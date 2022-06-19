@@ -8,11 +8,11 @@
 import UIKit
 
 final class ResultIMCViewController: UIViewController {
-
-	private var customView: ResultIMCView?
-	var viewModel: ResultIMCViewModel
 	
-	init(viewModel: ResultIMCViewModel) {
+	private var customView: ResultIMCView?
+	var viewModel: ResultIMCViewModelProtocol
+	
+	init(viewModel: ResultIMCViewModelProtocol) {
 		self.viewModel = viewModel
 		super.init(nibName: nil, bundle: nil)
 	}
@@ -54,9 +54,13 @@ final class ResultIMCViewController: UIViewController {
 	}
 	
 	private func setupResult() {
-		guard let result = viewModel.getResult else { return }
+		guard let color = viewModel.getColor,
+			  let result = viewModel.getResult,
+			  let text = viewModel.getClassification
+		else { return }
+		customView?.setImageColor(to: color)
 		customView?.setNumberLabel(result: result)
-		print(result, #line)
+		customView?.setClassificationLabel(with: text, and: color)
 	}
 	
 }

@@ -9,7 +9,6 @@ import UIKit
 
 final class ResultIMCViewController: UIViewController {
 
-	var coordinator: Coordinator?
 	private var customView: ResultIMCView?
 	var viewModel: ResultIMCViewModel
 	
@@ -27,6 +26,7 @@ final class ResultIMCViewController: UIViewController {
 		
 		setupView()
 		setupButtonAction()
+		setupResult()
 	}
 	
 	private func setupView() {
@@ -51,6 +51,12 @@ final class ResultIMCViewController: UIViewController {
 	
 	@objc private func didTaRecalculateButton() {
 		navigationController?.popViewController(animated: true)
+	}
+	
+	private func setupResult() {
+		guard let result = viewModel.getResult else { return }
+		customView?.setNumberLabel(result: result)
+		print(result, #line)
 	}
 	
 }

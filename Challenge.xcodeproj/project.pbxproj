@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EB11D532285E4698007F0F15 /* InputMVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11D531285E4698007F0F15 /* InputMVCCoordinator.swift */; };
+		EB11D534285E8FFA007F0F15 /* ResultIMCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11D533285E8FFA007F0F15 /* ResultIMCModel.swift */; };
 		EB269E5F285CDCE700B91825 /* InputIMCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E5E285CDCE700B91825 /* InputIMCViewController.swift */; };
 		EB269E61285CDCF100B91825 /* ResultIMCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E60285CDCF100B91825 /* ResultIMCViewController.swift */; };
 		EB269E64285CDE1B00B91825 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E63285CDE1B00B91825 /* Coordinator.swift */; };
@@ -29,11 +30,12 @@
 		EBA140982853C99900653227 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA140972853C99900653227 /* TableViewDataSource.swift */; };
 		EBA1409A2853C9D600653227 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA140992853C9D600653227 /* TableViewDelegate.swift */; };
 		EBE117FA284E7A0E00326C62 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE117F9284E7A0E00326C62 /* MainViewModel.swift */; };
-		EBE117FC284E7A3700326C62 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE117FB284E7A3700326C62 /* Model.swift */; };
+		EBE117FC284E7A3700326C62 /* ChallengesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE117FB284E7A3700326C62 /* ChallengesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EB11D531285E4698007F0F15 /* InputMVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMVCCoordinator.swift; sourceTree = "<group>"; };
+		EB11D533285E8FFA007F0F15 /* ResultIMCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultIMCModel.swift; sourceTree = "<group>"; };
 		EB269E5E285CDCE700B91825 /* InputIMCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputIMCViewController.swift; sourceTree = "<group>"; };
 		EB269E60285CDCF100B91825 /* ResultIMCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultIMCViewController.swift; sourceTree = "<group>"; };
 		EB269E63285CDE1B00B91825 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -57,7 +59,7 @@
 		EBA140972853C99900653227 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		EBA140992853C9D600653227 /* TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
 		EBE117F9284E7A0E00326C62 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		EBE117FB284E7A3700326C62 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		EBE117FB284E7A3700326C62 /* ChallengesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,7 +203,8 @@
 		EBE117FE284E8AF600326C62 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EBE117FB284E7A3700326C62 /* Model.swift */,
+				EBE117FB284E7A3700326C62 /* ChallengesModel.swift */,
+				EB11D533285E8FFA007F0F15 /* ResultIMCModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -281,13 +284,14 @@
 				EB269E82285D8F1E00B91825 /* ResultIMCFactory.swift in Sources */,
 				EBA1409A2853C9D600653227 /* TableViewDelegate.swift in Sources */,
 				EB269E68285CE35800B91825 /* MainFactory.swift in Sources */,
+				EB11D534285E8FFA007F0F15 /* ResultIMCModel.swift in Sources */,
 				EBA140982853C99900653227 /* TableViewDataSource.swift in Sources */,
 				EB269E64285CDE1B00B91825 /* Coordinator.swift in Sources */,
 				EB269E5F285CDCE700B91825 /* InputIMCViewController.swift in Sources */,
 				EB269E75285D342300B91825 /* ResultIMCView.swift in Sources */,
 				EB269E80285D8E2200B91825 /* ResultIMCViewModel.swift in Sources */,
 				EB269E73285D338300B91825 /* InputIMCViewModel.swift in Sources */,
-				EBE117FC284E7A3700326C62 /* Model.swift in Sources */,
+				EBE117FC284E7A3700326C62 /* ChallengesModel.swift in Sources */,
 				EB269E66285CE0D000B91825 /* MainCoordinator.swift in Sources */,
 				EB4BC010284BF17400B6460D /* MainViewController.swift in Sources */,
 				EB4BC00C284BF17400B6460D /* AppDelegate.swift in Sources */,

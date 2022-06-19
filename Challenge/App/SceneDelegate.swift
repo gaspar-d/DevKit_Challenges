@@ -20,6 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		guard let windowScene = (scene as? UIWindowScene) else { return }
 		let safeWindow = UIWindow(windowScene: windowScene)
 		safeWindow.rootViewController = navigation
+		
+//		safeWindow.rootViewController = ResultIMCFactory.make(result: ResultIMCModel(height: 0, weight: 0), coordinator: navigation)
+		
 		safeWindow.makeKeyAndVisible()
 		
 		self.window = safeWindow

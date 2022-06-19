@@ -8,7 +8,7 @@
 import UIKit
 
 protocol InputIMCViewModelProtocol: AnyObject {
-	func navigateToResult()
+	func navigateToResult(result: ResultIMCModel)
 }
 
 final class InputIMCViewModel: NSObject {
@@ -16,7 +16,12 @@ final class InputIMCViewModel: NSObject {
 }
 
 extension InputIMCViewModel: InputIMCViewModelProtocol {
-	func navigateToResult() {
-		coordinator?.navigateToIMC()
+	
+	func setData() {
+		
+	}
+	
+	func navigateToResult(result: ResultIMCModel) {
+		coordinator?.navigateToResultIMC(result: result)
 	}
 }

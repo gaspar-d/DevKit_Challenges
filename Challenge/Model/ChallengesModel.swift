@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Model {
+struct ChallengesModel {
 	
 	public let names: [String] = [
 		"IMC",

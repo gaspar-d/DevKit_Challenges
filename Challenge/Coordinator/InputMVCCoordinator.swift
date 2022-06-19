@@ -20,8 +20,8 @@ final class InputMVCCoordinator: Coordinator {
 		navigation.pushViewController(vc, animated: true)
 	}
 	
-	func navigateToIMC() {
-		let vc = ResultIMCFactory.make(coordinator: self)
+	func navigateToResultIMC(result: ResultIMCModel) {
+		let vc = ResultIMCFactory.make(result: result, coordinator: self)
 		navigation.pushViewController(vc, animated: true)
 	}
 }

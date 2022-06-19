@@ -15,9 +15,9 @@ protocol MainViewModelProtocol: AnyObject {
 final class MainViewModel: NSObject {
 	
 	public var coordinator: MainCoordinator?
-	private let model: Model
+	private let model: ChallengesModel
 	
-	init(model: Model) {
+	init(model: ChallengesModel) {
 		self.model = model
 	}
 }

@@ -10,7 +10,7 @@
 ### #01 - IMC Calculator
 
 <p float="left" align="center" >
-  <img src="https://github.com/gaspar-d/DevKit_Challenges/blob/main/Challenge/Resources/IMC.gif" width="200" />
+  <img src="https://github.com/gaspar-d/DevKit_Challenges/blob/main/Challenge/Resources/IMC.gif" width="30%" />
 
-  <img src="https://github.com/gaspar-d/DevKit_Challenges/blob/main/Challenge/Resources/IMC.gif" width="200" />
+  <img src="https://github.com/gaspar-d/DevKit_Challenges/blob/main/Challenge/Resources/IMC.gif" width="60%" />
 <p/>

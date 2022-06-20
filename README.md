@@ -10,3 +10,5 @@
 ### #01 - IMC Calculator
 
 ![IMC Gif](https://github.com/gaspar-d/DevKit_Challenges/blob/main/Challenge/Resources/IMC.gif)
+
+<img src="https://github.com/gaspar-d/DevKit_Challenges/blob/main/Challenge/Resources/IMC.gif" width="100" />

@@ -16,7 +16,14 @@ final class ResultIMCView: UIView {
 		return image
 	}()
 	
-	private lazy var numberLabel: UILabel = {
+	private lazy var classificationLabel: UILabel = {
+		let label = UILabel()
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.text = "Classificação"
+		return label
+	}()
+	
+	private lazy var numberResult: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.text = "IMC number"
@@ -24,7 +31,17 @@ final class ResultIMCView: UIView {
 		return label
 	}()
 	
-	private lazy var classificationLabel: UILabel = {
+	private lazy var stackClassification: UIStackView = {
+		let stack = UIStackView(arrangedSubviews: [classificationLabel, classificationResult])
+		stack.translatesAutoresizingMaskIntoConstraints = false
+		stack.distribution = .equalSpacing
+		stack.alignment = .center
+		stack.axis = .vertical
+		stack.spacing = 10
+		return stack
+	}()
+	
+	private lazy var classificationResult: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.text = "IMC classification"
@@ -33,7 +50,7 @@ final class ResultIMCView: UIView {
 	}()
 	
 	private lazy var stackContainer: UIStackView = {
-		let stack = UIStackView(arrangedSubviews: [imcImage, numberLabel, classificationLabel])
+		let stack = UIStackView(arrangedSubviews: [imcImage, numberResult, stackClassification])
 		stack.translatesAutoresizingMaskIntoConstraints = false
 		stack.distribution = .equalSpacing
 		stack.alignment = .center
@@ -82,17 +99,18 @@ final class ResultIMCView: UIView {
 		recalculateButton.addTarget(target, action: action, for: .touchUpInside)
 	}
 	
-	public func setNumberLabel(result: String) {
-		numberLabel.text = result
+	public func setNumberResult(result: String) {
+		numberResult.text = result
 	}
 	
-	public func setImageColor(to result: UIColor) {
-		imcImage.tintColor = result
+	public func setImage(image: UIImage, color: UIColor) {
+		imcImage.image = image
+		imcImage.tintColor = color
 	}
 	
-	public func setClassificationLabel(with result: String, and color: UIColor) {
-		classificationLabel.text = result
-		classificationLabel.textColor = color
+	public func setClassificationResult(with result: String, and color: UIColor) {
+		classificationResult.text = result
+		classificationResult.textColor = color
 	}
 }
 

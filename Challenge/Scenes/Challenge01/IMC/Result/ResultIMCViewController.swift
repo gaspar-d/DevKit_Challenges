@@ -26,15 +26,19 @@ final class ResultIMCViewController: UIViewController {
 		
 		setupView()
 		setupButtonAction()
-		setupResult()
+		setupResultData()
+		setupNavigationBar()
 	}
 	
 	private func setupView() {
 		customView = ResultIMCView()
 		view = customView
-		
+	}
+	
+	private func setupNavigationBar() {
 		title = "Seu IMC"
 		navigationController?.navigationBar.prefersLargeTitles = true
+		navigationItem.setHidesBackButton(true, animated: true)
 	}
 	
 	private func setupButtonAction() {
@@ -53,14 +57,15 @@ final class ResultIMCViewController: UIViewController {
 		navigationController?.popViewController(animated: true)
 	}
 	
-	private func setupResult() {
+	private func setupResultData() {
 		guard let color = viewModel.getColor,
+			  let image = viewModel.getImage,
 			  let result = viewModel.getResult,
 			  let text = viewModel.getClassification
 		else { return }
-		customView?.setImageColor(to: color)
-		customView?.setNumberLabel(result: result)
-		customView?.setClassificationLabel(with: text, and: color)
+		customView?.setImage(image: image, color: color)
+		customView?.setNumberResult(result: result)
+		customView?.setClassificationResult(with: text, and: color)
 	}
 	
 }

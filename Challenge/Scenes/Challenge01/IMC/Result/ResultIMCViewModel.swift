@@ -20,6 +20,7 @@ enum IMC: Float {
 
 protocol ResultIMCViewModelProtocol: AnyObject {
 	var getResult: String? { get }
+	var getImage: UIImage? { get }
 	var getColor: UIColor? { get }
 	var getClassification: String? { get }
 }
@@ -45,31 +46,56 @@ extension ResultIMCViewModel: ResultIMCViewModelProtocol {
 		String(format: "%.1f", setResult)
 	}
 	
+	// TODO: - Transform all this in just one method that config all options at once
+	
+	public var getImage: UIImage? {
+		var image: UIImage?
+		
+		if setResult <= 18.5 {
+			image = UIImage(systemName: "person.crop.circle.badge.minus")
+		}
+		else if setResult <= 24.9 {
+			image = UIImage(systemName: "person.crop.circle.badge.checkmark")
+		}
+		else if setResult <= 29.9 {
+			image = UIImage(systemName: "person.crop.circle.badge.plus")
+		}
+		else if setResult <= 34.9 {
+			image = UIImage(systemName: "person.crop.circle.badge.exclamationmark")
+		}
+		else if setResult <= 39.9 {
+			image = UIImage(systemName: "person.crop.circle.badge.exclamationmark")
+		}
+		else if setResult >= 40 {
+			image = UIImage(systemName: "person.crop.circle.badge.exclamationmark")
+		}
+		
+		guard let image = image else {
+			return UIImage(systemName: "person.crop.circle.badge.checkmark")
+		}
+		
+		return image
+	}
+	
 	public var getColor: UIColor? {
 		var color: UIColor?
 		
 		if setResult <= 18.5 {
-			print("Abaixo do normal")
 			color = UIColor.cyan
 		}
 		else if setResult <= 24.9 {
-			print("Normal")
 			color = UIColor.blue
 		}
 		else if setResult <= 29.9 {
-			print("Sobrepeso")
 			color = UIColor.systemGreen
 		}
 		else if setResult <= 34.9 {
-			print("Obesidade grau 1")
 			color = UIColor.systemYellow
 		}
 		else if setResult <= 39.9 {
-			print("Obesidade grau 2")
 			color = UIColor.systemOrange
 		}
 		else if setResult >= 40 {
-			print("Obesidade grau 3")
 			color = UIColor.systemRed
 		}
 		
@@ -109,11 +135,3 @@ extension ResultIMCViewModel: ResultIMCViewModelProtocol {
 		return classification
 	}
 }
-
-// MARK: - Reference IMC
-// 18,5 - 0 -> Abaixo do Normal
-// 24,9 - 18,6 -> Normal
-// 29,9 - 25,0 -> Sobrepeso
-// 34,9 - 30,0 -> Obesidade grau 1
-// 35,0 - 39,9 -> Obesidade grau 2
-// 40+ -> Obesidade grau 3

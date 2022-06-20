@@ -26,12 +26,15 @@ final class InputIMCViewController: UIViewController {
 		setupView()
 		setupButtonAction()
 		setupSliderAction()
+		setupNavigationBar()
 	}
 	
 	private func setupView() {
 		customView = InputView()
 		view = customView
-		
+	}
+	
+	private func setupNavigationBar() {
 		title = "Calculadora de IMC"
 		navigationController?.navigationBar.prefersLargeTitles = true
 	}

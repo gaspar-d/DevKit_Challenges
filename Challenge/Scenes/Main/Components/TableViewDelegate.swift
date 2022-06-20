@@ -17,11 +17,9 @@ final class TableViewDelegate: NSObject, UITableViewDelegate {
 	
 	init(withDelegate delegate: ViewControllerDelegate) {
 		self.delegate = delegate
-		
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		self.delegate?.selectedCell(item: indexPath.item)
-		
 	}
 }

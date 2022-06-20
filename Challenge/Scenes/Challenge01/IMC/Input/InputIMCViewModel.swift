@@ -8,15 +8,16 @@
 import UIKit
 
 protocol InputIMCViewModelProtocol: AnyObject {
-	func navigateToResult()
+	func navigateToResult(result: ResultIMCModel)
 }
 
 final class InputIMCViewModel: NSObject {
-	var coordinator: InputMVCCoordinator?
+	weak var coordinator: InputMVCCoordinator?
 }
 
 extension InputIMCViewModel: InputIMCViewModelProtocol {
-	func navigateToResult() {
-		coordinator?.navigateToIMC()
+	
+	public func navigateToResult(result: ResultIMCModel) {
+		coordinator?.navigateToResultIMC(result: result)
 	}
 }

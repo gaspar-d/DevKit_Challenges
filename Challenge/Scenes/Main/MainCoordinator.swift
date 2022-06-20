@@ -8,20 +8,20 @@
 import UIKit
 
 final class MainCoordinator: Coordinator {
-	var childCoordinators: [Coordinator] = []
-	var navigation: UINavigationController
+	public var childCoordinators: [Coordinator] = []
+	public var navigation: UINavigationController
 	
 	init(navigation: UINavigationController) {
 		self.navigation = navigation
 	}
 	
-	func start() {
+	public func start() {
 		let vc = MainFactory.make(coordinator: self)
 		navigation.pushViewController(vc, animated: true)
 	}
 	
-	// MARK: - Handle MainVC navigation
-	func navigateTo(sceneIndex: Int) {
+	// MARK: - Handle MainVC table navigation
+	public func navigateTo(sceneIndex: Int) {
 		switch sceneIndex {
 		case 0:
 			let child = InputMVCCoordinator(navigation: navigation)
@@ -29,7 +29,7 @@ final class MainCoordinator: Coordinator {
 			child.start()
 			
 		default:
-			print("Cell index not found")
+			fatalError("Cell index not found", file: #file, line: #line)
 		}
 	}
 }

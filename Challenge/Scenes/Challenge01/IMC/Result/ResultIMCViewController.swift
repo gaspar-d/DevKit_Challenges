@@ -63,9 +63,9 @@ final class ResultIMCViewController: UIViewController {
 			  let result = viewModel.getResult,
 			  let text = viewModel.getClassification
 		else { return }
+		
 		customView?.setImage(image: image, color: color)
 		customView?.setNumberResult(result: result)
 		customView?.setClassificationResult(with: text, and: color)
 	}
-	
 }

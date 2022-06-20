@@ -1,5 +1,5 @@
 //
-//  InputIMCViewController.swift
+//  InputIMCController.swift
 //  Challenge
 //
 //  Created by Diogo Gaspar on 17/06/22.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class InputIMCViewController: UIViewController {
+final class InputIMCController: UIViewController {
 	
-	private var customView: InputView?
+	private var customView: InputIMCView?
 	var viewModel: InputIMCViewModelProtocol
 	
 	init(viewModel: InputIMCViewModelProtocol) {
@@ -30,7 +30,7 @@ final class InputIMCViewController: UIViewController {
 	}
 	
 	private func setupView() {
-		customView = InputView()
+		customView = InputIMCView()
 		view = customView
 	}
 	
@@ -44,8 +44,8 @@ final class InputIMCViewController: UIViewController {
 	}
 	
 	@objc func didTapCalculateButton() {
-		guard let height = customView?.getInputHeight(),
-			  let weight = customView?.getInputWeight()
+		guard let height = customView?.getInputHeight,
+			  let weight = customView?.getInputWeight
 		else {
 			return
 		}
@@ -60,14 +60,12 @@ final class InputIMCViewController: UIViewController {
 	}
 	
 	@objc private func heightSliderDidChange(_ sender: UISlider!) {
-		print(Int(sender.value))
 		DispatchQueue.main.async {
 			self.customView?.updateHeightNumber()
 		}
 	}
 	
 	@objc private func weightSliderDidChange(_ sender: UISlider) {
-		print(Int(sender.value))
 		DispatchQueue.main.async {
 			self.customView?.updateWeightNumber()
 		}

@@ -1,5 +1,5 @@
 //
-//  InputView.swift
+//  InputIMCView.swift
 //  Challenge
 //
 //  Created by Diogo Gaspar on 17/06/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class InputView: UIView {
+final class InputIMCView: UIView {
 	
 	private let width = UIScreen.main.bounds.width
 	
@@ -171,19 +171,18 @@ final class InputView: UIView {
 	}
 	
 	// MARK: - pass data methods
-	
-	public func getInputHeight() -> Float {
+	public var getInputHeight: Float {
 		let height = heightSlider.value.rounded()
 		return height
 	}
 	
-	public func getInputWeight() -> Float {
+	public var getInputWeight: Float {
 		let weight = weightSlider.value.rounded()
 		return weight
 	}
 }
 
-extension InputView: ViewCodeTemplate {
+extension InputIMCView: ViewCodeTemplate {
 	func setupComponents() {
 		addSubview(stackContainer)
 		addSubview(calculateButton)
@@ -192,6 +191,7 @@ extension InputView: ViewCodeTemplate {
 	func setupConstraints() {
 		let sliderPadding: CGFloat = 60
 		let stackPadding: CGFloat = 30
+		
 		NSLayoutConstraint.activate([
 			
 			weightSlider.widthAnchor.constraint(equalToConstant: width - sliderPadding),

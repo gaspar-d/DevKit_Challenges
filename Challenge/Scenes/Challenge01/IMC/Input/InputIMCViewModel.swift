@@ -12,7 +12,7 @@ protocol InputIMCViewModelProtocol: AnyObject {
 }
 
 final class InputIMCViewModel: NSObject {
-	var coordinator: InputMVCCoordinator?
+	weak var coordinator: InputMVCCoordinator?
 }
 
 extension InputIMCViewModel: InputIMCViewModelProtocol {

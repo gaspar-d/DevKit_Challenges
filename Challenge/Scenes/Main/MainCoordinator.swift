@@ -29,7 +29,7 @@ final class MainCoordinator: Coordinator {
 			child.start()
 			
 		default:
-			print("Cell index not found")
+			fatalError("Cell index not found", file: #file, line: #line)
 		}
 	}
 }

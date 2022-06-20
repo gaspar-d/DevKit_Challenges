@@ -5,10 +5,8 @@
 //  Created by Diogo Gaspar on 18/06/22.
 //
 
-import Foundation
 import UIKit
 
-// TODO: - Thinking about how to use a enum in this.
 enum IMC: Float {
 	case underWeight = 18.5
 	case normal = 24.9
@@ -27,111 +25,71 @@ protocol ResultIMCViewModelProtocol: AnyObject {
 
 final class ResultIMCViewModel: NSObject {
 	
-	var coordinator: InputMVCCoordinator?
+	weak var coordinator: InputMVCCoordinator?
 	private var model: ResultIMCModel
-	private var result: Float?
+	private var result: Float = 0
+	
+	private var image: UIImage?
+	private var color: UIColor?
+	private var classification: String?
 	
 	init(model: ResultIMCModel) {
 		self.model = model
+		super.init()
 		
+		self.setupData()
 	}
 	
-	private var setResult: Float {
-		model.weight / (model.height * model.height) * 10000
+	func setupData() {
+		result = model.weight / (model.height * model.height) * 10000
+		
+		if result <= IMC.underWeight.rawValue {
+			image = UIImage(systemName: "person.crop.circle.badge.minus")
+			color = UIColor.cyan
+			classification = "Abaixo do normal"
+		}
+		else if result <= IMC.normal.rawValue {
+			image = UIImage(systemName: "person.crop.circle.badge.checkmark")
+			color = UIColor.systemGreen
+			classification = "Normal"
+		}
+		else if result <= IMC.overWeight.rawValue {
+			image = UIImage(systemName: "person.crop.circle.badge.plus")
+			color = UIColor.blue
+			classification = "Sobrepeso"
+		}
+		else if result <= IMC.obesity1.rawValue {
+			image = UIImage(systemName: "person.crop.circle.badge.exclamationmark")
+			color = UIColor.systemYellow
+			classification = "Obesidade grau 1"
+		}
+		else if result <= IMC.obesity2.rawValue {
+			image = UIImage(systemName: "person.crop.circle.badge.exclamationmark")
+			color = UIColor.systemOrange
+			classification = "Obesidade grau 2"
+		}
+		else if result >= IMC.obesity3.rawValue {
+			image = UIImage(systemName: "person.crop.circle.badge.exclamationmark")
+			color = UIColor.systemRed
+			classification = "Obesidade grau 3"
+		}
 	}
 }
 
 extension ResultIMCViewModel: ResultIMCViewModelProtocol {
 	public var getResult: String? {
-		String(format: "%.1f", setResult)
+		String(format: "%.1f", result)
 	}
 	
-	// TODO: - Transform all this in just one method that config all options at once
-	
 	public var getImage: UIImage? {
-		var image: UIImage?
-		
-		if setResult <= 18.5 {
-			image = UIImage(systemName: "person.crop.circle.badge.minus")
-		}
-		else if setResult <= 24.9 {
-			image = UIImage(systemName: "person.crop.circle.badge.checkmark")
-		}
-		else if setResult <= 29.9 {
-			image = UIImage(systemName: "person.crop.circle.badge.plus")
-		}
-		else if setResult <= 34.9 {
-			image = UIImage(systemName: "person.crop.circle.badge.exclamationmark")
-		}
-		else if setResult <= 39.9 {
-			image = UIImage(systemName: "person.crop.circle.badge.exclamationmark")
-		}
-		else if setResult >= 40 {
-			image = UIImage(systemName: "person.crop.circle.badge.exclamationmark")
-		}
-		
-		guard let image = image else {
-			return UIImage(systemName: "person.crop.circle.badge.checkmark")
-		}
-		
-		return image
+		image
 	}
 	
 	public var getColor: UIColor? {
-		var color: UIColor?
-		
-		if setResult <= 18.5 {
-			color = UIColor.cyan
-		}
-		else if setResult <= 24.9 {
-			color = UIColor.blue
-		}
-		else if setResult <= 29.9 {
-			color = UIColor.systemGreen
-		}
-		else if setResult <= 34.9 {
-			color = UIColor.systemYellow
-		}
-		else if setResult <= 39.9 {
-			color = UIColor.systemOrange
-		}
-		else if setResult >= 40 {
-			color = UIColor.systemRed
-		}
-		
-		guard let color = color else {
-			return UIColor.purple
-		}
-		
-		return color
+		color
 	}
 	
 	public var getClassification: String? {
-		var classification: String? = ""
-		
-		if setResult <= 18.5 {
-			classification = "Abaixo do normal"
-		}
-		else if setResult <= 24.9 {
-			classification = "Normal"
-		}
-		else if setResult <= 29.9 {
-			classification = "Sobrepeso"
-		}
-		else if setResult <= 34.9 {
-			classification = "Obesidade grau 1"
-		}
-		else if setResult <= 39.9 {
-			classification = "Obesidade grau 2"
-		}
-		else if setResult >= 40 {
-			classification = "Obesidade grau 3"
-		}
-
-		guard let classification = classification else {
-			return "Failed to get classification"
-		}
-
-		return classification
+		classification
 	}
 }

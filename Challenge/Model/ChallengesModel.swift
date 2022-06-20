@@ -11,14 +11,5 @@ struct ChallengesModel {
 	
 	public let names: [String] = [
 		"IMC",
-		"MVVM",
-		"TableView",
-		"UIKit",
-		"DevKit",
-		"iOS",
-		"Swift",
-		"SOLID",
-		"Clean Code",
-		"SDK"
 	]
 }

@@ -9,10 +9,10 @@ import Foundation
 
 enum InputIMCFactory {
 	
-	static func make(coordinator: InputMVCCoordinator) -> InputIMCViewController {
+	static func make(coordinator: InputMVCCoordinator) -> InputIMCController {
 		let vm = InputIMCViewModel()
 		vm.coordinator = coordinator
-		let vc = InputIMCViewController(viewModel: vm)
+		let vc = InputIMCController(viewModel: vm)
 		
 		return vc
 	}

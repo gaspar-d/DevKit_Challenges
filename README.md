@@ -9,8 +9,8 @@
 
 ### #01 - IMC Calculator
 
-<p float="left" 
+<p float="left" >
   <img src="https://github.com/gaspar-d/DevKit_Challenges/blob/main/Challenge/Resources/IMC.gif" width="200" />
 
   <img src="https://github.com/gaspar-d/DevKit_Challenges/blob/main/Challenge/Resources/IMC.gif" width="200" />
-/>
+<p/>

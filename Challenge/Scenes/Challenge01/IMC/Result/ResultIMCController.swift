@@ -1,5 +1,5 @@
 //
-//  ResultIMCViewController.swift
+//  ResultIMCController.swift
 //  Challenge
 //
 //  Created by Diogo Gaspar on 17/06/22.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-final class ResultIMCViewController: UIViewController {
+final class ResultIMCController: UIViewController {
 	
 	private var customView: ResultIMCView?
-	var viewModel: ResultIMCViewModelProtocol
+	public var viewModel: ResultIMCViewModelProtocol
 	
 	init(viewModel: ResultIMCViewModelProtocol) {
 		self.viewModel = viewModel

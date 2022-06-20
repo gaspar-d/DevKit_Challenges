@@ -170,7 +170,7 @@ final class InputIMCView: UIView {
 		weightSlider.addTarget(target, action: action, for: .valueChanged)
 	}
 	
-	// MARK: - pass data methods
+	// MARK: - passing data
 	public var getInputHeight: Float {
 		let height = heightSlider.value.rounded()
 		return height

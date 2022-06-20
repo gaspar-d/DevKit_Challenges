@@ -27,8 +27,8 @@ final class ResultIMCViewModel: NSObject {
 	
 	weak var coordinator: InputMVCCoordinator?
 	private var model: ResultIMCModel
-	private var result: Float = 0
 	
+	private var result: Float = 0
 	private var image: UIImage?
 	private var color: UIColor?
 	private var classification: String?
@@ -40,7 +40,7 @@ final class ResultIMCViewModel: NSObject {
 		self.setupData()
 	}
 	
-	func setupData() {
+	private func setupData() {
 		result = model.weight / (model.height * model.height) * 10000
 		
 		if result <= IMC.underWeight.rawValue {

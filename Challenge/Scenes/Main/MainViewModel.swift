@@ -23,11 +23,11 @@ final class MainViewModel: NSObject {
 }
 
 extension MainViewModel: MainViewModelProtocol {
-	var getNames: [String] {
+	public var getNames: [String] {
 		model.names
 	}
 	
-	func didTapCell(index: Int) {
+	public func didTapCell(index: Int) {
 		coordinator?.navigateTo(sceneIndex: index)
 	}
 }

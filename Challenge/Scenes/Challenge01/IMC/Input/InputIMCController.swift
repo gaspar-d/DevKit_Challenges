@@ -10,7 +10,7 @@ import UIKit
 final class InputIMCController: UIViewController {
 	
 	private var customView: InputIMCView?
-	var viewModel: InputIMCViewModelProtocol
+	public var viewModel: InputIMCViewModelProtocol
 	
 	init(viewModel: InputIMCViewModelProtocol) {
 		self.viewModel = viewModel

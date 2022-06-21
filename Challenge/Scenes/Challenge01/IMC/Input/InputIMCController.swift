@@ -25,7 +25,6 @@ final class InputIMCController: UIViewController {
 		super.viewDidLoad()
 		setupView()
 		setupButtonAction()
-		setupSliderAction()
 		setupNavigationBar()
 	}
 	
@@ -46,28 +45,36 @@ final class InputIMCController: UIViewController {
 	@objc func didTapCalculateButton() {
 		guard let height = customView?.getInputHeight,
 			  let weight = customView?.getInputWeight
+				
 		else {
 			return
 		}
 		
-		viewModel.navigateToResult(result: ResultIMCModel(height: height, weight: weight))
-	}
-	
-	private func setupSliderAction() {
-		customView?.heightSliderChanged(target: self, action: #selector(heightSliderDidChange))
+		if height.isEmpty || weight.isEmpty {
+			isValidInputAlert(title: "Opa faltou digitar algo?",
+							  message: "Por favor preencha todos os campos \n para podermos calcular seu IMC")
+		}
 		
-		customView?.weightSliderChanged(target: self, action: #selector(weightSliderDidChange))
+		let result = viewModel.validateUserInput(height: height, weight: weight)
+		
+		if result.weight < 15 || result.weight > 150 {
+			isValidInputAlert(title: "Peso fora do limite aceito pelo App",
+							  message: "O peso precisa estar entre 15 e 150kg")
+			
+		} else if result.height < 100 || result.height > 210 {
+			isValidInputAlert(title: "Altura fora do limite aceito pelo App",
+							  message: "A altura precisa estar entre 100 e 210 centímetros.")
+		}
+		
+		viewModel.navigateToResult(result: result)
 	}
 	
-	@objc private func heightSliderDidChange(_ sender: UISlider!) {
-		DispatchQueue.main.async {
-			self.customView?.updateHeightNumber()
-		}
-	}
-	
-	@objc private func weightSliderDidChange(_ sender: UISlider) {
-		DispatchQueue.main.async {
-			self.customView?.updateWeightNumber()
-		}
+	func isValidInputAlert(title: String, message: String) {
+		
+		let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+		let cancel = UIAlertAction(title: "OK", style: .cancel)
+		
+		alert.addAction(cancel)
+		present(alert, animated: true)
 	}
 }

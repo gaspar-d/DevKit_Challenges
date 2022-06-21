@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class InputIMCView: UIView {
+final class InputIMCView: UIView, UITextFieldDelegate {
 	
 	private let width = UIScreen.main.bounds.width
 	
@@ -20,31 +20,22 @@ final class InputIMCView: UIView {
 		return label
 	}()
 	
-	private lazy var weightNumber: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "82kg"
-		label.font = UIFont.systemFont(ofSize: 32, weight: .heavy)
-		label.textColor = .systemBlue
-		return label
-	}()
-	
-	private lazy var weightSlider: UISlider = {
-		let slider = UISlider()
-		slider.translatesAutoresizingMaskIntoConstraints = false
-		slider.center = center
-		slider.tintColor = .blue
-		slider.minimumValue = 15
-		slider.maximumValue = 150
-		slider.minimumTrackTintColor = .systemBlue
-		slider.maximumTrackTintColor = .purple
-		slider.setValue(82, animated: true)
-		slider.isContinuous = true
-		return slider
+	private lazy var weightTextField: UITextField = {
+		let text = UITextField()
+		text.translatesAutoresizingMaskIntoConstraints = false
+		text.layer.borderWidth = 2
+		text.layer.borderColor = UIColor.systemBlue.cgColor
+		text.layer.cornerRadius = 10
+		text.placeholder = "Seu peso em kg ex: 82"
+		text.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
+		text.leftViewMode = .always
+		text.keyboardType = .numberPad
+		
+		return text
 	}()
 	
 	private lazy var weightStack: UIStackView = {
-		let stack = UIStackView(arrangedSubviews: [weightLabel, weightNumber, weightSlider])
+		let stack = UIStackView(arrangedSubviews: [weightLabel, weightTextField])
 		stack.translatesAutoresizingMaskIntoConstraints = false
 		stack.axis = .vertical
 		stack.spacing = 20
@@ -73,31 +64,22 @@ final class InputIMCView: UIView {
 		return label
 	}()
 	
-	private lazy var heightNumber: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "155cm"
-		label.font = UIFont.systemFont(ofSize: 32, weight: .heavy)
-		label.textColor = .systemBlue
-		return label
-	}()
-	
-	private lazy var heightSlider: UISlider = {
-		let slider = UISlider()
-		slider.translatesAutoresizingMaskIntoConstraints = false
-		slider.center = center
-		slider.tintColor = .blue
-		slider.minimumValue = 100
-		slider.maximumValue = 210
-		slider.minimumTrackTintColor = .systemBlue
-		slider.maximumTrackTintColor = .purple
-		slider.setValue(155, animated: true)
-		slider.isContinuous = true
-		return slider
+	private lazy var heightTextField: UITextField = {
+		let text = UITextField()
+		text.translatesAutoresizingMaskIntoConstraints = false
+		text.layer.borderWidth = 2
+		text.layer.borderColor = UIColor.systemBlue.cgColor
+		text.layer.cornerRadius = 10
+		text.placeholder = "Sua altura em cm ex: 180"
+		text.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
+		text.leftViewMode = .always
+		text.keyboardType = .numberPad
+		
+		return text
 	}()
 	
 	private lazy var heightStack: UIStackView = {
-		let stack = UIStackView(arrangedSubviews: [heightLabel, heightNumber, heightSlider])
+		let stack = UIStackView(arrangedSubviews: [heightLabel, heightTextField])
 		stack.translatesAutoresizingMaskIntoConstraints = false
 		stack.axis = .vertical
 		stack.spacing = 20
@@ -143,41 +125,38 @@ final class InputIMCView: UIView {
 		super.init(frame: frame)
 		
 		setup()
+		weightTextField.delegate = self
+		heightTextField.delegate = self
+		
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	// MARK: - update view methods
-	public func updateHeightNumber() {
-		self.heightNumber.text = "\(Int(self.heightSlider.value.rounded()))cm"
-	}
-	
-	public func updateWeightNumber() {
-		self.weightNumber.text = "\(Int(self.weightSlider.value.rounded()))kg"
+	// MARK: - Allow only numbers in textField
+	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+		
+		let allowedCharacters = "0123456789"
+		let allowedCharactersSet = CharacterSet(charactersIn: allowedCharacters)
+		let userInputed = CharacterSet(charactersIn: string)
+		let onlyNumbers = allowedCharactersSet.isSuperset(of: userInputed)
+		
+		return onlyNumbers
 	}
 	
 	public func buttonAction(target: Any?, action: Selector) {
 		calculateButton.addTarget(target, action: action, for: .touchUpInside)
 	}
 	
-	public func heightSliderChanged(target: Any?, action: Selector) {
-		heightSlider.addTarget(target, action: action, for: .valueChanged)
-	}
-	
-	public func weightSliderChanged(target: Any?, action: Selector) {
-		weightSlider.addTarget(target, action: action, for: .valueChanged)
-	}
-	
-	// MARK: - passing data
-	public var getInputHeight: Float {
-		let height = heightSlider.value.rounded()
+	// MARK: - Pass the textfield data
+	public var getInputHeight: String {
+		guard let height = heightTextField.text else { return "" }
 		return height
 	}
 	
-	public var getInputWeight: Float {
-		let weight = weightSlider.value.rounded()
+	public var getInputWeight: String {
+		guard let weight = weightTextField.text else { return "" }
 		return weight
 	}
 }
@@ -189,15 +168,18 @@ extension InputIMCView: ViewCodeTemplate {
 	}
 	
 	func setupConstraints() {
-		let sliderPadding: CGFloat = 60
+		let textFieldWidth: CGFloat = 60
+		let textFieldHeight: CGFloat = 44
 		let stackPadding: CGFloat = 30
 		
 		NSLayoutConstraint.activate([
 			
-			weightSlider.widthAnchor.constraint(equalToConstant: width - sliderPadding),
+			weightTextField.widthAnchor.constraint(equalToConstant: width - textFieldWidth),
+			weightTextField.heightAnchor.constraint(equalToConstant: textFieldHeight),
 			weightStack.widthAnchor.constraint(equalToConstant: width - stackPadding),
 			
-			heightSlider.widthAnchor.constraint(equalToConstant: width - sliderPadding),
+			heightTextField.widthAnchor.constraint(equalToConstant: width - textFieldWidth),
+			heightTextField.heightAnchor.constraint(equalToConstant: textFieldHeight),
 			heightStack.widthAnchor.constraint(equalToConstant: width - stackPadding),
 			
 			stackContainer.centerXAnchor.constraint(equalTo: centerXAnchor),

@@ -12,7 +12,7 @@
 
 | Version 1.0                                      | Version 2.0      |
 | :----:                                           |   :----:          |
-| <img src="https://github.com/gaspar-d/DevKit_Challenges/blob/main/Challenge/Resources/IMC_V1.gif" width="43%" /> | <img src="https://github.com/gaspar-d/DevKit_Challenges/blob/main/Challenge/Resources/IMC_V2.gif" width="33%" />                                              |
+| <img src="https://github.com/gaspar-d/DevKit_Challenges/blob/main/Challenge/Resources/IMC_V1.gif" width="50%" /> | <img src="https://github.com/gaspar-d/DevKit_Challenges/blob/main/Challenge/Resources/IMC_V2.gif" width="50%" />                                              |
 
 
 

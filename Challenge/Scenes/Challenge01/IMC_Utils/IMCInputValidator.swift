@@ -1,5 +1,5 @@
 //
-//  IMCInputValidador.swift
+//  IMCInputValidator.swift
 //  Challenge
 //
 //  Created by Diogo Gaspar on 21/06/22.
@@ -9,11 +9,7 @@ import Foundation
 
 final class InputValidator {
 	
-	static let shared = InputValidator()
-	
-	private init() {}
-	
-	public func validateUserInput(height: String, weight: String) -> ResultIMCModel {
+	public func convertUserInputToFloat(height: String, weight: String) -> ResultIMCModel {
 		
 		let trimmedHeight = height.trimmingCharacters(in: .whitespacesAndNewlines)
 		let trimmedWeight = weight.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -29,4 +25,43 @@ final class InputValidator {
 		
 		return result
 	}
+	
+	public func isInputEmpty(height: String, weight: String) -> Bool {
+		var value = false
+		
+		if height.isEmpty || weight.isEmpty {
+			value = true
+		}
+		
+		return value
+	}
+	
+	public func isWeightOutOfRange(weight: String) -> Bool {
+		let trimmedWeight = weight.trimmingCharacters(in: .whitespacesAndNewlines)
+		var value = true
+		
+		guard let convertedWeight = Float(trimmedWeight),
+			  convertedWeight < 15 || convertedWeight > 150
+		
+		else {
+			value = false
+			return value }
+		
+		return value
+	}
+	
+	public func isHeightOutOfRange(height: String) -> Bool {
+		let trimmedHeight = height.trimmingCharacters(in: .whitespacesAndNewlines)
+		var value = true
+		
+		guard let convertedHeight = Float(trimmedHeight),
+			  convertedHeight < 100 || convertedHeight > 210
+				
+		else {
+			value = false
+			return value }
+		
+		return value
+	}
 }
+

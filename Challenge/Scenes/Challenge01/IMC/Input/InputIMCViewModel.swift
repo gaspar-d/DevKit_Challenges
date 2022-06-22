@@ -10,13 +10,17 @@ import UIKit
 protocol InputIMCViewModelProtocol: AnyObject {
 	func navigateToResult(result: ResultIMCModel)
 	func validateUserInput(height: String, weight: String) -> ResultIMCModel
+	
+	func isTextFieldEmpty(height: String, weight: String) -> Bool
+	func weightIsValid(weight: String) -> Bool
+	func heightIsValid(height: String) -> Bool
 }
 
 final class InputIMCViewModel: NSObject {
 	weak var coordinator: InputMVCCoordinator?
-	private let validator: InputValidator?
+	private let validator: InputValidator
 	
-	init(validator: InputValidator = InputValidator.shared) {
+	init(validator: InputValidator) {
 		self.validator = validator
 	}
 }
@@ -28,7 +32,18 @@ extension InputIMCViewModel: InputIMCViewModelProtocol {
 	}
 	
 	public func validateUserInput(height: String, weight: String) -> ResultIMCModel {
-		
-		validator?.validateUserInput(height: height, weight: weight) ?? ResultIMCModel(height: 0, weight: 0)
+		validator.convertUserInputToFloat(height: height, weight: weight)
+	}
+	
+	public func isTextFieldEmpty(height: String, weight: String) -> Bool {
+		validator.isInputEmpty(height: height, weight: weight)
+	}
+	
+	public func weightIsValid(weight: String) -> Bool {
+		validator.isWeightOutOfRange(weight: weight)
+	}
+	
+	public func heightIsValid(height: String) -> Bool {
+		validator.isHeightOutOfRange(height: height)
 	}
 }

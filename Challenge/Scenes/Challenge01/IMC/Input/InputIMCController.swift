@@ -50,31 +50,50 @@ final class InputIMCController: UIViewController {
 			return
 		}
 		
-		if height.isEmpty || weight.isEmpty {
-			isValidInputAlert(title: "Opa faltou digitar algo?",
-							  message: "Por favor preencha todos os campos \n para podermos calcular seu IMC")
+		if viewModel.isTextFieldEmpty(height: height, weight: weight) {
+			isValidInputAlert()
+		}
+		
+		if viewModel.weightIsValid(weight: weight) {
+			isValidWeightAlert()
+		}
+		
+		if viewModel.heightIsValid(height: height) {
+			isValidHeightAlert()
 		}
 		
 		let result = viewModel.validateUserInput(height: height, weight: weight)
 		
-		if result.weight < 15 || result.weight > 150 {
-			isValidInputAlert(title: "Peso fora do limite aceito pelo App",
-							  message: "O peso precisa estar entre 15 e 150kg")
-			
-		} else if result.height < 100 || result.height > 210 {
-			isValidInputAlert(title: "Altura fora do limite aceito pelo App",
-							  message: "A altura precisa estar entre 100 e 210 centímetros.")
-		}
-		
 		viewModel.navigateToResult(result: result)
 	}
 	
-	func isValidInputAlert(title: String, message: String) {
+	func isValidInputAlert() {
+		let alert = UIAlertController(title: "Opa faltou digitar algo?",
+									  message: "Por favor preencha todos os campos \n para podermos calcular seu IMC",
+									  preferredStyle: .alert)
+		let okAction = UIAlertAction(title: "OK", style: .cancel)
 		
-		let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-		let cancel = UIAlertAction(title: "OK", style: .cancel)
+		alert.addAction(okAction)
+		present(alert, animated: true)
+	}
+	
+	func isValidWeightAlert() {
+		let alert = UIAlertController(title: "Peso fora do limite aceito pelo App",
+									  message: "O peso precisa estar entre 15 e 150kg",
+									  preferredStyle: .alert)
+		let okAction = UIAlertAction(title: "OK", style: .cancel)
 		
-		alert.addAction(cancel)
+		alert.addAction(okAction)
+		present(alert, animated: true)
+	}
+	
+	func isValidHeightAlert() {
+		let alert = UIAlertController(title: "Altura fora do limite aceito pelo App",
+									  message: "A altura precisa estar entre 100 e 210 centímetros.",
+									  preferredStyle: .alert)
+		let okAction = UIAlertAction(title: "OK", style: .cancel)
+		
+		alert.addAction(okAction)
 		present(alert, animated: true)
 	}
 }

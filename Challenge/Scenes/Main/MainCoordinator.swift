@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol MainCoordinatorProtocol: AnyObject {
+	func navigateTo(sceneIndex: Int)
+}
+
 final class MainCoordinator: Coordinator {
 	public var childCoordinators: [Coordinator] = []
 	public var navigation: UINavigationController
@@ -19,6 +23,9 @@ final class MainCoordinator: Coordinator {
 		let vc = MainFactory.make(coordinator: self)
 		navigation.pushViewController(vc, animated: true)
 	}
+}
+
+extension MainCoordinator: MainCoordinatorProtocol {
 	
 	// MARK: - Handle MainVC table navigation
 	public func navigateTo(sceneIndex: Int) {

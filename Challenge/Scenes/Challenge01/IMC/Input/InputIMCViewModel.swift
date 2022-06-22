@@ -16,7 +16,7 @@ protocol InputIMCViewModelProtocol: AnyObject {
 }
 
 final class InputIMCViewModel: NSObject {
-	weak var coordinator: InputMVCCoordinator?
+	weak var coordinator: InputMVCCoordinatorProtocol?
 	public let validator: InputValidatorProtocol
 	
 	init(validator: InputValidatorProtocol) {

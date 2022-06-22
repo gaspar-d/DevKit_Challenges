@@ -10,7 +10,6 @@ import UIKit
 protocol InputIMCViewModelProtocol: AnyObject {
 	func navigateToResult(result: ResultIMCModel)
 	func validateUserInput(height: String, weight: String) -> ResultIMCModel
-	
 	func isTextFieldEmpty(height: String, weight: String) -> Bool
 	func weightIsValid(weight: String) -> Bool
 	func heightIsValid(height: String) -> Bool
@@ -18,9 +17,9 @@ protocol InputIMCViewModelProtocol: AnyObject {
 
 final class InputIMCViewModel: NSObject {
 	weak var coordinator: InputMVCCoordinator?
-	private let validator: InputValidator
+	public let validator: InputValidatorProtocol
 	
-	init(validator: InputValidator) {
+	init(validator: InputValidatorProtocol) {
 		self.validator = validator
 	}
 }

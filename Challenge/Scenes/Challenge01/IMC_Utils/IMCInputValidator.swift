@@ -7,7 +7,16 @@
 
 import Foundation
 
-final class InputValidator {
+protocol InputValidatorProtocol: AnyObject {
+	func convertUserInputToFloat(height: String, weight: String) -> ResultIMCModel
+	func isInputEmpty(height: String, weight: String) -> Bool
+	func isWeightOutOfRange(weight: String) -> Bool
+	func isHeightOutOfRange(height: String) -> Bool
+}
+
+final class InputValidator { }
+
+extension InputValidator: InputValidatorProtocol {
 	
 	public func convertUserInputToFloat(height: String, weight: String) -> ResultIMCModel {
 		

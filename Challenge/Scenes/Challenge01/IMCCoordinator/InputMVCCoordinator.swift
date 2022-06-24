@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol InputMVCCoordinatorProtocol: AnyObject {
+protocol InputMVCCoordinatorProtocol: Coordinator {
 	func navigateToResultIMC(result: ResultIMCModel)
 }
 

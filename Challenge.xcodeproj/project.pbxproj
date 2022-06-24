@@ -111,7 +111,6 @@
 				EB269E5E285CDCE700B91825 /* InputIMCController.swift */,
 				EB269E69285D219D00B91825 /* InputIMCView.swift */,
 				EB269E76285D3E5E00B91825 /* InputIMCFactory.swift */,
-				EB11D531285E4698007F0F15 /* InputMVCCoordinator.swift */,
 				EB269E72285D338300B91825 /* InputIMCViewModel.swift */,
 			);
 			path = Input;
@@ -213,9 +212,18 @@
 			path = IMC_Utils;
 			sourceTree = "<group>";
 		};
+		EBCD193D286603BA006F91D8 /* IMCCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				EB11D531285E4698007F0F15 /* InputMVCCoordinator.swift */,
+			);
+			path = IMCCoordinator;
+			sourceTree = "<group>";
+		};
 		EBDB3E4F285D9FB300FE40D0 /* Challenge01 */ = {
 			isa = PBXGroup;
 			children = (
+				EBCD193D286603BA006F91D8 /* IMCCoordinator */,
 				EBB195AB2862652A001BBBDF /* IMC_Utils */,
 				EBA34B702861040B00F72682 /* ModelIMC */,
 				EB269E5C285CDC0E00B91825 /* IMC */,

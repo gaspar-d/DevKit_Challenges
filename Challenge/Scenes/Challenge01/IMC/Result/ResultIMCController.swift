@@ -58,10 +58,10 @@ final class ResultIMCController: UIViewController {
 	}
 	
 	private func setupResultData() {
-		guard let color = viewModel.getColor,
-			  let image = viewModel.getImage,
+		guard let color = viewModel.color,
+			  let image = viewModel.image,
 			  let result = viewModel.getResult,
-			  let text = viewModel.getClassification
+			  let text = viewModel.classification
 		else { return }
 		
 		customView?.setImage(image: image, color: color)

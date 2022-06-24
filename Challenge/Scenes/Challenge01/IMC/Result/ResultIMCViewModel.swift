@@ -18,9 +18,9 @@ enum IMC: Float {
 
 protocol ResultIMCViewModelProtocol: AnyObject {
 	var getResult: String? { get }
-	var getImage: UIImage? { get }
-	var getColor: UIColor? { get }
-	var getClassification: String? { get }
+	var image: UIImage? { get }
+	var color: UIColor? { get }
+	var classification: String? { get }
 }
 
 final class ResultIMCViewModel: NSObject {
@@ -29,9 +29,9 @@ final class ResultIMCViewModel: NSObject {
 	private var model: ResultIMCModel
 	
 	private var result: Float = 0
-	private var image: UIImage?
-	private var color: UIColor?
-	private var classification: String?
+	private(set) var image: UIImage?
+	private(set) var color: UIColor?
+	private(set) var classification: String?
 	
 	init(model: ResultIMCModel) {
 		self.model = model
@@ -79,17 +79,5 @@ final class ResultIMCViewModel: NSObject {
 extension ResultIMCViewModel: ResultIMCViewModelProtocol {
 	public var getResult: String? {
 		String(format: "%.1f", result)
-	}
-	
-	public var getImage: UIImage? {
-		image
-	}
-	
-	public var getColor: UIColor? {
-		color
-	}
-	
-	public var getClassification: String? {
-		classification
 	}
 }

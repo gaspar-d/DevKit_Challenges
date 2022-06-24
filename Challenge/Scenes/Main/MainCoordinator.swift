@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol MainCoordinatorProtocol: AnyObject {
+protocol MainCoordinatorProtocol: Coordinator {
 	func navigateTo(sceneIndex: Int)
 }
 

@@ -7,15 +7,6 @@
 
 import UIKit
 
-enum IMC: Float {
-	case underWeight = 18.5
-	case normal = 24.9
-	case overWeight = 29.9
-	case obesity1 = 34.9
-	case obesity2 = 39.9
-	case obesity3 = 40
-}
-
 protocol ResultIMCViewModelProtocol: AnyObject {
 	var getResult: String? { get }
 	var image: UIImage? { get }
@@ -27,7 +18,6 @@ final class ResultIMCViewModel: NSObject {
 	
 	weak var coordinator: InputMVCCoordinator?
 	private var model: ResultIMCModel
-	
 	private var result: Float = 0
 	private(set) var image: UIImage?
 	private(set) var color: UIColor?
@@ -44,37 +34,35 @@ final class ResultIMCViewModel: NSObject {
 		result = model.weight / (model.height * model.height) * 10000
 		
 		switch result {
-		case let result where result <= IMC.underWeight.rawValue:
+		case 0...18.5:
 			image = UIImage(systemName: "person.crop.circle.badge.minus")
 			color = UIColor.cyan
 			classification = "Abaixo do normal"
 			
-		case let result where result <= IMC.normal.rawValue:
+		case 18.6...24.9:
 			image = UIImage(systemName: "person.crop.circle.badge.checkmark")
 			color = UIColor.systemGreen
 			classification = "Normal"
 			
-		case let result where result <= IMC.overWeight.rawValue:
+		case 25...29.9:
 			image = UIImage(systemName: "person.crop.circle.badge.plus")
 			color = UIColor.blue
 			classification = "Sobrepeso"
 			
-		case let result where result <= IMC.obesity1.rawValue:
+		case 30...34.9:
 			image = UIImage(systemName: "person.crop.circle.badge.exclamationmark")
 			color = UIColor.systemYellow
 			classification = "Obesidade grau 1"
 			
-		case let result where result <= IMC.obesity2.rawValue:
+		case 35...39.9:
 			image = UIImage(systemName: "person.crop.circle.badge.exclamationmark")
 			color = UIColor.systemOrange
 			classification = "Obesidade grau 2"
 			
-		case let result where result >= IMC.obesity3.rawValue:
+		default:
 			image = UIImage(systemName: "person.crop.circle.badge.exclamationmark")
 			color = UIColor.systemRed
 			classification = "Obesidade grau 3"
-			
-		default:
 			print("Impossible to compute the data in setupData method")
 		}
 	}

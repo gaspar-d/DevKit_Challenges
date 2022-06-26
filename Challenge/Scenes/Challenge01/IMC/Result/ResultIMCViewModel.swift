@@ -63,7 +63,6 @@ final class ResultIMCViewModel: NSObject {
 			image = UIImage(systemName: "person.crop.circle.badge.exclamationmark")
 			color = UIColor.systemRed
 			classification = "Obesidade grau 3"
-			print("Impossible to compute the data in setupData method")
 		}
 	}
 }

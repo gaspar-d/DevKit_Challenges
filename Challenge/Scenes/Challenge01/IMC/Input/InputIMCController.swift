@@ -51,15 +51,18 @@ final class InputIMCController: UIViewController {
 		}
 		
 		if viewModel.isTextFieldEmpty(height: height, weight: weight) {
-			isValidInputAlert()
+			isValidInputAlert(title: "Opa faltou digitar algo?",
+							  message: "Por favor preencha todos os campos \n para podermos calcular seu IMC")
 		}
 		
 		if viewModel.weightIsValid(weight: weight) {
-			isValidWeightAlert()
+			isValidInputAlert(title: "Peso fora do limite aceito pelo App",
+							   message: "O peso precisa estar entre 15 e 150kg")
 		}
 		
 		if viewModel.heightIsValid(height: height) {
-			isValidHeightAlert()
+			isValidInputAlert(title: "Altura fora do limite aceito pelo App",
+							   message: "A altura precisa estar entre 100 e 210 centímetros.")
 		}
 		
 		let result = viewModel.validateUserInput(height: height, weight: weight)
@@ -67,29 +70,9 @@ final class InputIMCController: UIViewController {
 		viewModel.navigateToResult(result: result)
 	}
 	
-	func isValidInputAlert() {
-		let alert = UIAlertController(title: "Opa faltou digitar algo?",
-									  message: "Por favor preencha todos os campos \n para podermos calcular seu IMC",
-									  preferredStyle: .alert)
-		let okAction = UIAlertAction(title: "OK", style: .cancel)
-		
-		alert.addAction(okAction)
-		present(alert, animated: true)
-	}
-	
-	func isValidWeightAlert() {
-		let alert = UIAlertController(title: "Peso fora do limite aceito pelo App",
-									  message: "O peso precisa estar entre 15 e 150kg",
-									  preferredStyle: .alert)
-		let okAction = UIAlertAction(title: "OK", style: .cancel)
-		
-		alert.addAction(okAction)
-		present(alert, animated: true)
-	}
-	
-	func isValidHeightAlert() {
-		let alert = UIAlertController(title: "Altura fora do limite aceito pelo App",
-									  message: "A altura precisa estar entre 100 e 210 centímetros.",
+	func isValidInputAlert(title: String, message: String) {
+		let alert = UIAlertController(title: title,
+									  message: message,
 									  preferredStyle: .alert)
 		let okAction = UIAlertAction(title: "OK", style: .cancel)
 		

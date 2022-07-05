@@ -36,9 +36,12 @@ extension MainCoordinator: MainCoordinatorProtocol {
 			child.start()
 			
 		case 1:
-			let vc = CarPlateController()
+			let child = CarRotationCoordinator(navigation: navigation)
+			childCoordinators.append(child)
+			child.start()
 			
-			navigation.pushViewController(vc, animated: true)
+//			let vc = CarPlateFactory.make()
+//			navigation.pushViewController(vc, animated: true)
 			
 		default:
 			fatalError("Cell index not found", file: #file, line: #line)

@@ -9,11 +9,11 @@ import Foundation
 
 enum CarRotationFactory {
 	
-	static func make(coordinator: CarRotationCoordinator) -> CarRotationController {
-		
+	static func make(plate: String, coordinator: CarRotationCoordinator) -> CarRotationController {
 		let vm = CarRotationViewModel()
 		vm.coordinator = coordinator
-		let vc = CarRotationController()
+		vm.plate = plate
+		let vc = CarRotationController(viewModel: vm)
 		
 		return vc
 	}

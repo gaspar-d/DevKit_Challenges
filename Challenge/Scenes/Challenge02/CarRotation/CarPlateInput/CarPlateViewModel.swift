@@ -8,18 +8,17 @@
 import Foundation
 
 protocol CarPlateViewModelProtocol: AnyObject {
-	func navigateTo()
+	func navigateToCarRotation(with plate: String)
 }
 
 final class CarPlateViewModel: NSObject {
 	
 	weak var coordinator: CarRotationCoordinator?
 	
-	
 }
 
 extension CarPlateViewModel: CarPlateViewModelProtocol {
-	func navigateTo() {
-		coordinator?.navigateToCarRotationResult()
+	func navigateToCarRotation(with plate: String) {
+		coordinator?.navigateToCarRotationResult(with: plate)
 	}
 }

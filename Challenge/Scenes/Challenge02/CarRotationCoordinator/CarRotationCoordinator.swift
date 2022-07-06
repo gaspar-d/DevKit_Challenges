@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CarRotationCoordinatorProtocol: AnyObject {
-	func navigateToCarRotationResult()
+	func navigateToCarRotationResult(with plate: String)
 }
 
 final class CarRotationCoordinator: Coordinator {
@@ -26,8 +26,9 @@ final class CarRotationCoordinator: Coordinator {
 }
 
 extension CarRotationCoordinator: CarRotationCoordinatorProtocol {
-	func navigateToCarRotationResult() {
-		let vc = CarRotationFactory.make(coordinator: self)
+	
+	func navigateToCarRotationResult(with plate: String) {
+		let vc = CarRotationFactory.make(plate: plate, coordinator: self)
 		navigation.pushViewController(vc, animated: true)
 	}
 }

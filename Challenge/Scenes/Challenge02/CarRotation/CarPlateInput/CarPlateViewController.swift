@@ -34,11 +34,15 @@ final class CarPlateController: UIViewController {
 	}
 	
 	private func setupButtonAction() {
-		customView?.plateButtonAction(target: self, action: #selector(didTapPlateButton))
+		customView?.setPlateButtonAction(target: self, action: #selector(didTapPlateButton))
 	}
 	
 	@objc private func didTapPlateButton() {
-		viewModel.navigateTo()
-		print("Opa")
+		guard let plate = customView?.getPlateInput else {
+			return
+		}
+		
+		viewModel.navigateToCarRotation(with: plate)
+		print(plate, #line)
 	}
 }

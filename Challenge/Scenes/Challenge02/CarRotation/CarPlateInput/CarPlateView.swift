@@ -16,7 +16,7 @@ final class CarPlateView: UIView {
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.text = "Digite sua placa"
 		label.font = UIFont.systemFont(ofSize: 22, weight: .medium)
-		label.textColor = .white
+		label.textColor = .systemBlue
 		return label
 	}()
 	
@@ -68,8 +68,12 @@ final class CarPlateView: UIView {
 	}
 	
 	// MARK: - methods
-	public func plateButtonAction(target: Any?, action: Selector) {
+	public func setPlateButtonAction(target: Any?, action: Selector) {
 		plateButton.addTarget(target, action: action, for: .touchUpInside)
+	}
+	
+	public var getPlateInput: String? {
+		plateField.text
 	}
 }
 

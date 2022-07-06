@@ -29,6 +29,8 @@ final class CarPlateController: UIViewController {
 	}
 	
 	func setupView() {
+		title = "Rodízio Automotivo SP"
+		
 		customView = CarPlateView()
 		self.view = customView
 	}

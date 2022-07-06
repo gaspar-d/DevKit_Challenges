@@ -16,7 +16,7 @@ final class CarRotationView: UIView {
 		return label
 	}()
 	
-	private lazy var plateButton: UIButton = {
+	private lazy var newQueryButton: UIButton = {
 		var configuration = UIButton.Configuration.filled()
 		configuration.title = "Fazer nova consulta"
 		
@@ -26,7 +26,7 @@ final class CarRotationView: UIView {
 	}()
 	
 	private lazy var stack: UIStackView = {
-		let stack = UIStackView(arrangedSubviews: [plateLabel, plateButton])
+		let stack = UIStackView(arrangedSubviews: [plateLabel, newQueryButton])
 		stack.translatesAutoresizingMaskIntoConstraints = false
 		stack.axis = .vertical
 		stack.distribution = .equalSpacing
@@ -49,6 +49,10 @@ final class CarRotationView: UIView {
 	public func setPlateLabel(plate: String) {
 		plateLabel.text = plate
 	}
+	
+	public func setNewQueryButtonAction(target: Any?, action: Selector) {
+		newQueryButton.addTarget(target, action: action, for: .touchUpInside)
+	}
 }
 
 extension CarRotationView: ViewCodeTemplate {
@@ -59,8 +63,8 @@ extension CarRotationView: ViewCodeTemplate {
 	func setupConstraints() {
 		NSLayoutConstraint.activate([
 			
-			plateButton.heightAnchor.constraint(equalToConstant: 44),
-			plateButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1/2),
+			newQueryButton.heightAnchor.constraint(equalToConstant: 44),
+			newQueryButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1/2),
 			
 			stack.centerXAnchor.constraint(equalTo: centerXAnchor),
 			stack.centerYAnchor.constraint(equalTo: centerYAnchor),

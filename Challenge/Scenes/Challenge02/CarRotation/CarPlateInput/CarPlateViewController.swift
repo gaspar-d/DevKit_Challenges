@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class CarPlateController: UIViewController {
+// MARK: - regex '/^[a-zA-Z]{3}[0-9][A-Za-z0-9][0-9]{2}$/'
+
+final class CarPlateController: UIViewController, UITextFieldDelegate {
 
 	private var customView: CarPlateView?
 	var viewModel: CarPlateViewModelProtocol
@@ -26,7 +28,29 @@ final class CarPlateController: UIViewController {
 		
 		setupView()
 		setupButtonAction()
+		customView?.setTextFieldDelegate(delegate: self)
 	}
+	
+	// TODO: - Consolidate this
+	
+	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+		print("------------->", textField.text, #line)
+		
+		let a = textField.text?.replacingOccurrences(of: " ", with: "")
+		
+		textField.text = a?.applyPatternOnNumbers(pattern: "### ####", replacementCharacter: "#")
+		
+		return textLimit(textField.text ?? "", newText: string, limit: 8)
+	}
+	
+	func textLimit(_ currentText: String, newText: String, limit: Int) -> Bool {
+		let text = currentText
+		let atLimit = text.count + newText.count <= limit
+		
+		return atLimit
+	}
+	
+	
 	
 	func setupView() {
 		title = "Rodízio Automotivo SP"
@@ -48,3 +72,4 @@ final class CarPlateController: UIViewController {
 		print(plate, #line)
 	}
 }
+

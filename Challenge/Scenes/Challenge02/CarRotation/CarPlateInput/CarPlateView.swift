@@ -27,7 +27,6 @@ final class CarPlateView: UIView {
 		text.textAlignment = .center
 		text.layer.cornerRadius = 5
 		text.backgroundColor = .white
-		
 		return text
 	}()
 	
@@ -74,6 +73,15 @@ final class CarPlateView: UIView {
 	
 	public var getPlateInput: String? {
 		plateField.text
+	}
+	
+	func test() {
+		let res =  plateField.text
+		plateField.text = res?.applyPatternOnNumbers(pattern: "### ####", replacementCharacter: "#")
+	}
+	
+	func setTextFieldDelegate(delegate: UITextFieldDelegate) {
+		plateField.delegate = delegate
 	}
 }
 

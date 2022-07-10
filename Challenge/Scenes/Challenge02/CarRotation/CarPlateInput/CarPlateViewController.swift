@@ -7,10 +7,8 @@
 
 import UIKit
 
-// MARK: - regex '/^[a-zA-Z]{3}[0-9][A-Za-z0-9][0-9]{2}$/'
-
-final class CarPlateController: UIViewController, UITextFieldDelegate {
-
+final class CarPlateController: UIViewController{
+	
 	private var customView: CarPlateView?
 	var viewModel: CarPlateViewModelProtocol
 	
@@ -31,27 +29,6 @@ final class CarPlateController: UIViewController, UITextFieldDelegate {
 		customView?.setTextFieldDelegate(delegate: self)
 	}
 	
-	// TODO: - Consolidate this
-	
-	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-		print("------------->", textField.text, #line)
-		
-		let a = textField.text?.replacingOccurrences(of: " ", with: "")
-		
-		textField.text = a?.applyPatternOnNumbers(pattern: "### ####", replacementCharacter: "#")
-		
-		return textLimit(textField.text ?? "", newText: string, limit: 8)
-	}
-	
-	func textLimit(_ currentText: String, newText: String, limit: Int) -> Bool {
-		let text = currentText
-		let atLimit = text.count + newText.count <= limit
-		
-		return atLimit
-	}
-	
-	
-	
 	func setupView() {
 		title = "Rodízio Automotivo SP"
 		
@@ -60,7 +37,8 @@ final class CarPlateController: UIViewController, UITextFieldDelegate {
 	}
 	
 	private func setupButtonAction() {
-		customView?.setPlateButtonAction(target: self, action: #selector(didTapPlateButton))
+		customView?.setPlateButtonAction(target: self,
+										 action: #selector(didTapPlateButton))
 	}
 	
 	@objc private func didTapPlateButton() {
@@ -69,7 +47,21 @@ final class CarPlateController: UIViewController, UITextFieldDelegate {
 		}
 		
 		viewModel.navigateToCarRotation(with: plate)
-		print(plate, #line)
 	}
 }
 
+extension CarPlateController: UITextFieldDelegate, TextFieldLimiter {
+	
+	func textField(_ textField: UITextField,
+				   shouldChangeCharactersIn range: NSRange,
+				   replacementString string: String) -> Bool {
+		
+		var removeExtraCharacters = textField.text?
+			.replacingOccurrences(of: " ", with: "")
+		
+		textField.text = removeExtraCharacters?.applyPatternOnString(pattern:"### ####",
+																	 replacementCharacter: "#")
+		
+		return textLimit(textField.text ?? "", newText: string, limit: 8)
+	}
+}

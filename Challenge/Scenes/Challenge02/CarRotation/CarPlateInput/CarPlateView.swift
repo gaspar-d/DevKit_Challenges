@@ -23,10 +23,11 @@ final class CarPlateView: UIView {
 	private lazy var plateField: UITextField = {
 		let text = UITextField()
 		text.translatesAutoresizingMaskIntoConstraints = false
-		text.placeholder = "XXX-XXXX"
+		text.placeholder = "XXX XXXX"
+		text.autocapitalizationType = .allCharacters
 		text.textAlignment = .center
 		text.layer.cornerRadius = 5
-		text.backgroundColor = .white
+		text.backgroundColor = .systemBackground
 		return text
 	}()
 	
@@ -75,11 +76,6 @@ final class CarPlateView: UIView {
 		plateField.text
 	}
 	
-	func test() {
-		let res =  plateField.text
-		plateField.text = res?.applyPatternOnNumbers(pattern: "### ####", replacementCharacter: "#")
-	}
-	
 	func setTextFieldDelegate(delegate: UITextFieldDelegate) {
 		plateField.delegate = delegate
 	}
@@ -105,6 +101,6 @@ extension CarPlateView: ViewCodeTemplate {
 	}
 	
 	func setupExtraConfiguration() {
-		backgroundColor = .yellow
+		backgroundColor = .systemBackground
 	}
 }

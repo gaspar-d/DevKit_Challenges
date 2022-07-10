@@ -9,10 +9,17 @@ import UIKit
 
 final class CarRotationView: UIView {
 	
-	private lazy var plateLabel: UILabel = {
+	private lazy var weekDayLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.text = "Insira sua placa"
+		return label
+	}()
+	
+	private lazy var descriptionLabel: UILabel = {
+		let label = UILabel()
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.text = "Placa com final: "
 		return label
 	}()
 	
@@ -26,7 +33,7 @@ final class CarRotationView: UIView {
 	}()
 	
 	private lazy var stack: UIStackView = {
-		let stack = UIStackView(arrangedSubviews: [plateLabel, newQueryButton])
+		let stack = UIStackView(arrangedSubviews: [weekDayLabel, descriptionLabel, newQueryButton])
 		stack.translatesAutoresizingMaskIntoConstraints = false
 		stack.axis = .vertical
 		stack.distribution = .equalSpacing
@@ -46,8 +53,12 @@ final class CarRotationView: UIView {
 	}
 	
 	// MARK: - Methods
-	public func setPlateLabel(plate: String) {
-		plateLabel.text = plate
+	public func setWeekDayLabel(with plate: String) {
+		weekDayLabel.text = plate
+	}
+	
+	public func setDescriptionLabel(with plate: String) {
+		descriptionLabel.text = "Placa com final: \(plate)"
 	}
 	
 	public func setNewQueryButtonAction(target: Any?, action: Selector) {

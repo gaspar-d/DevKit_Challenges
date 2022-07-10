@@ -43,6 +43,7 @@
 		EBB195AD286269E9001BBBDF /* IMC_V1.gif in Resources */ = {isa = PBXBuildFile; fileRef = EBB195AC286269E9001BBBDF /* IMC_V1.gif */; };
 		EBD93D0B287A7F350062CBCC /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD93D0A287A7F350062CBCC /* UIKitExtensions.swift */; };
 		EBD93D0D287A80450062CBCC /* TextFieldLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD93D0C287A80450062CBCC /* TextFieldLimiter.swift */; };
+		EBD93D10287B709F0062CBCC /* CarRotationValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD93D0F287B709F0062CBCC /* CarRotationValidator.swift */; };
 		EBE117FA284E7A0E00326C62 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE117F9284E7A0E00326C62 /* MainViewModel.swift */; };
 		EBE117FC284E7A3700326C62 /* ChallengesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE117FB284E7A3700326C62 /* ChallengesModel.swift */; };
 /* End PBXBuildFile section */
@@ -86,6 +87,7 @@
 		EBB195AC286269E9001BBBDF /* IMC_V1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IMC_V1.gif; sourceTree = "<group>"; };
 		EBD93D0A287A7F350062CBCC /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		EBD93D0C287A80450062CBCC /* TextFieldLimiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLimiter.swift; sourceTree = "<group>"; };
+		EBD93D0F287B709F0062CBCC /* CarRotationValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRotationValidator.swift; sourceTree = "<group>"; };
 		EBE117F9284E7A0E00326C62 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		EBE117FB284E7A3700326C62 /* ChallengesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +106,7 @@
 		EB1D5C1F2874CA1F00BAAA53 /* Challenge02 */ = {
 			isa = PBXGroup;
 			children = (
+				EBD93D0E287B70830062CBCC /* CarRotationUtils */,
 				EB1D5C2F2874D39300BAAA53 /* CarRotationCoordinator */,
 				EB1D5C242874CDFC00BAAA53 /* CarRotation */,
 			);
@@ -293,6 +296,14 @@
 			path = IMCCoordinator;
 			sourceTree = "<group>";
 		};
+		EBD93D0E287B70830062CBCC /* CarRotationUtils */ = {
+			isa = PBXGroup;
+			children = (
+				EBD93D0F287B709F0062CBCC /* CarRotationValidator.swift */,
+			);
+			path = CarRotationUtils;
+			sourceTree = "<group>";
+		};
 		EBDB3E4F285D9FB300FE40D0 /* Challenge01 */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB269E6A285D219D00B91825 /* InputIMCView.swift in Sources */,
+				EBD93D10287B709F0062CBCC /* CarRotationValidator.swift in Sources */,
 				EB1D5C232874CB3700BAAA53 /* CarPlateView.swift in Sources */,
 				EB269E82285D8F1E00B91825 /* ResultIMCFactory.swift in Sources */,
 				EBA1409A2853C9D600653227 /* TableViewDelegate.swift in Sources */,

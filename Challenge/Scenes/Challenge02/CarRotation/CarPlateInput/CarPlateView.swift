@@ -76,6 +76,10 @@ final class CarPlateView: UIView {
 		plateField.text
 	}
 	
+	public func cleanPlateField() {
+		plateField.text = ""
+	}
+	
 	func setTextFieldDelegate(delegate: UITextFieldDelegate) {
 		plateField.delegate = delegate
 	}

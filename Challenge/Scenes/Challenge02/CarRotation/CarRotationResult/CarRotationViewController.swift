@@ -39,13 +39,26 @@ final class CarRotationController: UIViewController {
 	private func setupNavigationBar() {
 		title = "Seu rodízio"
 		navigationItem.hidesBackButton = true
+		
+		let backButton = UIBarButtonItem(barButtonSystemItem: .cancel,
+										 target: self,
+										 action: #selector(didTapBackButton))
+		backButton.tintColor = .label
+		
+		navigationItem.rightBarButtonItem = backButton
+	}
+	
+	@objc private func didTapBackButton() {
+		navigationController?.popToRootViewController(animated: true)
 	}
 	
 	private func setupPlateLabel() {
 		guard let plate = viewModel?.getPlateNumber,
+			  let digit = viewModel?.getLastCharacterOfPlate,
 			  !plate.isEmpty else { return }
 		
-		customView?.setPlateLabel(plate: plate)
+		customView?.setWeekDayLabel(with: plate)
+		customView?.setDescriptionLabel(with: digit)
 	}
 	
 	private func setupButtonAction() {

@@ -55,10 +55,13 @@ final class CarRotationController: UIViewController {
 	private func setupPlateLabel() {
 		guard let plate = viewModel?.getPlateNumber,
 			  let digit = viewModel?.getLastCharacterOfPlate,
+			  let weekday = viewModel?.getWeekday(with: digit),
+			  let rotationTime = viewModel?.getRotationPerTime(with: weekday),
 			  !plate.isEmpty else { return }
 		
-		customView?.setWeekDayLabel(with: plate)
-		customView?.setDescriptionLabel(with: digit)
+		customView?.setRotationDayLabel(with: rotationTime)
+		customView?.setWeekdayLabel(with: weekday)
+		
 	}
 	
 	private func setupButtonAction() {

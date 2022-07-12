@@ -108,18 +108,18 @@
 			children = (
 				EBD93D0E287B70830062CBCC /* CarRotationUtils */,
 				EB1D5C2F2874D39300BAAA53 /* CarRotationCoordinator */,
-				EB1D5C242874CDFC00BAAA53 /* CarRotation */,
+				EB1D5C242874CDFC00BAAA53 /* CarScenes */,
 			);
 			path = Challenge02;
 			sourceTree = "<group>";
 		};
-		EB1D5C242874CDFC00BAAA53 /* CarRotation */ = {
+		EB1D5C242874CDFC00BAAA53 /* CarScenes */ = {
 			isa = PBXGroup;
 			children = (
 				EB1D5C252874D07800BAAA53 /* CarPlateInput */,
 				EB1D5C262874D08D00BAAA53 /* CarRotationResult */,
 			);
-			path = CarRotation;
+			path = CarScenes;
 			sourceTree = "<group>";
 		};
 		EB1D5C252874D07800BAAA53 /* CarPlateInput */ = {
@@ -152,13 +152,13 @@
 			path = CarRotationCoordinator;
 			sourceTree = "<group>";
 		};
-		EB269E5C285CDC0E00B91825 /* IMC */ = {
+		EB269E5C285CDC0E00B91825 /* IMCScenes */ = {
 			isa = PBXGroup;
 			children = (
 				EB269E6B285D21A200B91825 /* Input */,
 				EB269E6C285D21AD00B91825 /* Result */,
 			);
-			path = IMC;
+			path = IMCScenes;
 			sourceTree = "<group>";
 		};
 		EB269E5D285CDC1B00B91825 /* Scenes */ = {
@@ -310,7 +310,7 @@
 				EBCD193D286603BA006F91D8 /* IMCCoordinator */,
 				EBB195AB2862652A001BBBDF /* IMC_Utils */,
 				EBA34B702861040B00F72682 /* ModelIMC */,
-				EB269E5C285CDC0E00B91825 /* IMC */,
+				EB269E5C285CDC0E00B91825 /* IMCScenes */,
 			);
 			path = Challenge01;
 			sourceTree = "<group>";

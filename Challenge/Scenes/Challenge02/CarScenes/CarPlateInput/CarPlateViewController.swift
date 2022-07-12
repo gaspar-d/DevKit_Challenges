@@ -10,7 +10,7 @@ import UIKit
 final class CarPlateController: UIViewController {
 	
 	private var customView: CarPlateView?
-	var viewModel: CarPlateViewModelProtocol
+	private var viewModel: CarPlateViewModelProtocol
 	
 	init(viewModel: CarPlateViewModelProtocol) {
 		self.viewModel = viewModel
@@ -29,7 +29,7 @@ final class CarPlateController: UIViewController {
 		customView?.setTextFieldDelegate(delegate: self)
 	}
 	
-	func setupView() {
+	private func setupView() {
 		title = "Rodízio Automotivo SP"
 		
 		customView = CarPlateView()
@@ -46,16 +46,20 @@ final class CarPlateController: UIViewController {
 			return
 		}
 		
-		// TODO: - Uncomment after completed CarRotationVC
-//		if viewModel.isPlateFieldEmpty(with: plate) {
-//			isValidInputAlert(title: "Campo vazio",
-//							  message: "Insira a numeração de sua placa para prosseguir")
-//		}
-//
-//		if viewModel.isPlateValid(with: plate) {
-//			isValidInputAlert(title: "Placa com números faltantes",
-//							  message: "Ambas placas modelo Mercosul e antiga precisam de 7 dígitos")
-//		}
+		if viewModel.isPlateFieldEmpty(with: plate) {
+			isValidInputAlert(title: "Campo vazio",
+							  message: "Insira a numeração de sua placa para prosseguir")
+		}
+
+		if viewModel.isPlateValid(with: plate) {
+			isValidInputAlert(title: "Placa com números faltantes",
+							  message: "Ambas placas modelo Mercosul e antiga precisam de 7 dígitos")
+		}
+		
+		if viewModel.isPlateFormatCorrect(with: plate) {
+			isValidInputAlert(title: "Placa em formato inválido",
+							  message: "Placas tem formato: \n (mercosul) XXX 0X00\n (antigo) XXX 0000")
+		}
 		
 		viewModel.navigateToCarRotation(with: plate)
 		customView?.cleanPlateField()
@@ -75,7 +79,7 @@ final class CarPlateController: UIViewController {
 
 extension CarPlateController: UITextFieldDelegate, TextFieldLimiter {
 	
-	func textField(_ textField: UITextField,
+	public func textField(_ textField: UITextField,
 				   shouldChangeCharactersIn range: NSRange,
 				   replacementString string: String) -> Bool {
 		

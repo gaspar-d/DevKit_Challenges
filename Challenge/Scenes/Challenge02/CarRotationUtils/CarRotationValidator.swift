@@ -10,17 +10,25 @@ import Foundation
 protocol CarRotationValidatorProtocol {
 	func isPlateFieldEmpty(with plate: String) -> Bool
 	func isPlateValid(with plate: String) -> Bool
+	func isPlateFormatCorrect(with plate: String) -> Bool
 }
 
 final class CarRotationValidator {}
 
 extension CarRotationValidator: CarRotationValidatorProtocol {
 	
-	func isPlateValid(with plate: String) -> Bool {
+	public func isPlateValid(with plate: String) -> Bool {
 		return plate.count < 8
 	}
 	
-	func isPlateFieldEmpty(with plate: String) -> Bool {
+	public func isPlateFieldEmpty(with plate: String) -> Bool {
 		return plate.isEmpty
+	}
+	
+	public func isPlateFormatCorrect(with plate: String) -> Bool {
+		let nameRegex = #"^[A-Z]{3}\s[0-9][A-Z0-9][0-9]{2}$"#
+		let result = plate.range(of: nameRegex, options: .regularExpression)
+		
+		return result == nil
 	}
 }

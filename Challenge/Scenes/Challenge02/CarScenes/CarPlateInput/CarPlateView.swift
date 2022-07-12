@@ -47,7 +47,7 @@ final class CarPlateView: UIView {
 		stack.distribution = .equalSpacing
 		stack.alignment = .center
 		stack.spacing = paddings
-		stack.backgroundColor = .systemYellow
+		stack.backgroundColor = .systemFill
 		stack.layer.cornerRadius = 5
 		stack.isLayoutMarginsRelativeArrangement = true
 		stack.directionalLayoutMargins = NSDirectionalEdgeInsets(top: paddings,
@@ -80,17 +80,17 @@ final class CarPlateView: UIView {
 		plateField.text = ""
 	}
 	
-	func setTextFieldDelegate(delegate: UITextFieldDelegate) {
+	public func setTextFieldDelegate(delegate: UITextFieldDelegate) {
 		plateField.delegate = delegate
 	}
 }
 
 extension CarPlateView: ViewCodeTemplate {
-	func setupComponents() {
+	public func setupComponents() {
 		addSubview(stack)
 	}
 	
-	func setupConstraints() {
+	public func setupConstraints() {
 		NSLayoutConstraint.activate([
 			
 			plateField.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1/3),
@@ -104,7 +104,7 @@ extension CarPlateView: ViewCodeTemplate {
 		])
 	}
 	
-	func setupExtraConfiguration() {
+	public func setupExtraConfiguration() {
 		backgroundColor = .systemBackground
 	}
 }

@@ -11,11 +11,12 @@ protocol CarPlateViewModelProtocol: AnyObject {
 	func navigateToCarRotation(with plate: String)
 	func isPlateValid(with plate: String) -> Bool
 	func isPlateFieldEmpty(with plate: String) -> Bool
+	func isPlateFormatCorrect(with plate: String) -> Bool
 }
 
 final class CarPlateViewModel: NSObject {
 	
-	weak var coordinator: CarRotationCoordinator?
+	public weak var coordinator: CarRotationCoordinator?
 	private let validator: CarRotationValidatorProtocol
 	
 	init(validator: CarRotationValidatorProtocol) {
@@ -28,11 +29,15 @@ extension CarPlateViewModel: CarPlateViewModelProtocol {
 		coordinator?.navigateToCarRotationResult(with: plate)
 	}
 	
-	func isPlateValid(with plate: String) -> Bool{
+	public func isPlateValid(with plate: String) -> Bool{
 		return validator.isPlateValid(with: plate)
 	}
 	
-	func isPlateFieldEmpty(with plate: String) -> Bool{
+	public func isPlateFieldEmpty(with plate: String) -> Bool{
 		return validator.isPlateFieldEmpty(with: plate)
+	}
+	
+	public func isPlateFormatCorrect(with plate: String) -> Bool {
+		return validator.isPlateFormatCorrect(with: plate)
 	}
 }

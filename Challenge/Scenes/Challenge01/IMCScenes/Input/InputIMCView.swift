@@ -41,7 +41,7 @@ final class InputIMCView: UIView, UITextFieldDelegate {
 		stack.spacing = 20
 		stack.distribution = .fillEqually
 		stack.alignment = .center
-		stack.backgroundColor = .white
+		stack.backgroundColor = .systemBackground
 		stack.layer.cornerRadius = 10
 		stack.layer.shadowColor = UIColor.gray.cgColor
 		stack.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
@@ -85,7 +85,7 @@ final class InputIMCView: UIView, UITextFieldDelegate {
 		stack.spacing = 20
 		stack.distribution = .fillEqually
 		stack.alignment = .center
-		stack.backgroundColor = .white
+		stack.backgroundColor = .systemBackground
 		stack.layer.cornerRadius = 10
 		stack.layer.shadowColor = UIColor.gray.cgColor
 		stack.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
@@ -134,7 +134,6 @@ final class InputIMCView: UIView, UITextFieldDelegate {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	// MARK: - Allow only numbers in textField
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 		
 		let allowedCharacters = "0123456789"
@@ -149,7 +148,6 @@ final class InputIMCView: UIView, UITextFieldDelegate {
 		calculateButton.addTarget(target, action: action, for: .touchUpInside)
 	}
 	
-	// MARK: - Pass the textfield data
 	public var getInputHeight: String {
 		guard let height = heightTextField.text else { return "" }
 		return height
@@ -192,7 +190,7 @@ extension InputIMCView: ViewCodeTemplate {
 	}
 	
 	func setupExtraConfiguration() {
-		backgroundColor = .white
+		backgroundColor = .systemBackground
 	}
 }
 

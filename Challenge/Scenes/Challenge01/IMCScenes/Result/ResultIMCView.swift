@@ -144,6 +144,6 @@ extension ResultIMCView: ViewCodeTemplate {
 	}
 	
 	func setupExtraConfiguration() {
-		backgroundColor = .white
+		backgroundColor = .systemBackground
 	}
 }

@@ -23,3 +23,4 @@ extension ViewCodeTemplate {
 	
 	func setupExtraConfiguration() {}
 }
+

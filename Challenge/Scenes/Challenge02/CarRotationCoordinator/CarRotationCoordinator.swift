@@ -12,8 +12,8 @@ protocol CarRotationCoordinatorProtocol: AnyObject {
 }
 
 final class CarRotationCoordinator: Coordinator {
-	var childCoordinators: [Coordinator] = []
-	var navigation: UINavigationController
+	public var childCoordinators: [Coordinator] = []
+	public var navigation: UINavigationController
 	
 	init(navigation: UINavigationController) {
 		self.navigation = navigation
@@ -27,7 +27,7 @@ final class CarRotationCoordinator: Coordinator {
 
 extension CarRotationCoordinator: CarRotationCoordinatorProtocol {
 	
-	func navigateToCarRotationResult(with plate: String) {
+	public func navigateToCarRotationResult(with plate: String) {
 		let vc = CarRotationFactory.make(plate: plate, coordinator: self)
 		navigation.pushViewController(vc, animated: true)
 	}

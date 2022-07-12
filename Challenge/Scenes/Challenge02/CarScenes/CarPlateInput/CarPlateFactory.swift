@@ -11,7 +11,8 @@ enum CarPlateFactory {
 	
 	static func make(coordinator: CarRotationCoordinator) -> CarPlateController {
 		
-		let vm = CarPlateViewModel()
+		let validator = CarRotationValidator()
+		let vm = CarPlateViewModel(validator: validator)
 		vm.coordinator = coordinator
 		let vc = CarPlateController(viewModel: vm)
 		

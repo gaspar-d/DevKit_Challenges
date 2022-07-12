@@ -21,12 +21,5 @@ extension String {
 		}
 		return self
 	}
-	
-	func textLimit(newText: String, limit: Int) -> Bool {
-//		let text = currentText
-		let atLimit = self.count + newText.count <= limit
-		
-		return atLimit
-	}
 }
 

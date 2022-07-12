@@ -9,7 +9,24 @@ import UIKit
 
 final class CarRotationView: UIView {
 	
-	private lazy var plateLabel: UILabel = {
+	private let paddings: CGFloat = 20
+	
+	private lazy var descriptionLabel: UILabel = {
+		let label = UILabel()
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.text = "Seu dia de rodízio é"
+		label.font = .systemFont(ofSize: 24, weight: .medium)
+		return label
+	}()
+	
+	private lazy var weekdayLabel: UILabel = {
+		let label = UILabel()
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.font = .systemFont(ofSize: 44, weight: .bold)
+		return label
+	}()
+	
+	private lazy var rotationDayLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.text = "Insira sua placa"
@@ -26,12 +43,22 @@ final class CarRotationView: UIView {
 	}()
 	
 	private lazy var stack: UIStackView = {
-		let stack = UIStackView(arrangedSubviews: [plateLabel, newQueryButton])
+		let stack = UIStackView(arrangedSubviews: [descriptionLabel,
+												   weekdayLabel,
+												   rotationDayLabel,
+												   newQueryButton])
 		stack.translatesAutoresizingMaskIntoConstraints = false
 		stack.axis = .vertical
 		stack.distribution = .equalSpacing
 		stack.alignment = .center
-		stack.spacing = 20
+		stack.spacing = paddings
+		stack.backgroundColor = .systemFill
+		stack.layer.cornerRadius = 5
+		stack.isLayoutMarginsRelativeArrangement = true
+		stack.directionalLayoutMargins = NSDirectionalEdgeInsets(top: paddings,
+																 leading: paddings,
+																 bottom: paddings,
+																 trailing: paddings)
 		return stack
 	}()
 	
@@ -46,8 +73,12 @@ final class CarRotationView: UIView {
 	}
 	
 	// MARK: - Methods
-	public func setPlateLabel(plate: String) {
-		plateLabel.text = plate
+	public func setRotationDayLabel(with plate: String) {
+		rotationDayLabel.text = plate
+	}
+	
+	public func setWeekdayLabel(with weekday: String) {
+		weekdayLabel.text = weekday
 	}
 	
 	public func setNewQueryButtonAction(target: Any?, action: Selector) {
@@ -56,11 +87,11 @@ final class CarRotationView: UIView {
 }
 
 extension CarRotationView: ViewCodeTemplate {
-	func setupComponents() {
+	public func setupComponents() {
 		addSubview(stack)
 	}
 	
-	func setupConstraints() {
+	public func setupConstraints() {
 		NSLayoutConstraint.activate([
 			
 			newQueryButton.heightAnchor.constraint(equalToConstant: 44),
@@ -71,8 +102,8 @@ extension CarRotationView: ViewCodeTemplate {
 		])
 	}
 	
-	func setupExtraConfiguration() {
-		backgroundColor = .orange
+	public func setupExtraConfiguration() {
+		backgroundColor = .systemBackground
 	}
 }
 

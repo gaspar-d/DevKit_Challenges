@@ -10,7 +10,7 @@ import UIKit
 final class CarRotationController: UIViewController {
 	
 	private var customView: CarRotationView?
-	var viewModel: CarRotationViewModelProtocol?
+	private var viewModel: CarRotationViewModelProtocol?
 	
 	init(viewModel: CarRotationViewModelProtocol) {
 		self.viewModel = viewModel

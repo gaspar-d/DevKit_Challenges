@@ -36,6 +36,7 @@
 		EB4BC015284BF17500B6460D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4BC014284BF17500B6460D /* Assets.xcassets */; };
 		EB4BC018284BF17500B6460D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB4BC016284BF17500B6460D /* LaunchScreen.storyboard */; };
 		EB4BC020284C0ECD00B6460D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4BC01F284C0ECD00B6460D /* MainViewController.xib */; };
+		EB78D84F2880AFE200F9EB26 /* carRotation.gif in Resources */ = {isa = PBXBuildFile; fileRef = EB78D84E2880AFE100F9EB26 /* carRotation.gif */; };
 		EBA140982853C99900653227 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA140972853C99900653227 /* TableViewDataSource.swift */; };
 		EBA1409A2853C9D600653227 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA140992853C9D600653227 /* TableViewDelegate.swift */; };
 		EBA34B7328611B8700F72682 /* IMC_V2.gif in Resources */ = {isa = PBXBuildFile; fileRef = EBA34B7228611B8700F72682 /* IMC_V2.gif */; };
@@ -80,6 +81,7 @@
 		EB4BC017284BF17500B6460D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB4BC019284BF17500B6460D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB4BC01F284C0ECD00B6460D /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		EB78D84E2880AFE100F9EB26 /* carRotation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = carRotation.gif; sourceTree = "<group>"; };
 		EBA140972853C99900653227 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		EBA140992853C9D600653227 /* TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
 		EBA34B7228611B8700F72682 /* IMC_V2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IMC_V2.gif; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				EB4BC014284BF17500B6460D /* Assets.xcassets */,
 				EBA34B7228611B8700F72682 /* IMC_V2.gif */,
 				EBB195AC286269E9001BBBDF /* IMC_V1.gif */,
+				EB78D84E2880AFE100F9EB26 /* carRotation.gif */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				EBB195AD286269E9001BBBDF /* IMC_V1.gif in Resources */,
 				EBA34B7328611B8700F72682 /* IMC_V2.gif in Resources */,
 				EB4BC018284BF17500B6460D /* LaunchScreen.storyboard in Resources */,
+				EB78D84F2880AFE200F9EB26 /* carRotation.gif in Resources */,
 				EB4BC020284C0ECD00B6460D /* MainViewController.xib in Resources */,
 				EB4BC015284BF17500B6460D /* Assets.xcassets in Resources */,
 			);

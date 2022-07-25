@@ -39,25 +39,36 @@ extension CarRotationViewModel: CarRotationViewModelProtocol {
 		
 		switch digit {
 		case 1...2:
-			weekday = "segunda-feira"
+//			weekday = "segunda-feira"
+			weekday = "Monday"
+//			weekday = 2
 		case 3...4:
 			weekday = "terça-feira"
+//			weekday = 3
 		case 5...6:
 			weekday = "quarta-feira"
+//			weekday = 4
 		case 7...8:
 			weekday = "quinta-feira"
+//			weekday = 5
 		case 9:
 			weekday = "sexta-feira"
+//			weekday = 6
 		default:
 			weekday = "sexta-feira"
+//			weekday = 6
 		}
 		
+		print(#line, "----------------->", weekday)
 		return weekday
 	}
 	
 	public func getRotationPerTime(with weekday: String) -> String {
 		
 		var rotationDay: String = ""
+		
+		guard let test = Calendar.current.dateComponents([.weekday], from: .now).weekday else { return "não pegou o dia de hoje"}
+		print(#line, "----------------->", test, type(of: test))
 		
 		guard var current = Calendar.current.date(byAdding: .weekday,
 												  value: 0,
@@ -69,6 +80,7 @@ extension CarRotationViewModel: CarRotationViewModelProtocol {
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "EEEE"
 		var systemWeekday = dateFormatter.string(from: current)
+		print(#line, "----------------->", systemWeekday)
 		
 		if weekday == systemWeekday {
 			rotationDay = "Hoje"
@@ -102,9 +114,10 @@ extension CarRotationViewModel: CarRotationViewModelProtocol {
 		}
 		
 		if weekday != systemWeekday {
-			rotationDay = ""
+			rotationDay = "rotationDay vazio"
 		}
 		
+		print(#line, "----------------->", rotationDay)
 		return rotationDay
 	}
 }

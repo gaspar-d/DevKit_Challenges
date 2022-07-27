@@ -56,52 +56,58 @@ extension CarRotationViewModel: CarRotationViewModelProtocol {
 	}
 	
 	public func getRotationPerTime(with weekday: String) -> String {
+		var weekDayAsInt: Int
+		
+		switch weekday {
+		case "segunda-feira":
+			weekDayAsInt = 2
+		case "terça-feira":
+			weekDayAsInt = 3
+		case "quarta-feira":
+			weekDayAsInt = 4
+		case "quinta-feira":
+			weekDayAsInt = 5
+		case "sexta-feira":
+			weekDayAsInt = 6
+			
+		default:
+			fatalError("ERROR: Can't get a weekday number")
+		}
 		
 		var rotationDay: String = ""
 		
-		guard var current = Calendar.current.date(byAdding: .weekday,
-												  value: 0,
-												  to: .now)
-		else {
-			return "ERROR: cannot fetch system time"
-		}
+		guard var systemWeekday = Calendar.current.dateComponents([.weekday], from: .now).weekday else { return "não pegou o dia de hoje"}
 		
-		let dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = "EEEE"
-		var systemWeekday = dateFormatter.string(from: current)
 		
-		if weekday == systemWeekday {
+		if weekDayAsInt == systemWeekday {
 			rotationDay = "Hoje"
 		}
 		
-		if weekday != systemWeekday {
-			current = Calendar.current.date(byAdding: .weekday, value: 1, to: .now)!
-			systemWeekday = dateFormatter.string(from: current)
+		if weekDayAsInt != systemWeekday {
+			systemWeekday += 1
 			
-			if weekday == systemWeekday {
+			if weekDayAsInt == systemWeekday {
 				rotationDay = "Amanhã"
 			}
 		}
 
-		if weekday != systemWeekday {
-			current = Calendar.current.date(byAdding: .weekday, value: 2, to: .now)!
-			systemWeekday = dateFormatter.string(from: current)
+		if weekDayAsInt != systemWeekday {
+			systemWeekday += 1
 			
-			if weekday == systemWeekday {
+			if weekDayAsInt == systemWeekday {
 				rotationDay = "Depois de Amanhã"
 			}
 		}
 
-		if weekday != systemWeekday {
-			current = Calendar.current.date(byAdding: .weekday, value: 3, to: .now)!
-			systemWeekday = dateFormatter.string(from: current)
+		if weekDayAsInt != systemWeekday {
+			systemWeekday += 1
 			
-			if weekday == systemWeekday {
+			if weekDayAsInt == systemWeekday {
 				rotationDay = "Daqui a três dias"
 			}
 		}
 		
-		if weekday != systemWeekday {
+		if weekDayAsInt != systemWeekday {
 			rotationDay = ""
 		}
 		

@@ -45,35 +45,10 @@ final class CarPlateController: UIViewController {
 		guard let plate = customView?.getPlateInput else {
 			return
 		}
-		
-		if viewModel.isPlateFieldEmpty(with: plate) {
-			isValidInputAlert(title: "Campo vazio",
-							  message: "Insira a numeração de sua placa para prosseguir")
-		}
 
-		if viewModel.isPlateValid(with: plate) {
-			isValidInputAlert(title: "Placa com números faltantes",
-							  message: "Ambas placas modelo Mercosul e antiga precisam de 7 dígitos")
-		}
-		
-		if viewModel.isPlateFormatCorrect(with: plate) {
-			isValidInputAlert(title: "Placa em formato inválido",
-							  message: "Placas tem formato: \n (mercosul) XXX 0X00\n (antigo) XXX 0000")
-		}
-		
+		viewModel.isInputValid(with: plate, controller: self)
 		viewModel.navigateToCarRotation(with: plate)
 		customView?.cleanPlateField()
-	}
-	
-	private func isValidInputAlert(title: String, message: String) {
-		let alert = UIAlertController(title: title,
-									  message: message,
-									  preferredStyle: .alert)
-		
-		let okAction = UIAlertAction(title: "Ok", style: .destructive)
-		alert.addAction(okAction)
-		
-		present(alert, animated: true)
 	}
 }
 

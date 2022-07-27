@@ -9,7 +9,7 @@ import Foundation
 
 protocol CarRotationValidatorProtocol {
 	func isPlateFieldEmpty(with plate: String) -> Bool
-	func isPlateValid(with plate: String) -> Bool
+	func isPlateValidLength(with plate: String) -> Bool
 	func isPlateFormatCorrect(with plate: String) -> Bool
 }
 
@@ -17,7 +17,7 @@ final class CarRotationValidator {}
 
 extension CarRotationValidator: CarRotationValidatorProtocol {
 	
-	public func isPlateValid(with plate: String) -> Bool {
+	public func isPlateValidLength(with plate: String) -> Bool {
 		return plate.count < 8
 	}
 	

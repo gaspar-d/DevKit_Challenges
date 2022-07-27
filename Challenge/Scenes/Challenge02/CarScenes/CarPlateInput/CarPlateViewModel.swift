@@ -6,21 +6,22 @@
 //
 
 import Foundation
+import UIKit
 
 protocol CarPlateViewModelProtocol: AnyObject {
 	func navigateToCarRotation(with plate: String)
-	func isPlateValid(with plate: String) -> Bool
-	func isPlateFieldEmpty(with plate: String) -> Bool
-	func isPlateFormatCorrect(with plate: String) -> Bool
+	func isInputValid(with plate: String, controller: UIViewController)
 }
 
 final class CarPlateViewModel: NSObject {
 	
 	public weak var coordinator: CarRotationCoordinator?
 	private let validator: CarRotationValidatorProtocol
+	private let alert: AlertsProtocol
 	
-	init(validator: CarRotationValidatorProtocol) {
+	init(validator: CarRotationValidatorProtocol, alert: AlertsProtocol) {
 		self.validator = validator
+		self.alert = alert
 	}
 }
 
@@ -29,15 +30,22 @@ extension CarPlateViewModel: CarPlateViewModelProtocol {
 		coordinator?.navigateToCarRotationResult(with: plate)
 	}
 	
-	public func isPlateValid(with plate: String) -> Bool{
-		return validator.isPlateValid(with: plate)
-	}
-	
-	public func isPlateFieldEmpty(with plate: String) -> Bool{
-		return validator.isPlateFieldEmpty(with: plate)
-	}
-	
-	public func isPlateFormatCorrect(with plate: String) -> Bool {
-		return validator.isPlateFormatCorrect(with: plate)
+	public func isInputValid(with plate: String, controller: UIViewController) {
+		
+		if validator.isPlateFieldEmpty(with: plate) {
+			alert.popup(title: "Campo vazio",
+						message: "Insira a numeração de sua placa para prosseguir",
+						controller: controller)
+		}
+		if validator.isPlateValidLength(with: plate) {
+			alert.popup(title: "Placa com números faltantes",
+						message: "Ambas placas modelo Mercosul e antiga precisam de 7 dígitos",
+						controller: controller)
+		}
+		if validator.isPlateFormatCorrect(with: plate) {
+			alert.popup(title: "Placa em formato inválido",
+						message: "Placas tem formato: \n (mercosul) XXX 0X00\n (antigo) XXX 0000",
+						controller: controller)
+		}
 	}
 }

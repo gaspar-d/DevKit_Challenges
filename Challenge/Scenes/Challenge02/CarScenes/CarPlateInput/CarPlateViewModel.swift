@@ -32,19 +32,20 @@ extension CarPlateViewModel: CarPlateViewModelProtocol {
 	
 	public func isInputValid(with plate: String, controller: UIViewController) {
 		
-		guard validator.isPlateFieldEmpty(with: plate) else { return }
+		if validator.isPlateFieldEmpty(with: plate) {
 			alert.popup(title: "Campo vazio",
 						message: "Insira a numeração de sua placa para prosseguir",
 						controller: controller)
-		
-		guard validator.isPlateValidLength(with: plate) else { return }
+			
+		} else if validator.isPlateValidLength(with: plate) {
 			alert.popup(title: "Placa com números faltantes",
 						message: "Ambas placas modelo Mercosul e antiga precisam de 7 dígitos",
 						controller: controller)
-		
-		guard validator.isPlateFormatCorrect(with: plate) else { return }
+			
+		} else if validator.isPlateFormatCorrect(with: plate) {
 			alert.popup(title: "Placa em formato inválido",
 						message: "Placas tem formato: \n (mercosul) XXX 0X00\n (antigo) XXX 0000",
 						controller: controller)
+		}
 	}
 }

@@ -36,13 +36,13 @@ extension CarPlateViewModel: CarPlateViewModelProtocol {
 			alert.popup(title: "Campo vazio",
 						message: "Insira a numeração de sua placa para prosseguir",
 						controller: controller)
-		}
-		if validator.isPlateValidLength(with: plate) {
+			
+		} else if validator.isPlateValidLength(with: plate) {
 			alert.popup(title: "Placa com números faltantes",
 						message: "Ambas placas modelo Mercosul e antiga precisam de 7 dígitos",
 						controller: controller)
-		}
-		if validator.isPlateFormatCorrect(with: plate) {
+			
+		} else if validator.isPlateFormatCorrect(with: plate) {
 			alert.popup(title: "Placa em formato inválido",
 						message: "Placas tem formato: \n (mercosul) XXX 0X00\n (antigo) XXX 0000",
 						controller: controller)

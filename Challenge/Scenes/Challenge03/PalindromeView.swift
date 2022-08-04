@@ -9,20 +9,23 @@ import UIKit
 
 final class PalindromeView: UIView {
 	
+	let itemsHeight: CGFloat = 54
+	let itemsWidth: CGFloat = 0.9
+	let verticalSpacing: CGFloat = 15.0
+	
 	private lazy var helpLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.text = "Não sabe o que é palíndromo?"
-		
+		label.textColor = .label
 		return label
 	}()
 	
 	private lazy var helpButton: UIButton = {
 		let button = UIButton()
 		button.translatesAutoresizingMaskIntoConstraints = false
-		button.setTitle("Clique e saiba mais!", for: .normal)
+		button.setTitle("Clique aqui e saiba mais!", for: .normal)
 		button.setTitleColor(UIColor.systemBlue, for: .normal)
-		
 		return button
 	}()
 	
@@ -33,17 +36,15 @@ final class PalindromeView: UIView {
 		stack.distribution = .equalSpacing
 		stack.alignment = .leading
 		stack.spacing = 5
-		
 		return stack
 	}()
-	
 	
 	private lazy var verifyLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.text = "Informe a frase"
 		label.font = .systemFont(ofSize: 32, weight: .regular)
-		
+		label.textColor = .label
 		return label
 	}()
 	
@@ -55,7 +56,7 @@ final class PalindromeView: UIView {
 		text.layer.borderWidth = 1
 		text.leftView = UIView(frame: CGRect.init(x: 0, y: 0, width: 10, height: 0))
 		text.leftViewMode = .always
-		
+		text.textColor = .label
 		return text
 		
 	}()
@@ -67,14 +68,16 @@ final class PalindromeView: UIView {
 		stack.distribution = .equalSpacing
 		stack.alignment = .leading
 		stack.spacing = 5
-		
 		return stack
 	}()
 	
 	private lazy var verifyButton: UIButton = {
 		var configuration = UIButton.Configuration.filled()
-		configuration.title = "Verificar"
 		configuration.baseBackgroundColor = .systemPurple
+		configuration.baseForegroundColor = .systemBackground
+		var container = AttributeContainer()
+		container.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+		configuration.attributedTitle = AttributedString("Verificar", attributes: container)
 		let button = UIButton(configuration: configuration)
 		button.translatesAutoresizingMaskIntoConstraints = false
 		return button
@@ -87,8 +90,7 @@ final class PalindromeView: UIView {
 		stack.axis = .vertical
 		stack.distribution = .equalSpacing
 		stack.alignment = .leading
-		stack.spacing = 15
-		
+		stack.spacing = verticalSpacing
 		return stack
 	}()
 	
@@ -113,19 +115,19 @@ extension PalindromeView: ViewCodeTemplate {
 		NSLayoutConstraint.activate([
 			containerStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
 			containerStack.centerXAnchor.constraint(equalTo: centerXAnchor),
-			containerStack.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9),
+			containerStack.widthAnchor.constraint(equalTo: widthAnchor, multiplier: itemsWidth),
 			
-			verifyTextField.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9),
-			verifyTextField.heightAnchor.constraint(equalToConstant: 54),
+			verifyTextField.widthAnchor.constraint(equalTo: widthAnchor, multiplier: itemsWidth),
+			verifyTextField.heightAnchor.constraint(equalToConstant: itemsHeight),
 			
 			verifyButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-			verifyButton.topAnchor.constraint(equalTo: containerStack.bottomAnchor, constant: 15),
+			verifyButton.topAnchor.constraint(equalTo: containerStack.bottomAnchor, constant: verticalSpacing),
 			verifyButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.4),
-			verifyButton.heightAnchor.constraint(equalToConstant: 54)
+			verifyButton.heightAnchor.constraint(equalToConstant: itemsHeight)
 		])
 	}
 	
 	func setupExtraConfiguration() {
-		backgroundColor = .white
+		backgroundColor = .systemBackground
 	}
 }

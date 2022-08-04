@@ -41,6 +41,8 @@
 		EBA140982853C99900653227 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA140972853C99900653227 /* TableViewDataSource.swift */; };
 		EBA1409A2853C9D600653227 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA140992853C9D600653227 /* TableViewDelegate.swift */; };
 		EBA34B7328611B8700F72682 /* IMC_V2.gif in Resources */ = {isa = PBXBuildFile; fileRef = EBA34B7228611B8700F72682 /* IMC_V2.gif */; };
+		EBA4235E289AC7C200AF1F52 /* PalindromeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA4235D289AC7C100AF1F52 /* PalindromeController.swift */; };
+		EBA42360289AC84C00AF1F52 /* PalindromeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA4235F289AC84C00AF1F52 /* PalindromeView.swift */; };
 		EBB195AA286263C2001BBBDF /* IMCInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB195A9286263C2001BBBDF /* IMCInputValidator.swift */; };
 		EBB195AD286269E9001BBBDF /* IMC_V1.gif in Resources */ = {isa = PBXBuildFile; fileRef = EBB195AC286269E9001BBBDF /* IMC_V1.gif */; };
 		EBD93D0B287A7F350062CBCC /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD93D0A287A7F350062CBCC /* UIKitExtensions.swift */; };
@@ -87,6 +89,8 @@
 		EBA140972853C99900653227 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		EBA140992853C9D600653227 /* TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
 		EBA34B7228611B8700F72682 /* IMC_V2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IMC_V2.gif; sourceTree = "<group>"; };
+		EBA4235D289AC7C100AF1F52 /* PalindromeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromeController.swift; sourceTree = "<group>"; };
+		EBA4235F289AC84C00AF1F52 /* PalindromeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromeView.swift; sourceTree = "<group>"; };
 		EBB195A9286263C2001BBBDF /* IMCInputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMCInputValidator.swift; sourceTree = "<group>"; };
 		EBB195AC286269E9001BBBDF /* IMC_V1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IMC_V1.gif; sourceTree = "<group>"; };
 		EBD93D0A287A7F350062CBCC /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 				EB4BC021284C0ED200B6460D /* Main */,
 				EBDB3E4F285D9FB300FE40D0 /* Challenge01 */,
 				EB1D5C1F2874CA1F00BAAA53 /* Challenge02 */,
+				EBA4235C289AC75600AF1F52 /* Challenge03 */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -284,6 +289,15 @@
 				EB78D84E2880AFE100F9EB26 /* carRotation.gif */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		EBA4235C289AC75600AF1F52 /* Challenge03 */ = {
+			isa = PBXGroup;
+			children = (
+				EBA4235D289AC7C100AF1F52 /* PalindromeController.swift */,
+				EBA4235F289AC84C00AF1F52 /* PalindromeView.swift */,
+			);
+			path = Challenge03;
 			sourceTree = "<group>";
 		};
 		EBB195AB2862652A001BBBDF /* IMC_Utils */ = {
@@ -422,6 +436,7 @@
 				EB269E68285CE35800B91825 /* MainFactory.swift in Sources */,
 				EB1D5C2C2874D28100BAAA53 /* CarPlateFactory.swift in Sources */,
 				EB11D534285E8FFA007F0F15 /* ResultIMCModel.swift in Sources */,
+				EBA4235E289AC7C200AF1F52 /* PalindromeController.swift in Sources */,
 				EB1D5C332874D5DD00BAAA53 /* CarPlateViewModel.swift in Sources */,
 				EBA140982853C99900653227 /* TableViewDataSource.swift in Sources */,
 				EB269E64285CDE1B00B91825 /* Coordinator.swift in Sources */,
@@ -430,6 +445,7 @@
 				EB1D5C212874CA8E00BAAA53 /* CarPlateViewController.swift in Sources */,
 				EB1D5C312874D3A500BAAA53 /* CarRotationCoordinator.swift in Sources */,
 				EB269E75285D342300B91825 /* ResultIMCView.swift in Sources */,
+				EBA42360289AC84C00AF1F52 /* PalindromeView.swift in Sources */,
 				EB1D5C2A2874D16A00BAAA53 /* CarRotationViewController.swift in Sources */,
 				EB269E80285D8E2200B91825 /* ResultIMCViewModel.swift in Sources */,
 				EB269E73285D338300B91825 /* InputIMCViewModel.swift in Sources */,

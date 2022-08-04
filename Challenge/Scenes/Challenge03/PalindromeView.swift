@@ -18,16 +18,13 @@ final class PalindromeView: UIView {
 	}()
 	
 	private lazy var helpButton: UIButton = {
-		var configuration = UIButton.Configuration.plain()
-		configuration.title = "Clique e saiba mais!"
-		configuration.titleAlignment = .leading
-		
-		let button = UIButton(configuration: configuration)
+		let button = UIButton()
 		button.translatesAutoresizingMaskIntoConstraints = false
+		button.setTitle("Clique e saiba mais!", for: .normal)
+		button.setTitleColor(UIColor.systemBlue, for: .normal)
+		
 		return button
 	}()
-	
-	
 	
 	private lazy var helpStack: UIStackView = {
 		let stack = UIStackView(arrangedSubviews: [helpLabel, helpButton])
@@ -53,7 +50,6 @@ final class PalindromeView: UIView {
 	private lazy var verifyTextField: UITextField = {
 		let text = UITextField()
 		text.translatesAutoresizingMaskIntoConstraints = false
-		text.placeholder = "placeholder"
 		text.layer.cornerRadius = 5
 		text.layer.borderColor = UIColor.gray.cgColor
 		text.layer.borderWidth = 1
@@ -119,11 +115,8 @@ extension PalindromeView: ViewCodeTemplate {
 			containerStack.centerXAnchor.constraint(equalTo: centerXAnchor),
 			containerStack.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9),
 			
-			helpButton.leadingAnchor.constraint(equalTo: helpStack.leadingAnchor, constant: -12), // this causes the constraints error.
-			
 			verifyTextField.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9),
 			verifyTextField.heightAnchor.constraint(equalToConstant: 54),
-			
 			
 			verifyButton.centerXAnchor.constraint(equalTo: centerXAnchor),
 			verifyButton.topAnchor.constraint(equalTo: containerStack.bottomAnchor, constant: 15),

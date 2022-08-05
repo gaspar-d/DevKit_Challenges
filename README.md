@@ -18,6 +18,16 @@
 ### #02 - Rodízio de veículos em SP
 
 
-| Version 1.0                                                                                                      |
-| :----:                                                                                                           |
+| Version 1.0                                                                                                           |
+| :----:                                                                                                                |
 | <img src="https://github.com/gaspar-d/DevKit_Challenges/blob/main/Challenge/Resources/carRotation.gif" width="50%" /> |
+
+### #03 - Palindrome Checker
+
+| Version 1.0                                                                                                          |
+| :---:                                                                                                                |
+| <img src="https://github.com/gaspar-d/DevKit_Challenges/blob/main/Challenge/Resources/palindrome.gif" width="50%" /> |
+
+
+
+

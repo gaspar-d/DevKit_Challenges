@@ -49,6 +49,7 @@
 		EBA42364289B55FB00AF1F52 /* PalindromeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA42363289B55FB00AF1F52 /* PalindromeCoordinator.swift */; };
 		EBB195AA286263C2001BBBDF /* IMCInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB195A9286263C2001BBBDF /* IMCInputValidator.swift */; };
 		EBB195AD286269E9001BBBDF /* IMC_V1.gif in Resources */ = {isa = PBXBuildFile; fileRef = EBB195AC286269E9001BBBDF /* IMC_V1.gif */; };
+		EBB9C701289DB15500587A18 /* palindrome.gif in Resources */ = {isa = PBXBuildFile; fileRef = EBB9C700289DB15400587A18 /* palindrome.gif */; };
 		EBD93D0B287A7F350062CBCC /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD93D0A287A7F350062CBCC /* UIKitExtensions.swift */; };
 		EBD93D0D287A80450062CBCC /* TextFieldLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD93D0C287A80450062CBCC /* TextFieldLimiter.swift */; };
 		EBD93D10287B709F0062CBCC /* CarRotationValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD93D0F287B709F0062CBCC /* CarRotationValidator.swift */; };
@@ -101,6 +102,7 @@
 		EBA42363289B55FB00AF1F52 /* PalindromeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromeCoordinator.swift; sourceTree = "<group>"; };
 		EBB195A9286263C2001BBBDF /* IMCInputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMCInputValidator.swift; sourceTree = "<group>"; };
 		EBB195AC286269E9001BBBDF /* IMC_V1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IMC_V1.gif; sourceTree = "<group>"; };
+		EBB9C700289DB15400587A18 /* palindrome.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = palindrome.gif; sourceTree = "<group>"; };
 		EBD93D0A287A7F350062CBCC /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		EBD93D0C287A80450062CBCC /* TextFieldLimiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLimiter.swift; sourceTree = "<group>"; };
 		EBD93D0F287B709F0062CBCC /* CarRotationValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRotationValidator.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				EBA34B7228611B8700F72682 /* IMC_V2.gif */,
 				EBB195AC286269E9001BBBDF /* IMC_V1.gif */,
 				EB78D84E2880AFE100F9EB26 /* carRotation.gif */,
+				EBB9C700289DB15400587A18 /* palindrome.gif */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBB9C701289DB15500587A18 /* palindrome.gif in Resources */,
 				EBB195AD286269E9001BBBDF /* IMC_V1.gif in Resources */,
 				EBA34B7328611B8700F72682 /* IMC_V2.gif in Resources */,
 				EB4BC018284BF17500B6460D /* LaunchScreen.storyboard in Resources */,

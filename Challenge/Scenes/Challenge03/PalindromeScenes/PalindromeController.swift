@@ -6,12 +6,9 @@
 //
 
 import UIKit
-import SafariServices
 
 final class PalindromeController: UIViewController {
 	
-	private let url = URL(string: "https://pt.wikipedia.org/wiki/Pal%C3%ADndromo") // Safari
-
 	private var customView: PalindromeView?
 	private let viewModel: PalindromeViewModelProtocol
 
@@ -45,19 +42,14 @@ final class PalindromeController: UIViewController {
 	}
 
 	@objc func setHelpButtonAction() {
-//		let palindromeDescription = SFSafariViewController(url: url!) // safari
-//		present(palindromeDescription, animated: true)
-		
-		
 		viewModel.navigateToPalindromeDescription()
-		print("Help pressed:")
 	}
 	
 	@objc func setVerifyButtonAction() {
-		print("Verify pressed")
 		
-		guard let inputedText = customView?.getInputedText() else { return }
-		
-		print(inputedText, #line)
+		guard let inputedText = customView?.getInputedText()?.lowercased() else { return }
+
+		viewModel.isPalindrome(input: inputedText, controller: self)
+		customView?.cleanInput()
 	}
 }

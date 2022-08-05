@@ -42,9 +42,7 @@ final class CarPlateController: UIViewController {
 	}
 	
 	@objc private func didTapPlateButton() {
-		guard let plate = customView?.getPlateInput else {
-			return
-		}
+		guard let plate = customView?.getPlateInput else { return }
 
 		viewModel.isInputValid(with: plate, controller: self)
 		viewModel.navigateToCarRotation(with: plate)

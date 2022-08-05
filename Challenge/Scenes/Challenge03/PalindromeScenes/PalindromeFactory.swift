@@ -11,7 +11,9 @@ enum PalindromeFactory {
 	
 	static func make(coordinator: PalindromeCoordinator) -> PalindromeController {
 
-		let vm = PalindromeViewModel()
+		let alert = Alerts()
+		let validator = PalindromeValidator()
+		let vm = PalindromeViewModel(validator: validator, alert: alert)
 		vm.coordinator = coordinator
 		let vc = PalindromeController(viewModel: vm)
 		

@@ -118,6 +118,10 @@ final class PalindromeView: UIView {
 	public func didTapVerifyButton(target: Any?, action: Selector) {
 		verifyButton.addTarget(target, action: action, for: .touchUpInside)
 	}
+	
+	public func cleanInput() {
+		verifyTextField.text = ""
+	}
 }
 
 extension PalindromeView: ViewCodeTemplate {

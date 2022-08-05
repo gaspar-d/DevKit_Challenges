@@ -10,7 +10,8 @@ import Foundation
 struct ChallengesModel {
 	
 	public let names: [String] = [
-		"IMC",
+		"Calculadora IMC",
 		"Rodízio de Automóveis",
+		"Verificador de Palíndromo"
 	]
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol CarRotationValidatorProtocol {
+protocol CarRotationValidatorProtocol: AnyObject {
 	func isPlateFieldEmpty(with plate: String) -> Bool
 	func isPlateValidLength(with plate: String) -> Bool
 	func isPlateFormatCorrect(with plate: String) -> Bool

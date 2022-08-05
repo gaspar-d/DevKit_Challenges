@@ -11,7 +11,7 @@ final class PalindromeView: UIView {
 	
 	let itemsHeight: CGFloat = 54
 	let itemsWidth: CGFloat = 0.9
-	let verticalSpacing: CGFloat = 15.0
+	let verticalSpacing: CGFloat = 20.0
 	
 	private lazy var helpLabel: UILabel = {
 		let label = UILabel()
@@ -57,6 +57,7 @@ final class PalindromeView: UIView {
 		text.leftView = UIView(frame: CGRect.init(x: 0, y: 0, width: 10, height: 0))
 		text.leftViewMode = .always
 		text.textColor = .label
+		text.keyboardType = .alphabet
 		return text
 		
 	}()
@@ -102,6 +103,20 @@ final class PalindromeView: UIView {
 	
 	required init?(coder: NSCoder) {
 		fatalError("ERROR: can't find PalindromeView")
+	}
+	
+	// MARK: - Methods
+	
+	public func getInputedText() -> String? {
+		return verifyTextField.text!
+	}
+	
+	public func didTapHelpButton(target: Any?, action: Selector) {
+		helpButton.addTarget(target, action: action, for: .touchUpInside)
+	}
+	
+	public func didTapVerifyButton(target: Any?, action: Selector) {
+		verifyButton.addTarget(target, action: action, for: .touchUpInside)
 	}
 }
 

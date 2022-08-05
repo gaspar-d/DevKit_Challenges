@@ -57,12 +57,12 @@ final class InputIMCController: UIViewController {
 		
 		if viewModel.weightIsValid(weight: weight) {
 			isValidInputAlert(title: "Peso fora do limite aceito pelo App",
-							   message: "O peso precisa estar entre 15 e 150kg")
+							  message: "O peso precisa estar entre 15 e 150kg")
 		}
 		
 		if viewModel.heightIsValid(height: height) {
 			isValidInputAlert(title: "Altura fora do limite aceito pelo App",
-							   message: "A altura precisa estar entre 100 e 210 centímetros.")
+							  message: "A altura precisa estar entre 100 e 210 centímetros.")
 		}
 		
 		let result = viewModel.validateUserInput(height: height, weight: weight)

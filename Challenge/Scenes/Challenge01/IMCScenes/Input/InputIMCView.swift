@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class InputIMCView: UIView, UITextFieldDelegate {
+final class InputIMCView: UIView {
 	
 	private let width = UIScreen.main.bounds.width
 	
@@ -125,24 +125,15 @@ final class InputIMCView: UIView, UITextFieldDelegate {
 		super.init(frame: frame)
 		
 		setup()
-		weightTextField.delegate = self
-		heightTextField.delegate = self
-		
+//		weightTextField.delegate = self
+//		heightTextField.delegate = self
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-		
-		let allowedCharacters = "0123456789"
-		let allowedCharactersSet = CharacterSet(charactersIn: allowedCharacters)
-		let userInputed = CharacterSet(charactersIn: string)
-		let onlyNumbers = allowedCharactersSet.isSuperset(of: userInputed)
-		
-		return onlyNumbers
-	}
+	// MARK: - Methods
 	
 	public func buttonAction(target: Any?, action: Selector) {
 		calculateButton.addTarget(target, action: action, for: .touchUpInside)

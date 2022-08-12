@@ -125,8 +125,6 @@ final class InputIMCView: UIView {
 		super.init(frame: frame)
 		
 		setup()
-//		weightTextField.delegate = self
-//		heightTextField.delegate = self
 	}
 	
 	required init?(coder: NSCoder) {

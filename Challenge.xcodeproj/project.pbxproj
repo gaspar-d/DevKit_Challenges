@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		EB11D532285E4698007F0F15 /* InputMVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11D531285E4698007F0F15 /* InputMVCCoordinator.swift */; };
 		EB11D534285E8FFA007F0F15 /* ResultIMCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11D533285E8FFA007F0F15 /* ResultIMCModel.swift */; };
+		EB14E1F428A44E2500B3548A /* NumbersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14E1F328A44E2500B3548A /* NumbersController.swift */; };
+		EB14E1F628A44E9F00B3548A /* NumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14E1F528A44E9F00B3548A /* NumbersView.swift */; };
 		EB1D5C212874CA8E00BAAA53 /* CarPlateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D5C202874CA8E00BAAA53 /* CarPlateViewController.swift */; };
 		EB1D5C232874CB3700BAAA53 /* CarPlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D5C222874CB3700BAAA53 /* CarPlateView.swift */; };
 		EB1D5C282874D11600BAAA53 /* CarRotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D5C272874D11600BAAA53 /* CarRotationView.swift */; };
@@ -60,6 +62,8 @@
 /* Begin PBXFileReference section */
 		EB11D531285E4698007F0F15 /* InputMVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMVCCoordinator.swift; sourceTree = "<group>"; };
 		EB11D533285E8FFA007F0F15 /* ResultIMCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultIMCModel.swift; sourceTree = "<group>"; };
+		EB14E1F328A44E2500B3548A /* NumbersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersController.swift; sourceTree = "<group>"; };
+		EB14E1F528A44E9F00B3548A /* NumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersView.swift; sourceTree = "<group>"; };
 		EB1D5C202874CA8E00BAAA53 /* CarPlateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlateViewController.swift; sourceTree = "<group>"; };
 		EB1D5C222874CB3700BAAA53 /* CarPlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlateView.swift; sourceTree = "<group>"; };
 		EB1D5C272874D11600BAAA53 /* CarRotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRotationView.swift; sourceTree = "<group>"; };
@@ -121,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB14E1F228A44DE900B3548A /* Challenge04 */ = {
+			isa = PBXGroup;
+			children = (
+				EB14E1F328A44E2500B3548A /* NumbersController.swift */,
+				EB14E1F528A44E9F00B3548A /* NumbersView.swift */,
+			);
+			path = Challenge04;
+			sourceTree = "<group>";
+		};
 		EB1D5C1F2874CA1F00BAAA53 /* Challenge02 */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +199,7 @@
 				EBDB3E4F285D9FB300FE40D0 /* Challenge01 */,
 				EB1D5C1F2874CA1F00BAAA53 /* Challenge02 */,
 				EBA4235C289AC75600AF1F52 /* Challenge03 */,
+				EB14E1F228A44DE900B3548A /* Challenge04 */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -468,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB14E1F428A44E2500B3548A /* NumbersController.swift in Sources */,
 				EB269E6A285D219D00B91825 /* InputIMCView.swift in Sources */,
 				EB661586289C8EE700A94921 /* PalindromeFactory.swift in Sources */,
 				EB66158B289C9A1700A94921 /* PalindromeValidator.swift in Sources */,
@@ -477,6 +492,7 @@
 				EBA1409A2853C9D600653227 /* TableViewDelegate.swift in Sources */,
 				EB269E68285CE35800B91825 /* MainFactory.swift in Sources */,
 				EB1D5C2C2874D28100BAAA53 /* CarPlateFactory.swift in Sources */,
+				EB14E1F628A44E9F00B3548A /* NumbersView.swift in Sources */,
 				EB11D534285E8FFA007F0F15 /* ResultIMCModel.swift in Sources */,
 				EBA4235E289AC7C200AF1F52 /* PalindromeController.swift in Sources */,
 				EB1D5C332874D5DD00BAAA53 /* CarPlateViewModel.swift in Sources */,

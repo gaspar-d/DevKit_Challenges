@@ -27,10 +27,10 @@ final class NumbersView: UIView {
 		text.layer.cornerRadius = 5
 		text.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
 		text.leftViewMode = .always
+		text.keyboardType = .numbersAndPunctuation
 		
 		return text
 	}()
-	
 	
 	private lazy var isPrimeLabel: UILabel = {
 		let label = UILabel()
@@ -117,15 +117,29 @@ final class NumbersView: UIView {
 	
 	// MARK: - Methods
 	
-	public var getInputedNumber: String? {
-		inputField.text
+	public func setIsPrimeLabel(number: Int) {
+		isPrimeLabel.text = String(number)
 	}
 	
-	public func setIsPrimeLabel(number: String) {
-		isPrimeLabel.text = number
+	public func setIsEvenLabel(number: Int) {
+		isEvenLabel.text = String(number)
+	}
+	
+	public func setIsOddLabel(number: Int) {
+		isOddLabel.text = String(number)
+	}
+	
+	public func setIsNaturalLabel(number: Int) {
+		isNaturalLabel.text = String(number)
+	}
+	
+	
+	
+	public func setInputTextLabelDelegate(delegate: UITextFieldDelegate) {
+		inputField.delegate = delegate
 	}
 
-	public func testToPrintInput(target: Any?, action: Selector) {
+	public func getInputText(target: Any?, action: Selector) {
 		inputField.addTarget(target, action: action, for: .editingChanged)
 	}
 	

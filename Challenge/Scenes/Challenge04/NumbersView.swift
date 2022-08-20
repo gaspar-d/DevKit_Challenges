@@ -94,6 +94,7 @@ final class NumbersView: UIView {
 		var configuration = UIButton.Configuration.filled()
 		configuration.baseBackgroundColor = .systemIndigo
 		configuration.buttonSize = .large
+		configuration.baseForegroundColor = .systemBackground
 		
 		var container = AttributeContainer()
 		container.font = UIFont.systemFont(ofSize: 20, weight: .semibold)

@@ -27,6 +27,8 @@ final class NumbersController: UIViewController {
 		setupView()
 		setupResponsesField()
 		setupTextFieldDelegate()
+		setupRevealButtonAction()
+		
 	}
 	
 	private func setupView() {
@@ -37,29 +39,56 @@ final class NumbersController: UIViewController {
 		navigationController?.navigationBar.prefersLargeTitles = true
 	}
 	
-	func setupResponsesField() {
-		customView?.getInputText(target: self, action: #selector(didTapRevealButton))
+	private func setupResponsesField() {
+		customView?.getInputText(target: self, action: #selector(onChangeInputField))
 	}
 	
-	@objc func didTapRevealButton(_ sender: UITextField) {
+	@objc func onChangeInputField(_ sender: UITextField) {
 		
 		guard let number = Int(sender.text ?? "") else { return }
-		
-		print(#line, number)
 		
 		let resultIsPrime = viewModel.isPrime(number)
 		let resultIsEven = viewModel.isEven(number)
 		let resultIsOdd = viewModel.isOdd(number)
 		let resultIsNatural = viewModel.isNatural(number)
 		
-		customView?.setIsPrimeLabel(result: viewModel.setIconForLabel(with: "primo",
-																	  label: <#T##UILabel#>,
-																	  for: resultIsEven))
+		customView?.setIsPrimeLabel(result: resultIsPrime)
 		customView?.setIsEvenLabel(result: resultIsEven)
-		
 		customView?.setIsOddLabel(result: resultIsOdd)
 		customView?.setIsNaturalLabel(result: resultIsNatural)
 	}
+	
+	private func setupRevealButtonAction() {
+		customView?.revealButtonAction(target: self, action: #selector(didTapRevealButton))
+	}
+	
+	@objc private func didTapRevealButton() {
+		let vc = ModalViewController()
+		
+		
+//		if let sheet = vc.sheetPresentationController {
+//			sheet.detents = [.medium()]
+//		}
+		
+		present(vc, animated: true)
+	}
+	
+	
+	@objc func showMyViewControllerInACustomizedSheet() {
+		let viewControllerToPresent = ModalViewController()
+		if let sheet = viewControllerToPresent.sheetPresentationController {
+			sheet.detents = [.medium()]
+			sheet.presentingViewController.title = "Indo"
+			sheet.presentedViewController.title = "Foi"
+//			sheet.largestUndimmedDetentIdentifier = .medium
+//			sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+//			sheet.prefersEdgeAttachedInCompactHeight = true
+//			sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+		}
+		present(viewControllerToPresent, animated: true, completion: nil)
+	}
+	
+	
 }
 
 // MARK: - Extension

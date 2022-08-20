@@ -12,6 +12,7 @@
 		EB14E1F428A44E2500B3548A /* NumbersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14E1F328A44E2500B3548A /* NumbersController.swift */; };
 		EB14E1F628A44E9F00B3548A /* NumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14E1F528A44E9F00B3548A /* NumbersView.swift */; };
 		EB14E1F828AF564E00B3548A /* NumbersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14E1F728AF564E00B3548A /* NumbersViewModel.swift */; };
+		EB14E1FA28B0A45200B3548A /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14E1F928B0A45200B3548A /* ModalViewController.swift */; };
 		EB1D5C212874CA8E00BAAA53 /* CarPlateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D5C202874CA8E00BAAA53 /* CarPlateViewController.swift */; };
 		EB1D5C232874CB3700BAAA53 /* CarPlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D5C222874CB3700BAAA53 /* CarPlateView.swift */; };
 		EB1D5C282874D11600BAAA53 /* CarRotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D5C272874D11600BAAA53 /* CarRotationView.swift */; };
@@ -66,6 +67,7 @@
 		EB14E1F328A44E2500B3548A /* NumbersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersController.swift; sourceTree = "<group>"; };
 		EB14E1F528A44E9F00B3548A /* NumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersView.swift; sourceTree = "<group>"; };
 		EB14E1F728AF564E00B3548A /* NumbersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewModel.swift; sourceTree = "<group>"; };
+		EB14E1F928B0A45200B3548A /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		EB1D5C202874CA8E00BAAA53 /* CarPlateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlateViewController.swift; sourceTree = "<group>"; };
 		EB1D5C222874CB3700BAAA53 /* CarPlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlateView.swift; sourceTree = "<group>"; };
 		EB1D5C272874D11600BAAA53 /* CarRotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRotationView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				EB14E1F328A44E2500B3548A /* NumbersController.swift */,
 				EB14E1F528A44E9F00B3548A /* NumbersView.swift */,
 				EB14E1F728AF564E00B3548A /* NumbersViewModel.swift */,
+				EB14E1F928B0A45200B3548A /* ModalViewController.swift */,
 			);
 			path = Challenge04;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				EB1D5C332874D5DD00BAAA53 /* CarPlateViewModel.swift in Sources */,
 				EBA140982853C99900653227 /* TableViewDataSource.swift in Sources */,
 				EB269E64285CDE1B00B91825 /* Coordinator.swift in Sources */,
+				EB14E1FA28B0A45200B3548A /* ModalViewController.swift in Sources */,
 				EB1D5C2E2874D2EF00BAAA53 /* CarRotationFactory.swift in Sources */,
 				EB269E5F285CDCE700B91825 /* InputIMCController.swift in Sources */,
 				EB1D5C212874CA8E00BAAA53 /* CarPlateViewController.swift in Sources */,

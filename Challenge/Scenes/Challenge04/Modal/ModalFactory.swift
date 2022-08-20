@@ -9,9 +9,10 @@ import Foundation
 
 enum ModalFactory {
 	
-	static func make(coordinator: NumbersCoordinator) -> ModalViewController {
+	static func make(coordinator: NumbersCoordinator, result: Int) -> ModalViewController {
 		
 		let vm = ModalViewModel()
+		vm.result = result
 //		vm.coordinator = coordinator
 		let vc = ModalViewController(viewModel: vm)
 		

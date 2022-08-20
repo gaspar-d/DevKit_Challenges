@@ -8,7 +8,7 @@
 import UIKit
 
 protocol NumbersViewModelProtocol: AnyObject {
-	func presentModal()
+	func presentModal(with result: Int)
 	func isPrime(_ number: Int) -> Bool
 	func isEven(_ number: Int) -> Bool
 	func isOdd(_ number: Int) -> Bool
@@ -21,8 +21,8 @@ final class NumbersViewModel: NSObject {
 
 extension NumbersViewModel: NumbersViewModelProtocol {
 	
-	public func presentModal() {
-		coordinator?.presentModal()
+	public func presentModal(with result: Int) {
+		coordinator?.presentModal(with: result)
 	}
 	
 	public func isPrime(_ number: Int) -> Bool {

@@ -26,6 +26,79 @@ final class ModalView: UIView {
 		return label
 	}()
 	
+	private lazy var doubleValueLabel: UILabel = {
+		let label = UILabel()
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.text = "double"
+		
+		return label
+	}()
+	
+	private lazy var squareRootValueLabel: UILabel = {
+		let label = UILabel()
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.text = "squareRoot"
+		
+		return label
+	}()
+	
+	private lazy var halfValueLabel: UILabel = {
+		let label = UILabel()
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.text = "half"
+		
+		return label
+	}()
+	
+	private lazy var monthOrNotValueLabel: UILabel = {
+		let label = UILabel()
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.text = "month or not"
+		
+		return label
+	}()
+	
+	private lazy var sumAllValueLabel: UILabel = {
+		let label = UILabel()
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.text = "sum"
+		
+		return label
+	}()
+	
+	private lazy var noIdeaValueLabel: UILabel = {
+		let label = UILabel()
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.text = "no idea"
+		
+		return label
+	}()
+	
+	private lazy var boggiemanValueLabel: UILabel = {
+		let label = UILabel()
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.text = "boggie man"
+		
+		return label
+	}()
+	
+	private lazy var myRandomValueLabel: UILabel = {
+		let label = UILabel()
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.text = "random phrase"
+		
+		return label
+	}()
+	
+	private lazy var containerStack: UIStackView = {
+		let stack = UIStackView(arrangedSubviews: [labelText, doubleValueLabel])
+		stack.translatesAutoresizingMaskIntoConstraints = false
+		stack.axis = .vertical
+		stack.spacing = 20
+		
+		return stack
+	}()
+	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		
@@ -35,14 +108,19 @@ final class ModalView: UIView {
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
+	
+	// MARK: - Methods
+	
+	public func setLabelTEST(with result: Int) {
+		doubleValueLabel.text = String(result)
+	}
 }
 
 extension ModalView: ViewCodeTemplate {
 	func setupComponents() {
 		addSubview(containerView)
-		containerView.addSubview(labelText)
+		containerView.addSubview(containerStack)
 	}
-	
 	
 	func setupConstraints() {
 		
@@ -52,8 +130,8 @@ extension ModalView: ViewCodeTemplate {
 			containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
 			containerView.bottomAnchor.constraint(equalTo: bottomAnchor),
 			
-			labelText.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-			labelText.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+			containerStack.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+			containerStack.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
 		])
 	}
 }

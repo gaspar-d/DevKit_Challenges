@@ -8,7 +8,7 @@
 import UIKit
 
 protocol NumbersCoordinatorProtocol: Coordinator {
-	func presentModal()
+	func presentModal(with result: Int)
 }
 
 final class NumbersCoordinator: Coordinator {
@@ -27,8 +27,9 @@ final class NumbersCoordinator: Coordinator {
 
 extension NumbersCoordinator: NumbersCoordinatorProtocol {
 	
-	public func presentModal() {
-		let modal = ModalFactory.make(coordinator: self)
+	public func presentModal(with result: Int) {
+		let modal = ModalFactory.make(coordinator: self, result: result)
+		
 		navigation.present(modal, animated: true)
 	}
 }

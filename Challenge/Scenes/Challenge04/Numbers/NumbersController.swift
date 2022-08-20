@@ -9,6 +9,8 @@ import UIKit
 
 final class NumbersController: UIViewController {
 
+	public var result: Int?
+	
 	private var customView: NumbersView?
 	private let viewModel: NumbersViewModelProtocol
 	
@@ -45,6 +47,7 @@ final class NumbersController: UIViewController {
 	@objc func onChangeInputField(_ sender: UITextField) {
 		
 		guard let number = Int(sender.text ?? "") else { return }
+		result = number
 		
 		let resultIsPrime = viewModel.isPrime(number)
 		let resultIsEven = viewModel.isEven(number)
@@ -62,7 +65,11 @@ final class NumbersController: UIViewController {
 	}
 	
 	@objc private func didTapRevealButton() {
-		viewModel.presentModal()
+		guard let safeResult = result else { return }
+		
+		viewModel.presentModal(with: safeResult)
+		
+//		viewModel.presentModal(with: result ?? 999)
 	}
 }
 
@@ -83,8 +90,6 @@ extension NumbersController: UITextFieldDelegate {
 	func textField(_ textField: UITextField,
 				   shouldChangeCharactersIn range: NSRange,
 				   replacementString string: String) -> Bool {
-		
-	
 		
 		let allowedCharacters = CharacterSet(charactersIn: "-1234567890").inverted
 		let characterSet = CharacterSet(charactersIn: string)

@@ -12,6 +12,7 @@ struct ChallengesModel {
 	public let names: [String] = [
 		"Calculadora IMC",
 		"Rodízio de Automóveis",
-		"Verificador de Palíndromo"
+		"Verificador de Palíndromo",
+		"Números"
 	]
 }

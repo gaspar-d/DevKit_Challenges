@@ -5,7 +5,6 @@
 //  Created by Diogo Gaspar on 05/07/22.
 //
 
-import Foundation
 import UIKit
 
 protocol CarPlateViewModelProtocol: AnyObject {
@@ -26,6 +25,7 @@ final class CarPlateViewModel: NSObject {
 }
 
 extension CarPlateViewModel: CarPlateViewModelProtocol {
+	
 	public func navigateToCarRotation(with plate: String) {
 		coordinator?.navigateToCarRotationResult(with: plate)
 	}

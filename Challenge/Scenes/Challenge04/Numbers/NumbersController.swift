@@ -28,7 +28,6 @@ final class NumbersController: UIViewController {
 		setupResponsesField()
 		setupTextFieldDelegate()
 		setupRevealButtonAction()
-		
 	}
 	
 	private func setupView() {
@@ -63,30 +62,16 @@ final class NumbersController: UIViewController {
 	}
 	
 	@objc private func didTapRevealButton() {
-		let vc = ModalViewController()
+//		let vc = ModalViewController()
 		
+		// TODO: - Present this VC using coordinator
 		
-//		if let sheet = vc.sheetPresentationController {
-//			sheet.detents = [.medium()]
-//		}
+//		present(vc, animated: true)
 		
-		present(vc, animated: true)
+		viewModel.presentModal()
 	}
 	
-	
-	@objc func showMyViewControllerInACustomizedSheet() {
-		let viewControllerToPresent = ModalViewController()
-		if let sheet = viewControllerToPresent.sheetPresentationController {
-			sheet.detents = [.medium()]
-			sheet.presentingViewController.title = "Indo"
-			sheet.presentedViewController.title = "Foi"
-//			sheet.largestUndimmedDetentIdentifier = .medium
-//			sheet.prefersScrollingExpandsWhenScrolledToEdge = false
-//			sheet.prefersEdgeAttachedInCompactHeight = true
-//			sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
-		}
-		present(viewControllerToPresent, animated: true, completion: nil)
-	}
+	 
 	
 	
 }

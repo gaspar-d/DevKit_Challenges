@@ -45,6 +45,11 @@ extension MainCoordinator: MainCoordinatorProtocol {
 			childCoordinators.append(child)
 			child.start()
 			
+		case 3:
+			let child = NumbersCoordinator(navigation: navigation)
+			childCoordinators.append(child)
+			child.start()
+			
 		default:
 			fatalError("Cell index not found", file: #file, line: #line)
 		}

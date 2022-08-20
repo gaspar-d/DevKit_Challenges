@@ -13,6 +13,10 @@
 		EB14E1F628A44E9F00B3548A /* NumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14E1F528A44E9F00B3548A /* NumbersView.swift */; };
 		EB14E1F828AF564E00B3548A /* NumbersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14E1F728AF564E00B3548A /* NumbersViewModel.swift */; };
 		EB14E1FA28B0A45200B3548A /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14E1F928B0A45200B3548A /* ModalViewController.swift */; };
+		EB14E1FC28B14CB000B3548A /* NumbersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14E1FB28B14CB000B3548A /* NumbersCoordinator.swift */; };
+		EB14E1FE28B14D6300B3548A /* NumbersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14E1FD28B14D6300B3548A /* NumbersFactory.swift */; };
+		EB14E20228B155FC00B3548A /* ModalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14E20128B155FC00B3548A /* ModalFactory.swift */; };
+		EB14E20428B1570500B3548A /* ModelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14E20328B1570500B3548A /* ModelViewModel.swift */; };
 		EB1D5C212874CA8E00BAAA53 /* CarPlateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D5C202874CA8E00BAAA53 /* CarPlateViewController.swift */; };
 		EB1D5C232874CB3700BAAA53 /* CarPlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D5C222874CB3700BAAA53 /* CarPlateView.swift */; };
 		EB1D5C282874D11600BAAA53 /* CarRotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1D5C272874D11600BAAA53 /* CarRotationView.swift */; };
@@ -68,6 +72,10 @@
 		EB14E1F528A44E9F00B3548A /* NumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersView.swift; sourceTree = "<group>"; };
 		EB14E1F728AF564E00B3548A /* NumbersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewModel.swift; sourceTree = "<group>"; };
 		EB14E1F928B0A45200B3548A /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		EB14E1FB28B14CB000B3548A /* NumbersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersCoordinator.swift; sourceTree = "<group>"; };
+		EB14E1FD28B14D6300B3548A /* NumbersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersFactory.swift; sourceTree = "<group>"; };
+		EB14E20128B155FC00B3548A /* ModalFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalFactory.swift; sourceTree = "<group>"; };
+		EB14E20328B1570500B3548A /* ModelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelViewModel.swift; sourceTree = "<group>"; };
 		EB1D5C202874CA8E00BAAA53 /* CarPlateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlateViewController.swift; sourceTree = "<group>"; };
 		EB1D5C222874CB3700BAAA53 /* CarPlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlateView.swift; sourceTree = "<group>"; };
 		EB1D5C272874D11600BAAA53 /* CarRotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRotationView.swift; sourceTree = "<group>"; };
@@ -132,12 +140,32 @@
 		EB14E1F228A44DE900B3548A /* Challenge04 */ = {
 			isa = PBXGroup;
 			children = (
-				EB14E1F328A44E2500B3548A /* NumbersController.swift */,
-				EB14E1F528A44E9F00B3548A /* NumbersView.swift */,
-				EB14E1F728AF564E00B3548A /* NumbersViewModel.swift */,
-				EB14E1F928B0A45200B3548A /* ModalViewController.swift */,
+				EB14E1FB28B14CB000B3548A /* NumbersCoordinator.swift */,
+				EB14E1FF28B152CD00B3548A /* Numbers */,
+				EB14E20028B152E700B3548A /* Modal */,
 			);
 			path = Challenge04;
+			sourceTree = "<group>";
+		};
+		EB14E1FF28B152CD00B3548A /* Numbers */ = {
+			isa = PBXGroup;
+			children = (
+				EB14E1F328A44E2500B3548A /* NumbersController.swift */,
+				EB14E1F528A44E9F00B3548A /* NumbersView.swift */,
+				EB14E1FD28B14D6300B3548A /* NumbersFactory.swift */,
+				EB14E1F728AF564E00B3548A /* NumbersViewModel.swift */,
+			);
+			path = Numbers;
+			sourceTree = "<group>";
+		};
+		EB14E20028B152E700B3548A /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				EB14E1F928B0A45200B3548A /* ModalViewController.swift */,
+				EB14E20128B155FC00B3548A /* ModalFactory.swift */,
+				EB14E20328B1570500B3548A /* ModelViewModel.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		EB1D5C1F2874CA1F00BAAA53 /* Challenge02 */ = {
@@ -270,9 +298,9 @@
 		EB4BC00A284BF17400B6460D /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				EBE117FD284E8ADF00326C62 /* App */,
 				EBA34B7128611B6400F72682 /* Resources */,
 				EB269E6D285D245E00B91825 /* Utils */,
-				EBE117FD284E8ADF00326C62 /* App */,
 				EBE117FE284E8AF600326C62 /* Model */,
 				EB269E5D285CDC1B00B91825 /* Scenes */,
 				EB269E62285CDDFF00B91825 /* Coordinator */,
@@ -503,6 +531,8 @@
 				EBA4235E289AC7C200AF1F52 /* PalindromeController.swift in Sources */,
 				EB1D5C332874D5DD00BAAA53 /* CarPlateViewModel.swift in Sources */,
 				EBA140982853C99900653227 /* TableViewDataSource.swift in Sources */,
+				EB14E1FC28B14CB000B3548A /* NumbersCoordinator.swift in Sources */,
+				EB14E20428B1570500B3548A /* ModelViewModel.swift in Sources */,
 				EB269E64285CDE1B00B91825 /* Coordinator.swift in Sources */,
 				EB14E1FA28B0A45200B3548A /* ModalViewController.swift in Sources */,
 				EB1D5C2E2874D2EF00BAAA53 /* CarRotationFactory.swift in Sources */,
@@ -521,10 +551,12 @@
 				EB14E1F828AF564E00B3548A /* NumbersViewModel.swift in Sources */,
 				EBD93D0D287A80450062CBCC /* TextFieldLimiter.swift in Sources */,
 				EB4BC010284BF17400B6460D /* MainViewController.swift in Sources */,
+				EB14E20228B155FC00B3548A /* ModalFactory.swift in Sources */,
 				EB4BC00C284BF17400B6460D /* AppDelegate.swift in Sources */,
 				EB1D5C282874D11600BAAA53 /* CarRotationView.swift in Sources */,
 				EB20AD652890D1CE005098BB /* Alerts.swift in Sources */,
 				EB269E61285CDCF100B91825 /* ResultIMCController.swift in Sources */,
+				EB14E1FE28B14D6300B3548A /* NumbersFactory.swift in Sources */,
 				EB269E6F285D247900B91825 /* ViewCodeTemplate.swift in Sources */,
 				EB1D5C352874DC5C00BAAA53 /* CarRotationViewModel.swift in Sources */,
 				EBD93D0B287A7F350062CBCC /* UIKitExtensions.swift in Sources */,

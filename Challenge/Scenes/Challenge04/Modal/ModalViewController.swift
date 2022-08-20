@@ -9,6 +9,8 @@ import UIKit
 
 final class ModalViewController: UIViewController {
 	
+	private let viewModel: ModalViewModelProtocol
+	
 	private lazy var containerView: UIView = {
 		let container = UIView()
 		container.translatesAutoresizingMaskIntoConstraints = false
@@ -31,6 +33,15 @@ final class ModalViewController: UIViewController {
 		
 		view.backgroundColor = .clear
 		setupConstraints()
+	}
+	
+	init(viewModel: ModalViewModelProtocol) {
+		self.viewModel = viewModel
+		super.init(nibName: nil, bundle: nil)
+	}
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
 	}
 	
 	func setupConstraints() {

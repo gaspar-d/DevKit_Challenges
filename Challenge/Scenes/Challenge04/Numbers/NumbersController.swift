@@ -62,18 +62,8 @@ final class NumbersController: UIViewController {
 	}
 	
 	@objc private func didTapRevealButton() {
-//		let vc = ModalViewController()
-		
-		// TODO: - Present this VC using coordinator
-		
-//		present(vc, animated: true)
-		
 		viewModel.presentModal()
 	}
-	
-	 
-	
-	
 }
 
 // MARK: - Extension

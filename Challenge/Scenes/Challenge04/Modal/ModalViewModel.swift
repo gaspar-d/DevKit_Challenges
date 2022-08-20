@@ -1,5 +1,5 @@
 //
-//  ModelViewModel.swift
+//  ModalViewModel.swift
 //  Challenge
 //
 //  Created by Diogo Gaspar on 20/08/22.

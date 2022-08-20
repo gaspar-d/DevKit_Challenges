@@ -34,28 +34,28 @@ final class NumbersView: UIView {
 	
 	private lazy var isPrimeLabel: UILabel = {
 		let label = UILabel()
-		label.text = "prime?"
+		label.text = "Número primo?"
 		
 		return label
 	}()
 	
 	private lazy var isEvenLabel: UILabel = {
 		let label = UILabel()
-		label.text = "even?"
+		label.text = "Número par?"
 		
 		return label
 	}()
 	
 	private lazy var isOddLabel: UILabel = {
 		let label = UILabel()
-		label.text = "odd"
+		label.text = "Número ímpar"
 		
 		return label
 	}()
 	
 	private lazy var isNaturalLabel: UILabel = {
 		let label = UILabel()
-		label.text = "natural"
+		label.text = "Número natural"
 		
 		return label
 	}()
@@ -101,7 +101,6 @@ final class NumbersView: UIView {
 		
 		let button = UIButton(configuration: configuration)
 		
-		
 		return button
 	}()
 	
@@ -117,23 +116,28 @@ final class NumbersView: UIView {
 	
 	// MARK: - Methods
 	
-	public func setIsPrimeLabel(number: Int) {
-		isPrimeLabel.text = String(number)
+	public func resetLabels() {
+		isPrimeLabel.text = " Número primo"
+		isEvenLabel.text = " Número par"
+		isOddLabel.text = " Número ímpar"
+		isNaturalLabel.text = " Número natural"
 	}
 	
-	public func setIsEvenLabel(number: Int) {
-		isEvenLabel.text = String(number)
+	public func setIsPrimeLabel(result: Bool) {
+		setIconForLabel(with: "primo", label: isPrimeLabel, for: result)
 	}
 	
-	public func setIsOddLabel(number: Int) {
-		isOddLabel.text = String(number)
+	public func setIsEvenLabel(result: Bool) {
+		setIconForLabel(with: "par", label: isEvenLabel, for: result)
 	}
 	
-	public func setIsNaturalLabel(number: Int) {
-		isNaturalLabel.text = String(number)
+	public func setIsOddLabel(result: Bool) {
+		setIconForLabel(with: "ímpar", label: isOddLabel, for: result)
 	}
 	
-	
+	public func setIsNaturalLabel(result: Bool) {
+		setIconForLabel(with: "natural", label: isNaturalLabel, for: result)
+	}
 	
 	public func setInputTextLabelDelegate(delegate: UITextFieldDelegate) {
 		inputField.delegate = delegate
@@ -146,8 +150,22 @@ final class NumbersView: UIView {
 	public func revealButtonAction(target: Any?, action: Selector) {
 		revealButton.addTarget(target, action: action, for: .touchUpInside)
 	}
+	
+	// TODO: - see where to put it
+	private func setIconForLabel(with text: String, label: UILabel, for icon: Bool) {
+		let imageIcon = NSTextAttachment()
+		if icon {
+			imageIcon.image = UIImage(systemName: "checkmark")?.withTintColor(.systemGreen)
+		} else {
+			imageIcon.image = UIImage(systemName: "xmark")?.withTintColor(.systemRed)
+		}
+		
+		let fullString = NSMutableAttributedString(string: "")
+		fullString.append(NSAttributedString(attachment: imageIcon))
+		fullString.append(NSAttributedString(string: " Número \(text)"))
+		label.attributedText = fullString
+	}
 }
-
 
 // MARK: - Extension
 extension NumbersView: ViewCodeTemplate {

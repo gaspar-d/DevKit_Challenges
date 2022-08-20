@@ -45,14 +45,20 @@ final class NumbersController: UIViewController {
 		
 		guard let number = Int(sender.text ?? "") else { return }
 		
-		print(#line, number / number)
+		print(#line, number)
 		
-		viewModel.isPrime(number)
+		let resultIsPrime = viewModel.isPrime(number)
+		let resultIsEven = viewModel.isEven(number)
+		let resultIsOdd = viewModel.isOdd(number)
+		let resultIsNatural = viewModel.isNatural(number)
 		
-		customView?.setIsPrimeLabel(number: number)
-		customView?.setIsEvenLabel(number: number)
-		customView?.setIsOddLabel(number: number)
-		customView?.setIsNaturalLabel(number: number)
+		customView?.setIsPrimeLabel(result: viewModel.setIconForLabel(with: "primo",
+																	  label: <#T##UILabel#>,
+																	  for: resultIsEven))
+		customView?.setIsEvenLabel(result: resultIsEven)
+		
+		customView?.setIsOddLabel(result: resultIsOdd)
+		customView?.setIsNaturalLabel(result: resultIsNatural)
 	}
 }
 
@@ -64,13 +70,21 @@ extension NumbersController: UITextFieldDelegate {
 		customView?.setInputTextLabelDelegate(delegate: self)
 	}
 	
+	func textFieldShouldClear(_ textField: UITextField) -> Bool {
+		customView?.resetLabels()
+		
+		return true
+	}
+	
 	func textField(_ textField: UITextField,
 				   shouldChangeCharactersIn range: NSRange,
 				   replacementString string: String) -> Bool {
 		
+	
+		
 		let allowedCharacters = CharacterSet(charactersIn: "-1234567890").inverted
 		let characterSet = CharacterSet(charactersIn: string)
-
+		
 		if allowedCharacters.isSuperset(of: characterSet) {
 			return false
 		}

@@ -12,90 +12,38 @@ final class ModalView: UIView {
 	private lazy var containerView: UIView = {
 		let container = UIView()
 		container.translatesAutoresizingMaskIntoConstraints = false
-		container.backgroundColor = .white
+		container.backgroundColor = .systemBackground
 		container.layer.cornerRadius = 16
 		
 		return container
 	}()
 	
-	private lazy var labelText: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "Modalzão"
-		
-		return label
-	}()
-	
-	private lazy var doubleValueLabel: UILabel = {
+	private lazy var resultLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.text = "double"
-		
-		return label
-	}()
-	
-	private lazy var squareRootValueLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "squareRoot"
-		
-		return label
-	}()
-	
-	private lazy var halfValueLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "half"
-		
-		return label
-	}()
-	
-	private lazy var monthOrNotValueLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "month or not"
-		
-		return label
-	}()
-	
-	private lazy var sumAllValueLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "sum"
-		
-		return label
-	}()
-	
-	private lazy var noIdeaValueLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "no idea"
-		
-		return label
-	}()
-	
-	private lazy var boggiemanValueLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "boggie man"
-		
-		return label
-	}()
-	
-	private lazy var myRandomValueLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "random phrase"
+		label.numberOfLines = 0
 		
 		return label
 	}()
 	
 	private lazy var containerStack: UIStackView = {
-		let stack = UIStackView(arrangedSubviews: [labelText, doubleValueLabel])
+		let stack = UIStackView(arrangedSubviews: [
+												   resultLabel,
+												  ])
+		
 		stack.translatesAutoresizingMaskIntoConstraints = false
 		stack.axis = .vertical
+		stack.alignment = .center
+		stack.distribution = .equalSpacing
 		stack.spacing = 20
-		
+		stack.backgroundColor = .systemBackground
+		stack.layer.cornerRadius = 16
+		stack.isLayoutMarginsRelativeArrangement = true
+		stack.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0,
+																 leading: 20,
+																 bottom: 0,
+																 trailing: 20)
 		return stack
 	}()
 	
@@ -111,9 +59,41 @@ final class ModalView: UIView {
 	
 	// MARK: - Methods
 	
-	public func setLabelTEST(with result: Int) {
-		doubleValueLabel.text = String(result)
+	public func setResultLabel(with result: String, index: Int) {
+		let safeResult = String(result)
+//		let randomElement = Int.random(in: 1...7)
+		
+		resultLabel.text = safeResult
+		
+//		if safeResult == "" {
+//			selectLabelToAppear(element: randomElement)
+//		}
+//
+//		selectLabelToAppear(element: randomElement)
 	}
+	
+	
+	
+//	private func selectLabelToAppear(element: Int) {
+//		switch element {
+//		case 1:
+//			resultLabel.isHidden = false
+//		case 2:
+//			squareRootValueLabel.isHidden = false
+//		case 3:
+//			halfValueLabel.isHidden = false
+//		case 4:
+//			monthOrNotValueLabel.isHidden = false
+//		case 5:
+//			sumAllValueLabel.isHidden = false
+//		case 6:
+//			noIdeaValueLabel.isHidden = false
+//		case 7:
+//			boogeymanValueLabel.isHidden = false
+//		default:
+//			print(#line, "ERROR: Element not found", #file)
+//		}
+//	}
 }
 
 extension ModalView: ViewCodeTemplate {
@@ -130,8 +110,10 @@ extension ModalView: ViewCodeTemplate {
 			containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
 			containerView.bottomAnchor.constraint(equalTo: bottomAnchor),
 			
-			containerStack.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-			containerStack.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+			containerStack.topAnchor.constraint(equalTo: containerView.topAnchor),
+			containerStack.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+			containerStack.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+			containerStack.bottomAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.bottomAnchor),
 		])
 	}
 }

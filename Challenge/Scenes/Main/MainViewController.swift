@@ -41,7 +41,6 @@ class MainViewController: UIViewController {
 		mainTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 	}
 	
-	// FIXME: - Unnecessary?
 	private func didTapCell(name: String) {
 		let messageAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .bold)]
 		let messageString = NSAttributedString(string: name, attributes: messageAttributes)

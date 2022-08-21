@@ -65,11 +65,11 @@ final class NumbersController: UIViewController {
 	}
 	
 	@objc private func didTapRevealButton() {
-		guard let safeResult = result else { return }
-		
+		guard let safeResult = result else {
+			viewModel.presentModal(with: 0)
+			return
+		}
 		viewModel.presentModal(with: safeResult)
-		
-//		viewModel.presentModal(with: result ?? 999)
 	}
 }
 
@@ -83,7 +83,7 @@ extension NumbersController: UITextFieldDelegate {
 	
 	func textFieldShouldClear(_ textField: UITextField) -> Bool {
 		customView?.resetLabels()
-		
+		result = 0
 		return true
 	}
 	
@@ -91,14 +91,7 @@ extension NumbersController: UITextFieldDelegate {
 				   shouldChangeCharactersIn range: NSRange,
 				   replacementString string: String) -> Bool {
 		
-		let allowedCharacters = CharacterSet(charactersIn: "-1234567890").inverted
-		let characterSet = CharacterSet(charactersIn: string)
-		
-		if allowedCharacters.isSuperset(of: characterSet) {
-			return false
-		}
-		
-		return true
+		viewModel.limitInputToNumbersOnly(string: string)
 	}
 }
 

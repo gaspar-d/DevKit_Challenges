@@ -142,7 +142,7 @@
 		EB14E1F228A44DE900B3548A /* Challenge04 */ = {
 			isa = PBXGroup;
 			children = (
-				EB14E1FB28B14CB000B3548A /* NumbersCoordinator.swift */,
+				EB14E20B28B21A2700B3548A /* NumbersCoordinator */,
 				EB14E1FF28B152CD00B3548A /* Numbers */,
 				EB14E20028B152E700B3548A /* Modal */,
 			);
@@ -169,6 +169,14 @@
 				EB14E20328B1570500B3548A /* ModalViewModel.swift */,
 			);
 			path = Modal;
+			sourceTree = "<group>";
+		};
+		EB14E20B28B21A2700B3548A /* NumbersCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				EB14E1FB28B14CB000B3548A /* NumbersCoordinator.swift */,
+			);
+			path = NumbersCoordinator;
 			sourceTree = "<group>";
 		};
 		EB1D5C1F2874CA1F00BAAA53 /* Challenge02 */ = {

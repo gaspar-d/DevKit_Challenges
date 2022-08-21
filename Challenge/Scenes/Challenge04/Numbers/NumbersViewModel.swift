@@ -9,6 +9,7 @@ import UIKit
 
 protocol NumbersViewModelProtocol: AnyObject {
 	func presentModal(with result: Int)
+	func limitInputToNumbersOnly(string: String) -> Bool
 	func isPrime(_ number: Int) -> Bool
 	func isEven(_ number: Int) -> Bool
 	func isOdd(_ number: Int) -> Bool
@@ -24,6 +25,18 @@ extension NumbersViewModel: NumbersViewModelProtocol {
 	public func presentModal(with result: Int) {
 		coordinator?.presentModal(with: result)
 	}
+	
+	public func limitInputToNumbersOnly(string: String) -> Bool {
+		let allowedCharacters = CharacterSet(charactersIn: "-1234567890").inverted
+		let characterSet = CharacterSet(charactersIn: string)
+		
+		if allowedCharacters.isSuperset(of: characterSet) {
+			return false
+		}
+		
+		return true
+	}
+	
 	
 	public func isPrime(_ number: Int) -> Bool {
 		

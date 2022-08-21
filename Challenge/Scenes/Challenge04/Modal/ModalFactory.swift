@@ -13,7 +13,6 @@ enum ModalFactory {
 		
 		let vm = ModalViewModel()
 		vm.result = result
-//		vm.coordinator = coordinator
 		let vc = ModalViewController(viewModel: vm)
 		
 		return vc

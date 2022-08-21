@@ -9,8 +9,6 @@ import UIKit
 
 final class NumbersView: UIView {
 	
-	// MARK: - Properties
-	
 	private lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.text = "Qual o valor?"
@@ -116,6 +114,10 @@ final class NumbersView: UIView {
 	}
 	
 	// MARK: - Methods
+
+	public func setInputTextLabelDelegate(delegate: UITextFieldDelegate) {
+		inputField.delegate = delegate
+	}
 	
 	public func resetLabels() {
 		isPrimeLabel.text = " Número primo"
@@ -140,10 +142,6 @@ final class NumbersView: UIView {
 		setIconForLabel(with: "natural", label: isNaturalLabel, for: result)
 	}
 	
-	public func setInputTextLabelDelegate(delegate: UITextFieldDelegate) {
-		inputField.delegate = delegate
-	}
-
 	public func getInputText(target: Any?, action: Selector) {
 		inputField.addTarget(target, action: action, for: .editingChanged)
 	}

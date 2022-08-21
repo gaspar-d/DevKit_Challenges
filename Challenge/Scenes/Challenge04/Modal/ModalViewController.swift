@@ -17,7 +17,7 @@ final class ModalViewController: UIViewController {
 		
 		view.backgroundColor = .clear
 		setupView()
-		setupResultField()
+		setupModalLabel()
 	}
 	
 	init(viewModel: ModalViewModelProtocol) {
@@ -34,10 +34,9 @@ final class ModalViewController: UIViewController {
 		self.view = customView
 	}
 	
-	private func setupResultField() {
-//		guard let safeNumber = viewModel.result else { return }
+	private func setupModalLabel() {
 		let safeNumber = viewModel.getRandomResult
 		
-		customView?.setResultLabel(with: safeNumber, index: 1)
+		customView?.setResultLabel(with: safeNumber)
 	}
 }

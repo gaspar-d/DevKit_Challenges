@@ -59,41 +59,10 @@ final class ModalView: UIView {
 	
 	// MARK: - Methods
 	
-	public func setResultLabel(with result: String, index: Int) {
+	public func setResultLabel(with result: String) {
 		let safeResult = String(result)
-//		let randomElement = Int.random(in: 1...7)
-		
 		resultLabel.text = safeResult
-		
-//		if safeResult == "" {
-//			selectLabelToAppear(element: randomElement)
-//		}
-//
-//		selectLabelToAppear(element: randomElement)
 	}
-	
-	
-	
-//	private func selectLabelToAppear(element: Int) {
-//		switch element {
-//		case 1:
-//			resultLabel.isHidden = false
-//		case 2:
-//			squareRootValueLabel.isHidden = false
-//		case 3:
-//			halfValueLabel.isHidden = false
-//		case 4:
-//			monthOrNotValueLabel.isHidden = false
-//		case 5:
-//			sumAllValueLabel.isHidden = false
-//		case 6:
-//			noIdeaValueLabel.isHidden = false
-//		case 7:
-//			boogeymanValueLabel.isHidden = false
-//		default:
-//			print(#line, "ERROR: Element not found", #file)
-//		}
-//	}
 }
 
 extension ModalView: ViewCodeTemplate {

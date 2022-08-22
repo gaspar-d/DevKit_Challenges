@@ -21,8 +21,9 @@ final class ModalView: UIView {
 	private lazy var resultLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "double"
 		label.numberOfLines = 0
+		label.textColor = .systemIndigo
+		label.font = .systemFont(ofSize: 22, weight: .semibold)
 		
 		return label
 	}()

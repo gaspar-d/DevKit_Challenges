@@ -20,6 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		guard let windowScene = (scene as? UIWindowScene) else { return }
 		let safeWindow = UIWindow(windowScene: windowScene)
 		safeWindow.rootViewController = navigation
+		
+		// TODO: - To test new VCs put it in the code line bellow and comment the code line above
+//		safeWindow.rootViewController = UINavigationController(rootViewController: NewVCHere())
+		
 		safeWindow.makeKeyAndVisible()
 		
 		self.window = safeWindow

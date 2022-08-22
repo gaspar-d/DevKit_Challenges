@@ -30,11 +30,7 @@ extension NumbersViewModel: NumbersViewModelProtocol {
 		let allowedCharacters = CharacterSet(charactersIn: "-1234567890").inverted
 		let characterSet = CharacterSet(charactersIn: string)
 		
-		if allowedCharacters.isSuperset(of: characterSet) {
-			return false
-		}
-		
-		return true
+		return !allowedCharacters.isSuperset(of: characterSet)
 	}
 	
 	

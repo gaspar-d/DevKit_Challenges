@@ -44,7 +44,7 @@
 		EB34693028B9A7A30019F939 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB34692F28B9A7A30019F939 /* MainView.swift */; };
 		EB4BC00C284BF17400B6460D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4BC00B284BF17400B6460D /* AppDelegate.swift */; };
 		EB4BC00E284BF17400B6460D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4BC00D284BF17400B6460D /* SceneDelegate.swift */; };
-		EB4BC010284BF17400B6460D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4BC00F284BF17400B6460D /* MainViewController.swift */; };
+		EB4BC010284BF17400B6460D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4BC00F284BF17400B6460D /* MainController.swift */; };
 		EB4BC015284BF17500B6460D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4BC014284BF17500B6460D /* Assets.xcassets */; };
 		EB4BC018284BF17500B6460D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB4BC016284BF17500B6460D /* LaunchScreen.storyboard */; };
 		EB661584289C863900A94921 /* PalindromeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB661583289C863900A94921 /* PalindromeViewModel.swift */; };
@@ -106,7 +106,7 @@
 		EB4BC008284BF17400B6460D /* Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4BC00B284BF17400B6460D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB4BC00D284BF17400B6460D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EB4BC00F284BF17400B6460D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EB4BC00F284BF17400B6460D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		EB4BC014284BF17500B6460D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB4BC017284BF17500B6460D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB4BC019284BF17500B6460D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -333,7 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				EB34692E28B9A7510019F939 /* MainCoordinator */,
-				EB4BC00F284BF17400B6460D /* MainViewController.swift */,
+				EB4BC00F284BF17400B6460D /* MainController.swift */,
 				EB34692F28B9A7A30019F939 /* MainView.swift */,
 				EB269E67285CE35700B91825 /* MainFactory.swift */,
 				EBE117F9284E7A0E00326C62 /* MainViewModel.swift */,
@@ -574,7 +574,7 @@
 				EBB195AA286263C2001BBBDF /* IMCInputValidator.swift in Sources */,
 				EB14E1F828AF564E00B3548A /* NumbersViewModel.swift in Sources */,
 				EBD93D0D287A80450062CBCC /* TextFieldLimiter.swift in Sources */,
-				EB4BC010284BF17400B6460D /* MainViewController.swift in Sources */,
+				EB4BC010284BF17400B6460D /* MainController.swift in Sources */,
 				EB14E20228B155FC00B3548A /* ModalFactory.swift in Sources */,
 				EB4BC00C284BF17400B6460D /* AppDelegate.swift in Sources */,
 				EB1D5C282874D11600BAAA53 /* CarRotationView.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  MainController.swift
 //  Creatiing a List
 //
 //  Created by Diogo Gaspar on 04/06/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MainViewController: UIViewController {
+final class MainController: UIViewController {
 	
 	private var customView: MainView?
 	private let viewModel: MainViewModelProtocol
@@ -51,7 +51,7 @@ final class MainViewController: UIViewController {
 }
 
 // MARK: - TableViewDelegate
-extension MainViewController: TableControllerDelegate {
+extension MainController: TableControllerDelegate {
 	func didSelectedCell(item: Int) {
 		viewModel.didTapCell(index: item)
 	}

@@ -21,12 +21,12 @@ class MainViewModelMock: MainViewModelProtocol {
 // MARK: - Tests
 class ChallengeTests: XCTestCase {
 	
-	var sut: MainViewController?
+	var sut: MainController?
 	var mock: MainViewModelProtocol?
 
     override func setUpWithError() throws {
 		print(1)
-		sut = MainViewController(viewModel: mock!)
+		sut = MainController(viewModel: mock!)
 		sut?.loadView()
     }
 

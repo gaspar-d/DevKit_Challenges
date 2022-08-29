@@ -7,12 +7,12 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
 	
-	@IBOutlet weak var mainTableView: UITableView!
+	private var customView: MainView?
 	private let viewModel: MainViewModelProtocol
 	private var tableViewDelegate: TableViewDelegate?
-	private var tableviewDataSource: TableViewDataSource?
+	private var tableViewDataSource: TableViewDataSource?
 	
 	init(viewModel: MainViewModelProtocol) {
 		self.viewModel = viewModel
@@ -25,27 +25,34 @@ class MainViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		navigationController?.navigationBar.prefersLargeTitles = true
-		title = "DevKit Challenges"
 		
+		setupView()
 		setupTableView()
 	}
 	
-	private func setupTableView() {
-		tableViewDelegate = TableViewDelegate(withDelegate: self)
-		tableviewDataSource = TableViewDataSource(withData: viewModel.getNames)
+	private func setupView() {
+		navigationController?.navigationBar.prefersLargeTitles = true
+		title = "DevKit Challenges"
 		
-		mainTableView.delegate = tableViewDelegate
-		mainTableView.dataSource = tableviewDataSource
-		
-		mainTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+		customView = MainView()
+		view = customView
 	}
 	
+	private func setupTableView() {
+		let delegate = TableViewDelegate(withDelegate: self)
+		let dataSource = TableViewDataSource(withData: viewModel.getNames)
+		
+		tableViewDelegate = delegate
+		tableViewDataSource = dataSource
+		
+		customView?.setTableViewProtocols(withDelegate: delegate,
+										  withDataSource: dataSource)
+	}
 }
 
 // MARK: - TableViewDelegate
-extension MainViewController: ViewControllerDelegate {
-	func selectedCell(item: Int) {
+extension MainViewController: TableControllerDelegate {
+	func didSelectedCell(item: Int) {
 		viewModel.didTapCell(index: item)
 	}
 }

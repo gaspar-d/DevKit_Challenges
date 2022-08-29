@@ -47,7 +47,6 @@
 		EB4BC010284BF17400B6460D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4BC00F284BF17400B6460D /* MainViewController.swift */; };
 		EB4BC015284BF17500B6460D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4BC014284BF17500B6460D /* Assets.xcassets */; };
 		EB4BC018284BF17500B6460D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB4BC016284BF17500B6460D /* LaunchScreen.storyboard */; };
-		EB4BC020284C0ECD00B6460D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4BC01F284C0ECD00B6460D /* MainViewController.xib */; };
 		EB661584289C863900A94921 /* PalindromeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB661583289C863900A94921 /* PalindromeViewModel.swift */; };
 		EB661586289C8EE700A94921 /* PalindromeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB661585289C8EE700A94921 /* PalindromeFactory.swift */; };
 		EB66158B289C9A1700A94921 /* PalindromeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66158A289C9A1700A94921 /* PalindromeValidator.swift */; };
@@ -111,7 +110,6 @@
 		EB4BC014284BF17500B6460D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB4BC017284BF17500B6460D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB4BC019284BF17500B6460D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB4BC01F284C0ECD00B6460D /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		EB661583289C863900A94921 /* PalindromeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromeViewModel.swift; sourceTree = "<group>"; };
 		EB661585289C8EE700A94921 /* PalindromeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromeFactory.swift; sourceTree = "<group>"; };
 		EB66158A289C9A1700A94921 /* PalindromeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromeValidator.swift; sourceTree = "<group>"; };
@@ -148,7 +146,7 @@
 			children = (
 				EB14E20B28B21A2700B3548A /* NumbersCoordinator */,
 				EB14E1FF28B152CD00B3548A /* Numbers */,
-				EB14E20028B152E700B3548A /* Modal */,
+				EB14E20028B152E700B3548A /* NumbersModal */,
 			);
 			path = Challenge04;
 			sourceTree = "<group>";
@@ -164,7 +162,7 @@
 			path = Numbers;
 			sourceTree = "<group>";
 		};
-		EB14E20028B152E700B3548A /* Modal */ = {
+		EB14E20028B152E700B3548A /* NumbersModal */ = {
 			isa = PBXGroup;
 			children = (
 				EB14E1F928B0A45200B3548A /* ModalViewController.swift */,
@@ -172,7 +170,7 @@
 				EB14E20128B155FC00B3548A /* ModalFactory.swift */,
 				EB14E20328B1570500B3548A /* ModalViewModel.swift */,
 			);
-			path = Modal;
+			path = NumbersModal;
 			sourceTree = "<group>";
 		};
 		EB14E20B28B21A2700B3548A /* NumbersCoordinator */ = {
@@ -186,8 +184,8 @@
 		EB1D5C1F2874CA1F00BAAA53 /* Challenge02 */ = {
 			isa = PBXGroup;
 			children = (
-				EB1D5C2F2874D39300BAAA53 /* CarRotationCoordinator */,
-				EBD93D0E287B70830062CBCC /* CarRotationUtils */,
+				EB1D5C2F2874D39300BAAA53 /* CarCoordinator */,
+				EBD93D0E287B70830062CBCC /* CarUtils */,
 				EB1D5C242874CDFC00BAAA53 /* CarScenes */,
 			);
 			path = Challenge02;
@@ -224,12 +222,12 @@
 			path = CarRotationResult;
 			sourceTree = "<group>";
 		};
-		EB1D5C2F2874D39300BAAA53 /* CarRotationCoordinator */ = {
+		EB1D5C2F2874D39300BAAA53 /* CarCoordinator */ = {
 			isa = PBXGroup;
 			children = (
 				EB1D5C302874D3A500BAAA53 /* CarRotationCoordinator.swift */,
 			);
-			path = CarRotationCoordinator;
+			path = CarCoordinator;
 			sourceTree = "<group>";
 		};
 		EB269E5C285CDC0E00B91825 /* IMCScenes */ = {
@@ -339,7 +337,6 @@
 				EB34692F28B9A7A30019F939 /* MainView.swift */,
 				EB269E67285CE35700B91825 /* MainFactory.swift */,
 				EBE117F9284E7A0E00326C62 /* MainViewModel.swift */,
-				EB4BC01F284C0ECD00B6460D /* MainViewController.xib */,
 				EBA140962853C8A500653227 /* Components */,
 			);
 			path = Main;
@@ -381,12 +378,12 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		EBA34B702861040B00F72682 /* ModelIMC */ = {
+		EBA34B702861040B00F72682 /* IMCModel */ = {
 			isa = PBXGroup;
 			children = (
 				EB11D533285E8FFA007F0F15 /* ResultIMCModel.swift */,
 			);
-			path = ModelIMC;
+			path = IMCModel;
 			sourceTree = "<group>";
 		};
 		EBA34B7128611B6400F72682 /* Resources */ = {
@@ -405,8 +402,8 @@
 		EBA4235C289AC75600AF1F52 /* Challenge03 */ = {
 			isa = PBXGroup;
 			children = (
-				EB661589289C99F100A94921 /* PalindromeUtils */,
 				EB661587289C94F900A94921 /* PalindromeCoordinator */,
+				EB661589289C99F100A94921 /* PalindromeUtils */,
 				EB661588289C951900A94921 /* PalindromeScenes */,
 			);
 			path = Challenge03;
@@ -428,12 +425,12 @@
 			path = IMCCoordinator;
 			sourceTree = "<group>";
 		};
-		EBD93D0E287B70830062CBCC /* CarRotationUtils */ = {
+		EBD93D0E287B70830062CBCC /* CarUtils */ = {
 			isa = PBXGroup;
 			children = (
 				EBD93D0F287B709F0062CBCC /* CarRotationValidator.swift */,
 			);
-			path = CarRotationUtils;
+			path = CarUtils;
 			sourceTree = "<group>";
 		};
 		EBDB3E4F285D9FB300FE40D0 /* Challenge01 */ = {
@@ -441,7 +438,7 @@
 			children = (
 				EBCD193D286603BA006F91D8 /* IMCCoordinator */,
 				EBB195AB2862652A001BBBDF /* IMCUtils */,
-				EBA34B702861040B00F72682 /* ModelIMC */,
+				EBA34B702861040B00F72682 /* IMCModel */,
 				EB269E5C285CDC0E00B91825 /* IMCScenes */,
 			);
 			path = Challenge01;
@@ -530,7 +527,6 @@
 				EB14E20D28B30B6300B3548A /* numbers.gif in Resources */,
 				EB4BC018284BF17500B6460D /* LaunchScreen.storyboard in Resources */,
 				EB78D84F2880AFE200F9EB26 /* carRotation.gif in Resources */,
-				EB4BC020284C0ECD00B6460D /* MainViewController.xib in Resources */,
 				EB4BC015284BF17500B6460D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

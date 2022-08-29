@@ -41,16 +41,6 @@ class MainViewController: UIViewController {
 		mainTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 	}
 	
-	private func didTapCell(name: String) {
-		let messageAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .bold)]
-		let messageString = NSAttributedString(string: name, attributes: messageAttributes)
-		let alert = UIAlertController(title: "The user name is:", message: "", preferredStyle: .alert)
-		alert.setValue(messageString, forKey: "attributedMessage")
-		let dismiss = UIAlertAction(title: "dismiss", style: .default)
-		alert.addAction(dismiss)
-
-		present(alert, animated: true)
-	}
 }
 
 // MARK: - TableViewDelegate

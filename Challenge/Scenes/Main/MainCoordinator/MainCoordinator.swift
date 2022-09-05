@@ -31,7 +31,7 @@ extension MainCoordinator: MainCoordinatorProtocol {
 	public func navigateTo(sceneIndex: Int) {
 		switch sceneIndex {
 		case 0:
-			let child = InputMVCCoordinator(navigation: navigation)
+			let child = InputIMCCoordinator(navigation: navigation)
 			childCoordinators.append(child)
 			child.start()
 			
@@ -51,7 +51,8 @@ extension MainCoordinator: MainCoordinatorProtocol {
 			child.start()
 			
 		default:
-			fatalError("Cell index not found", file: #file, line: #line)
+			// TODO: - Test this error
+			print("Cell index not found")
 		}
 	}
 }

@@ -128,7 +128,8 @@ final class InputIMCView: UIView {
 	}
 	
 	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
+		// TODO: - fatal error test
+		return nil
 	}
 	
 	// MARK: - Methods

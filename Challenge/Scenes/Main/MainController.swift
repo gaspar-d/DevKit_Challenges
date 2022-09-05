@@ -20,7 +20,8 @@ final class MainController: UIViewController {
 	}
 	
 	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
+		// TODO: - testing a fatalError()
+		return nil
 	}
 	
 	override func viewDidLoad() {
@@ -51,8 +52,9 @@ final class MainController: UIViewController {
 }
 
 // MARK: - TableViewDelegate
+
 extension MainController: TableControllerDelegate {
-	func didSelectedCell(item: Int) {
+	func didSelectCell(item: Int) {
 		viewModel.didTapCell(index: item)
 	}
 }

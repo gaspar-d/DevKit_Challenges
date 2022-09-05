@@ -1,5 +1,5 @@
 //
-//  InputMVCCoordinator.swift
+//  InputIMCCoordinator.swift
 //  Challenge
 //
 //  Created by Diogo Gaspar on 18/06/22.
@@ -11,7 +11,7 @@ protocol InputMVCCoordinatorProtocol: Coordinator {
 	func navigateToResultIMC(result: ResultIMCModel)
 }
 
-final class InputMVCCoordinator: Coordinator {
+final class InputIMCCoordinator: Coordinator {
 	public var childCoordinators: [Coordinator] = []
 	public var navigation: UINavigationController
 	
@@ -25,7 +25,7 @@ final class InputMVCCoordinator: Coordinator {
 	}
 }
 
-extension InputMVCCoordinator: InputMVCCoordinatorProtocol {
+extension InputIMCCoordinator: InputMVCCoordinatorProtocol {
 	
 	public func navigateToResultIMC(result: ResultIMCModel) {
 		let vc = ResultIMCFactory.make(result: result, coordinator: self)

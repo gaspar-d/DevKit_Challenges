@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TableControllerDelegate: AnyObject {
-	func didSelectedCell(item: Int)
+	func didSelectCell(item: Int)
 }
 
 final class TableViewDelegate: NSObject, UITableViewDelegate {
@@ -20,6 +20,6 @@ final class TableViewDelegate: NSObject, UITableViewDelegate {
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		self.delegate?.didSelectedCell(item: indexPath.item)
+		self.delegate?.didSelectCell(item: indexPath.item)
 	}
 }

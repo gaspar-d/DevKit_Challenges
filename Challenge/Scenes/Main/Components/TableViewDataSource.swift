@@ -9,7 +9,7 @@ import UIKit
 
 final class TableViewDataSource: NSObject, UITableViewDataSource {
 	
-	private var data: [String] = []
+	private(set) var data: [String] = []
 	
 	init(withData data: [String]) {
 		self.data = data

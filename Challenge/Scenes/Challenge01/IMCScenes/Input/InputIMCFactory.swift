@@ -9,7 +9,7 @@ import Foundation
 
 enum InputIMCFactory {
 	
-	static func make(coordinator: InputMVCCoordinator) -> InputIMCController {
+	static func make(coordinator: InputIMCCoordinator) -> InputIMCController {
 		
 		let validator = InputValidator()
 		let vm = InputIMCViewModel(validator: validator)

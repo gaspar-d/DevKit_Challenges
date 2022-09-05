@@ -21,22 +21,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		let safeWindow = UIWindow(windowScene: windowScene)
 		safeWindow.rootViewController = navigation
 		
-		// TODO: - To test new VCs put it in the code line bellow and comment the code line above
-//		safeWindow.rootViewController = UINavigationController(rootViewController: NewVCHere())
+		// TODO: - To test new Scenes put it in the code line bellow and comment the code line above
+		// safeWindow.rootViewController = UINavigationController(rootViewController: NewVCHere())
 		
 		safeWindow.makeKeyAndVisible()
 		
 		self.window = safeWindow
 	}
-
-	func sceneDidDisconnect(_ scene: UIScene) {}
-
-	func sceneDidBecomeActive(_ scene: UIScene) {}
-
-	func sceneWillResignActive(_ scene: UIScene) {}
-
-	func sceneWillEnterForeground(_ scene: UIScene) {}
-
-	func sceneDidEnterBackground(_ scene: UIScene) {}
 }
 

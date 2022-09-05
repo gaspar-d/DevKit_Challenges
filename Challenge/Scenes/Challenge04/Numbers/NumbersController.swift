@@ -10,7 +10,6 @@ import UIKit
 final class NumbersController: UIViewController {
 
 	public var result: Int?
-	
 	private var customView: NumbersView?
 	private let viewModel: NumbersViewModelProtocol
 	

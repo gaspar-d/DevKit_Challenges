@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ResultIMCModel {
+struct ResultIMCModel: Equatable {
 	let height: Float
 	let weight: Float
 }

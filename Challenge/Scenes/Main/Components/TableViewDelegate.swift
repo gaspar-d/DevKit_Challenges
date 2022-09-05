@@ -7,19 +7,19 @@
 
 import UIKit
 
-protocol ViewControllerDelegate: AnyObject {
-	func selectedCell(item: Int)
+protocol TableControllerDelegate: AnyObject {
+	func didSelectCell(item: Int)
 }
 
 final class TableViewDelegate: NSObject, UITableViewDelegate {
 	
-	weak var delegate: ViewControllerDelegate?
+	weak var delegate: TableControllerDelegate?
 	
-	init(withDelegate delegate: ViewControllerDelegate) {
+	init(withDelegate delegate: TableControllerDelegate) {
 		self.delegate = delegate
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		self.delegate?.selectedCell(item: indexPath.item)
+		self.delegate?.didSelectCell(item: indexPath.item)
 	}
 }

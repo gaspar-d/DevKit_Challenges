@@ -18,7 +18,9 @@ final class InputIMCController: UIViewController {
 	}
 	
 	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
+		// TODO: - fatal error 
+		return nil
+//		fatalError("init(coder:) has not been implemented")
 	}
 	
 	override func viewDidLoad() {

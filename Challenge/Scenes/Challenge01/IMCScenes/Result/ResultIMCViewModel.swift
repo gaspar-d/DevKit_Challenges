@@ -16,7 +16,7 @@ protocol ResultIMCViewModelProtocol: AnyObject {
 
 final class ResultIMCViewModel: NSObject {
 	
-	weak var coordinator: InputMVCCoordinator?
+	weak var coordinator: InputIMCCoordinator?
 	private var model: ResultIMCModel
 	private var result: Float = 0
 	private(set) var image: UIImage?

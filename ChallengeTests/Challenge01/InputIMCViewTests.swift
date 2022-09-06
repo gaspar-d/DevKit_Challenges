@@ -12,6 +12,7 @@ class InputIMCViewTests: XCTestCase {
 
 	var sutInit = InputIMCView(coder: NSCoder())
 	var sut = InputIMCView()
+	var buttonTapped: Bool = false
 	
 	func test_Init() {
 		XCTAssertNil(sutInit)
@@ -22,7 +23,9 @@ class InputIMCViewTests: XCTestCase {
 	}
 	
 	@objc func test_buttonTapped() {
-		print("Button working")
+		self.buttonTapped = true
+		
+		XCTAssertTrue(buttonTapped)
 	}
 	
 	func test_getInputHeight() {
@@ -32,5 +35,4 @@ class InputIMCViewTests: XCTestCase {
 	func test_getInputWeight() {
 		XCTAssertEqual(sut.getInputWeight, "")
 	}
-	
 }

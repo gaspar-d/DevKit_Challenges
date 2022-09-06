@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB0A919D28C7DFE30016938C /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A919C28C7DFE30016938C /* UIKitExtensions.swift */; };
 		EB11D532285E4698007F0F15 /* InputIMCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11D531285E4698007F0F15 /* InputIMCCoordinator.swift */; };
 		EB11D534285E8FFA007F0F15 /* ResultIMCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11D533285E8FFA007F0F15 /* ResultIMCModel.swift */; };
 		EB14E1F428A44E2500B3548A /* NumbersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14E1F328A44E2500B3548A /* NumbersController.swift */; };
@@ -89,6 +90,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB0A919C28C7DFE30016938C /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		EB11D531285E4698007F0F15 /* InputIMCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputIMCCoordinator.swift; sourceTree = "<group>"; };
 		EB11D533285E8FFA007F0F15 /* ResultIMCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultIMCModel.swift; sourceTree = "<group>"; };
 		EB14E1F328A44E2500B3548A /* NumbersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersController.swift; sourceTree = "<group>"; };
@@ -497,6 +499,7 @@
 			children = (
 				EBADAEB228C6890B001B68C9 /* AlertsTests.swift */,
 				EB2A9E4D28C6927F00ECFBC2 /* TextFieldLimiterTest.swift */,
+				EB0A919C28C7DFE30016938C /* UIKitExtensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				EB34698628C252B40019F939 /* InputIMCCoordinatorTests.swift in Sources */,
 				EBADAEB028C67D40001B68C9 /* InputIMCControllerTests.swift in Sources */,
 				EB34698928C25C3B0019F939 /* MainControllerTests.swift in Sources */,
+				EB0A919D28C7DFE30016938C /* UIKitExtensions.swift in Sources */,
 				EB34697B28BD58C40019F939 /* MainViewTests.swift in Sources */,
 				EB34698F28C283410019F939 /* InputValidatorProtocolTests.swift in Sources */,
 				EB2A9E4E28C6927F00ECFBC2 /* TextFieldLimiterTest.swift in Sources */,

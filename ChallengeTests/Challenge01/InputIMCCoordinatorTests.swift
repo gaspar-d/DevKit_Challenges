@@ -19,7 +19,6 @@ class InputIMCCoordinatorTests: XCTestCase {
 		
 		coordinator = InputIMCCoordinator(navigation: navigation)
 		sut = InputIMCFactory.make(coordinator: coordinator)
-		
 	}
 
     override func tearDown() {

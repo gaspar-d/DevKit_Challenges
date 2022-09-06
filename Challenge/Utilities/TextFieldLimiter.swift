@@ -14,9 +14,10 @@ protocol TextFieldLimiter: AnyObject {
 extension TextFieldLimiter {
 	
 	public func textLimit(_ currentText: String, newText: String, limit: Int) -> Bool {
-		let text = currentText
-		let atLimit = text.count + newText.count <= limit
+		let atLimit = currentText.count + newText.count <= limit
 		
 		return atLimit
 	}
 }
+
+// MARK: - Must be used inside UITextFieldDelegate -> shouldChangeCharactersIn method

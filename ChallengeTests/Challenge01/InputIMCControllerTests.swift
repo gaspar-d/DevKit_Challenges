@@ -14,10 +14,6 @@ class InputIMCControllerTests: XCTestCase {
 		coordinator: InputIMCCoordinator(
 			navigation: UINavigationController()))
 	
-	func test_isValidInputAlert() {
-		XCTAssertNotNil(sut.isValidInputAlert(title: "", message: ""))
-	}
-	
 	func test_requiredInit() {
 		let sutInit = InputIMCController(coder: NSCoder())
 		XCTAssertNil(sutInit)

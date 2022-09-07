@@ -52,33 +52,10 @@ final class InputIMCController: UIViewController {
 			return
 		}
 		
-		if viewModel.isTextFieldEmpty(height: height, weight: weight) {
-			isValidInputAlert(title: "Opa faltou digitar algo?",
-							  message: "Por favor preencha todos os campos \n para podermos calcular seu IMC")
-		}
-		
-		if viewModel.weightIsValid(weight: weight) {
-			isValidInputAlert(title: "Peso fora do limite aceito pelo App",
-							  message: "O peso precisa estar entre 15 e 150kg")
-		}
-		
-		if viewModel.heightIsValid(height: height) {
-			isValidInputAlert(title: "Altura fora do limite aceito pelo App",
-							  message: "A altura precisa estar entre 100 e 210 centímetros.")
-		}
+		viewModel.isInputValid(height: height, weight: weight, controller: self)
 		
 		let result = viewModel.validateUserInput(height: height, weight: weight)
 		
 		viewModel.navigateToResult(result: result)
-	}
-	
-	func isValidInputAlert(title: String, message: String) {
-		let alert = UIAlertController(title: title,
-									  message: message,
-									  preferredStyle: .alert)
-		let okAction = UIAlertAction(title: "OK", style: .cancel)
-		
-		alert.addAction(okAction)
-		present(alert, animated: true)
 	}
 }

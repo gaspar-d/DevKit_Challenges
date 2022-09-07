@@ -27,14 +27,13 @@ class InputIMCCoordinatorTests: XCTestCase {
 	}
 
     func test_DidTapCalculateButton() {
-		sut.didTapCalculateButton()
+		XCTAssertNotNil(sut.didTapCalculateButton())
 	}
 	
 	func test_IsValidInputAlert() {
-		sut.isValidInputAlert(title: "", message: "")
-		
+
 		let result: () = coordinator.navigateToResultIMC(result: ResultIMCModel(height: 100, weight: 100))
-		
+
 		XCTAssertNotNil(result)
 	}
 }

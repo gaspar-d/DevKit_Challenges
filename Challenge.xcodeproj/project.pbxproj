@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		EB0A919D28C7DFE30016938C /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A919C28C7DFE30016938C /* UIKitExtensions.swift */; };
+		EB0A91A028D046D80016938C /* CarRotationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A919F28D046D80016938C /* CarRotationCoordinatorTests.swift */; };
+		EB0A91A328D04A6C0016938C /* PalindromeCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A91A228D04A6C0016938C /* PalindromeCoordinatorTests.swift */; };
 		EB11D532285E4698007F0F15 /* InputIMCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11D531285E4698007F0F15 /* InputIMCCoordinator.swift */; };
 		EB11D534285E8FFA007F0F15 /* ResultIMCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11D533285E8FFA007F0F15 /* ResultIMCModel.swift */; };
 		EB14E1F428A44E2500B3548A /* NumbersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14E1F328A44E2500B3548A /* NumbersController.swift */; };
@@ -91,6 +93,8 @@
 
 /* Begin PBXFileReference section */
 		EB0A919C28C7DFE30016938C /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
+		EB0A919F28D046D80016938C /* CarRotationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRotationCoordinatorTests.swift; sourceTree = "<group>"; };
+		EB0A91A228D04A6C0016938C /* PalindromeCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromeCoordinatorTests.swift; sourceTree = "<group>"; };
 		EB11D531285E4698007F0F15 /* InputIMCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputIMCCoordinator.swift; sourceTree = "<group>"; };
 		EB11D533285E8FFA007F0F15 /* ResultIMCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultIMCModel.swift; sourceTree = "<group>"; };
 		EB14E1F328A44E2500B3548A /* NumbersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersController.swift; sourceTree = "<group>"; };
@@ -183,6 +187,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB0A919E28D046890016938C /* Challenge02 */ = {
+			isa = PBXGroup;
+			children = (
+				EB0A919F28D046D80016938C /* CarRotationCoordinatorTests.swift */,
+			);
+			path = Challenge02;
+			sourceTree = "<group>";
+		};
+		EB0A91A128D04A2D0016938C /* Challenge03 */ = {
+			isa = PBXGroup;
+			children = (
+				EB0A91A228D04A6C0016938C /* PalindromeCoordinatorTests.swift */,
+			);
+			path = Challenge03;
+			sourceTree = "<group>";
+		};
 		EB14E1F228A44DE900B3548A /* Challenge04 */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +368,8 @@
 				EBADAEB128C688F7001B68C9 /* Utilities */,
 				EB34697928BD58AD0019F939 /* Main */,
 				EB34698428C252340019F939 /* Challenge01 */,
+				EB0A919E28D046890016938C /* Challenge02 */,
+				EB0A91A128D04A2D0016938C /* Challenge03 */,
 			);
 			path = ChallengeTests;
 			sourceTree = "<group>";
@@ -663,6 +685,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB0A91A328D04A6C0016938C /* PalindromeCoordinatorTests.swift in Sources */,
 				EBADAEB328C6890B001B68C9 /* AlertsTests.swift in Sources */,
 				EB34698B28C263D20019F939 /* InputIMCViewTests.swift in Sources */,
 				EB34697F28C034900019F939 /* MainViewModelTests.swift in Sources */,
@@ -672,6 +695,7 @@
 				EB0A919D28C7DFE30016938C /* UIKitExtensions.swift in Sources */,
 				EB34697B28BD58C40019F939 /* MainViewTests.swift in Sources */,
 				EB34698F28C283410019F939 /* InputValidatorProtocolTests.swift in Sources */,
+				EB0A91A028D046D80016938C /* CarRotationCoordinatorTests.swift in Sources */,
 				EB2A9E4E28C6927F00ECFBC2 /* TextFieldLimiterTest.swift in Sources */,
 				EB34698D28C2691E0019F939 /* InputIMCViewModelTests.swift in Sources */,
 				EB34698328C2364F0019F939 /* MainCoordinatorTests.swift in Sources */,

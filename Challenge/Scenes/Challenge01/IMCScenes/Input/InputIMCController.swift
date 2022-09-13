@@ -53,9 +53,7 @@ final class InputIMCController: UIViewController {
 		}
 		
 		viewModel.isInputValid(height: height, weight: weight, controller: self)
-		
 		let result = viewModel.validateUserInput(height: height, weight: weight)
-		
 		viewModel.navigateToResult(result: result)
 	}
 }

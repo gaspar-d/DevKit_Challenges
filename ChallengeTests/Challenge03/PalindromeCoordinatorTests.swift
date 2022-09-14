@@ -10,15 +10,22 @@ import XCTest
 
 class PalindromeCoordinatorTests: XCTestCase {
 
-	var sut = PalindromeCoordinator(navigation: UINavigationController())
+	var sut = PalindromeCoordinator(navigation: NavigationControllerMock())
 	var mock = PalindromeCoordinatorProtocolMock()
+	var navigation = NavigationControllerMock()
 	
 	func test_navigateToPalindromeDescription() {
+		
 		XCTAssertNotNil(sut.navigateToPalindromeDescription())
-	
 		XCTAssertFalse(mock.navigateToPalindrome)
 		mock.navigateToPalindromeDescription()
 		XCTAssertTrue(mock.navigateToPalindrome)
+	}
+	
+	func test_PalindromeWebSceneDidAppear() {
+		XCTAssertFalse(navigation.pushViewControllerTesting)
+		navigation.pushViewController(UIViewController(), animated: true)
+		XCTAssertTrue(navigation.pushViewControllerTesting)
 	}
 }
 
@@ -27,9 +34,6 @@ class PalindromeCoordinatorProtocolMock: PalindromeCoordinatorProtocol {
 	
 	func navigateToPalindromeDescription() {
 		self.navigateToPalindrome = true
-		
 	}
-	
-	
-	
 }
+

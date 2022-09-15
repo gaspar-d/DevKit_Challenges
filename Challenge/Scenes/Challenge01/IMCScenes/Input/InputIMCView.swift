@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol InputIMCViewProtocol: AnyObject {
+	var getInputHeight: String { get }
+	var getInputWeight: String { get }
+	
+	func buttonAction(target: Any?, action: Selector)
+}
 final class InputIMCView: UIView {
 	
 	private let width = UIScreen.main.bounds.width
@@ -131,8 +137,11 @@ final class InputIMCView: UIView {
 		// TODO: - fatal error test
 		return nil
 	}
-	
-	// MARK: - Methods
+}
+
+	// MARK: - 
+
+extension InputIMCView: InputIMCViewProtocol {
 	
 	public func buttonAction(target: Any?, action: Selector) {
 		calculateButton.addTarget(target, action: action, for: .touchUpInside)

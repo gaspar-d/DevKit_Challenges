@@ -18,16 +18,6 @@ class InputIMCViewTests: XCTestCase {
 		XCTAssertNil(sutInit)
 	}
 
-	func test_buttonAction() {
-		sut.buttonAction(target: self, action: #selector(test_buttonTapped))
-	}
-	
-	@objc func test_buttonTapped() {
-		self.buttonTapped = true
-		
-		XCTAssertTrue(buttonTapped)
-	}
-	
 	func test_getInputHeight() {
 		XCTAssertEqual(sut.getInputHeight, "")
 	}

@@ -97,8 +97,6 @@ class NavigationControllerMock: UINavigationController {
 	var pushViewControllerTesting: Bool = false
 	
 	override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-		super.pushViewController(viewController,
-								 animated: animated)
 		
 		pushViewControllerTesting = true
 	}

@@ -7,6 +7,17 @@
 
 import UIKit
 
+protocol NumbersViewProtocol: AnyObject {
+	func setInputTextLabelDelegate(delegate: UITextFieldDelegate)
+	func resetLabels()
+	func setIsPrimeLabel(result: Bool)
+	func setIsEvenLabel(result: Bool)
+	func setIsOddLabel(result: Bool)
+	func setIsNaturalLabel(result: Bool)
+	func getInputText(target: Any?, action: Selector)
+	func revealButtonAction(target: Any?, action: Selector)
+}
+
 final class NumbersView: UIView {
 	
 	private lazy var titleLabel: UILabel = {
@@ -113,7 +124,24 @@ final class NumbersView: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	private func setIconForLabel(with text: String, label: UILabel, for icon: Bool) {
+		let imageIcon = NSTextAttachment()
+		if icon {
+			imageIcon.image = UIImage(systemName: "checkmark")?.withTintColor(.systemGreen)
+		} else {
+			imageIcon.image = UIImage(systemName: "xmark")?.withTintColor(.systemRed)
+		}
+		
+		let fullString = NSMutableAttributedString(string: "")
+		fullString.append(NSAttributedString(attachment: imageIcon))
+		fullString.append(NSAttributedString(string: " Número \(text)"))
+		label.attributedText = fullString
+	}
+}
+
 	// MARK: - Methods
+
+extension NumbersView: NumbersViewProtocol {
 
 	public func setInputTextLabelDelegate(delegate: UITextFieldDelegate) {
 		inputField.delegate = delegate
@@ -148,21 +176,6 @@ final class NumbersView: UIView {
 	
 	public func revealButtonAction(target: Any?, action: Selector) {
 		revealButton.addTarget(target, action: action, for: .touchUpInside)
-	}
-	
-	// TODO: - see where to put it
-	private func setIconForLabel(with text: String, label: UILabel, for icon: Bool) {
-		let imageIcon = NSTextAttachment()
-		if icon {
-			imageIcon.image = UIImage(systemName: "checkmark")?.withTintColor(.systemGreen)
-		} else {
-			imageIcon.image = UIImage(systemName: "xmark")?.withTintColor(.systemRed)
-		}
-		
-		let fullString = NSMutableAttributedString(string: "")
-		fullString.append(NSAttributedString(attachment: imageIcon))
-		fullString.append(NSAttributedString(string: " Número \(text)"))
-		label.attributedText = fullString
 	}
 }
 

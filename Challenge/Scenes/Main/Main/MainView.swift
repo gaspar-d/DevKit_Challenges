@@ -11,8 +11,13 @@ enum CellIdentifier {
 	static let cell = "reusableCellIdentifier"
 }
 
-final class MainView: UIView {
+protocol MainViewProtocol: AnyObject {
+	func setTableViewProtocols(withDelegate delegate: UITableViewDelegate,
+							   withDataSource dataSource: UITableViewDataSource)
+}
 
+final class MainView: UIView {
+	
 	private lazy var mainTableView: UITableView = {
 		let tableView = UITableView()
 		tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -23,13 +28,15 @@ final class MainView: UIView {
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		
 		setup()
 	}
 	
 	required init?(coder: NSCoder) {
-		return nil
+		fatalError("Storyboard not founded")
 	}
+}
+
+extension MainView: MainViewProtocol {
 	
 	public func setTableViewProtocols(withDelegate delegate: UITableViewDelegate,
 									  withDataSource dataSource: UITableViewDataSource) {

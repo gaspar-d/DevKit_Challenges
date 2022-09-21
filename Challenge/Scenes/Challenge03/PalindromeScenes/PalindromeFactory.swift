@@ -15,7 +15,9 @@ enum PalindromeFactory {
 		let validator = PalindromeValidator()
 		let vm = PalindromeViewModel(validator: validator, alert: alert)
 		vm.coordinator = coordinator
-		let vc = PalindromeController(viewModel: vm)
+		let customView = PalindromeView()
+		let vc = PalindromeController(customView: customView,
+									  viewModel: vm)
 		
 		return vc
 	}

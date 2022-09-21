@@ -10,8 +10,11 @@ import XCTest
 
 class TextFieldLimiterTest: XCTestCase, TextFieldLimiter {
 	
-	func test_textLimit() {
+	func test_textLimit_True() {
 		XCTAssertTrue(textLimit("123", newText: "456", limit: 6))
+	}
+	
+	func test_textLimit_False() {
 		XCTAssertFalse(textLimit("123", newText: "456", limit: 5))
 	}
 }

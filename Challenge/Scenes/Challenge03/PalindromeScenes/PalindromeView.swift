@@ -7,6 +7,13 @@
 
 import UIKit
 
+protocol PalindromeViewProtocol: AnyObject {
+	func getInputedText() -> String?
+	func didTapHelpButton(target: Any?, action: Selector)
+	func didTapVerifyButton(target: Any?, action: Selector)
+	func cleanInput()
+}
+
 final class PalindromeView: UIView {
 	
 	let itemsHeight: CGFloat = 54
@@ -104,8 +111,10 @@ final class PalindromeView: UIView {
 	required init?(coder: NSCoder) {
 		fatalError("ERROR: can't find PalindromeView")
 	}
+}
 	
 	// MARK: - Methods
+extension PalindromeView: PalindromeViewProtocol {
 	
 	public func getInputedText() -> String? {
 		return verifyTextField.text!

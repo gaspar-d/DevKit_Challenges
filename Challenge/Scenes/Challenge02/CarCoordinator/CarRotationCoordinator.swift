@@ -32,3 +32,4 @@ extension CarRotationCoordinator: CarRotationCoordinatorProtocol {
 		navigation.pushViewController(vc, animated: true)
 	}
 }
+

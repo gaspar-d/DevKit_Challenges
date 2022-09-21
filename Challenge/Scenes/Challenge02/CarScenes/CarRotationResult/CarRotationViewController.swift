@@ -9,10 +9,13 @@ import UIKit
 
 final class CarRotationController: UIViewController {
 	
-	private var customView: CarRotationView?
+	private var customView: CarRotationViewProtocol?
 	private var viewModel: CarRotationViewModelProtocol?
 	
-	init(viewModel: CarRotationViewModelProtocol) {
+	init(customView: CarRotationViewProtocol,
+		 viewModel: CarRotationViewModelProtocol)
+	{
+		self.customView = customView
 		self.viewModel = viewModel
 		super.init(nibName: nil, bundle: nil)
 	}
@@ -32,8 +35,7 @@ final class CarRotationController: UIViewController {
 	
 	// MARK: - methods
 	private func setupView() {
-		customView = CarRotationView()
-		self.view = customView
+		self.view = customView as? UIView
 	}
 	
 	private func setupNavigationBar() {

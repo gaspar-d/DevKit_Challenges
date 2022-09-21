@@ -10,12 +10,12 @@ import XCTest
 
 class InputIMCControllerTests: XCTestCase {
 	
-	let sut = InputIMCFactory.make(
-		coordinator: InputIMCCoordinator(
-			navigation: UINavigationController()))
-	
-	func test_requiredInit() {
-		let sutInit = InputIMCController(coder: NSCoder())
-		XCTAssertNil(sutInit)
-	}
+//	let sut = InputIMCFactory.make(
+//		coordinator: InputIMCCoordinator(
+//			navigation: UINavigationController()))
+//	
+//	func test_requiredInit() {
+//		let sutInit = InputIMCController(coder: NSCoder())
+//		XCTAssertNil(sutInit)
+//	}
 }

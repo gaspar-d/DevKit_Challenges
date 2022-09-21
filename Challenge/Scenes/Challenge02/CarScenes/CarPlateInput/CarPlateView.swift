@@ -7,10 +7,17 @@
 
 import UIKit
 
+protocol CarPlateViewProtocol: AnyObject {
+	var getPlateInput: String? { get }
+	func setPlateButtonAction(target: Any?, action: Selector)
+	func cleanPlateField()
+	func setTextFieldDelegate(delegate: UITextFieldDelegate)
+}
+
 final class CarPlateView: UIView {
 	
 	private let paddings: CGFloat = 20
-
+	
 	private lazy var plateLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
@@ -66,14 +73,17 @@ final class CarPlateView: UIView {
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
-	
-	// MARK: - methods
-	public func setPlateButtonAction(target: Any?, action: Selector) {
-		plateButton.addTarget(target, action: action, for: .touchUpInside)
-	}
+}
+
+// MARK: - methods
+extension CarPlateView: CarPlateViewProtocol {
 	
 	public var getPlateInput: String? {
 		plateField.text
+	}
+	
+	public func setPlateButtonAction(target: Any?, action: Selector) {
+		plateButton.addTarget(target, action: action, for: .touchUpInside)
 	}
 	
 	public func cleanPlateField() {
@@ -84,6 +94,8 @@ final class CarPlateView: UIView {
 		plateField.delegate = delegate
 	}
 }
+
+// MARK: - View Constraints
 
 extension CarPlateView: ViewCodeTemplate {
 	public func setupComponents() {

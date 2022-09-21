@@ -7,6 +7,14 @@
 
 import UIKit
 
+protocol ResultIMCViewProtocol: AnyObject {
+	func closeButtonAction(target: Any?, action: Selector)
+	func recalculateButtonAction(target: Any?, action: Selector)
+	func setNumberResult(result: String)
+	func setImage(image: UIImage, color: UIColor)
+	func setClassificationResult(with result: String, and color: UIColor)
+}
+
 final class ResultIMCView: UIView {
 	
 	private lazy var imcImage: UIImageView = {
@@ -90,6 +98,9 @@ final class ResultIMCView: UIView {
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
+}
+
+extension ResultIMCView: ResultIMCViewProtocol {
 	
 	public func closeButtonAction(target: Any?, action: Selector) {
 		closeButton.addTarget(target, action: action, for: .touchUpInside)

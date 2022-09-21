@@ -9,19 +9,22 @@ import UIKit
 
 final class MainController: UIViewController {
 	
-	private var customView: MainView?
+	private var customView: MainViewProtocol
 	private let viewModel: MainViewModelProtocol
 	private var tableViewDelegate: TableViewDelegate?
 	private var tableViewDataSource: TableViewDataSource?
 	
-	init(viewModel: MainViewModelProtocol) {
+	init(customView: MainViewProtocol,
+		 viewModel: MainViewModelProtocol)
+	{
+		self.customView = customView
 		self.viewModel = viewModel
 		super.init(nibName: nil, bundle: nil)
 	}
 	
 	required init?(coder: NSCoder) {
 		// TODO: - testing a fatalError()
-		return nil
+		fatalError("Storyboard not founded")
 	}
 	
 	override func viewDidLoad() {
@@ -35,8 +38,7 @@ final class MainController: UIViewController {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		title = "DevKit Challenges"
 		
-		customView = MainView()
-		view = customView
+		view = customView as? UIView
 	}
 	
 	private func setupTableView() {
@@ -46,7 +48,7 @@ final class MainController: UIViewController {
 		tableViewDelegate = delegate
 		tableViewDataSource = dataSource
 		
-		customView?.setTableViewProtocols(withDelegate: delegate,
+		customView.setTableViewProtocols(withDelegate: delegate,
 										  withDataSource: dataSource)
 	}
 }

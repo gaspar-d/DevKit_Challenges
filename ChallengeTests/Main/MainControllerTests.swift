@@ -44,12 +44,6 @@ class MainControllerTests: XCTestCase {
 		XCTAssertEqual(datasource?.data, ["Joe", "Doe"])
 	}
 	
-	func test_initCoder() {
-		// TODO: - FatalError???
-		let sutInit = MainController(coder: NSCoder())
-		XCTAssertNil(sutInit)
-	}
-	
 	override func tearDown() {
 		tableView = nil
 		datasource = nil

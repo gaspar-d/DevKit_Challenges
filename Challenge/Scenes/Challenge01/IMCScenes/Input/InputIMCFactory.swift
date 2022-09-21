@@ -13,9 +13,10 @@ enum InputIMCFactory {
 		
 		let validator = InputValidator()
 		let alert = Alerts()
+		let customView = InputIMCView()
 		let vm = InputIMCViewModel(validator: validator, alert: alert)
 		vm.coordinator = coordinator
-		let vc = InputIMCController(viewModel: vm)
+		let vc = InputIMCController(customView: customView, viewModel: vm)
 		
 		return vc
 	}

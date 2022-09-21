@@ -13,9 +13,11 @@ enum CarPlateFactory {
 		
 		let alert = Alerts()
 		let validator = CarRotationValidator()
+		let customView = CarPlateView()
 		let vm = CarPlateViewModel(validator: validator, alert: alert)
 		vm.coordinator = coordinator
-		let vc = CarPlateController(viewModel: vm)
+		let vc = CarPlateController(customView: customView,
+									viewModel: vm)
 		
 		return vc
 	}

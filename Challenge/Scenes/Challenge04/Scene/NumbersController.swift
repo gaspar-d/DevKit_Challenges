@@ -10,10 +10,13 @@ import UIKit
 final class NumbersController: UIViewController {
 
 	public var result: Int?
-	private var customView: NumbersView?
+	private var customView: NumbersViewProtocol?
 	private let viewModel: NumbersViewModelProtocol
 	
-	init(viewModel: NumbersViewModelProtocol) {
+	init(customView: NumbersViewProtocol = NumbersView(),
+		 viewModel: NumbersViewModelProtocol)
+	{
+		self.customView = customView
 		self.viewModel = viewModel
 		super.init(nibName: nil, bundle: nil)
 	}
@@ -32,8 +35,7 @@ final class NumbersController: UIViewController {
 	}
 	
 	private func setupView() {
-		customView = NumbersView()
-		self.view = customView
+		self.view = customView as? UIView
 		
 		title = "Números"
 		navigationController?.navigationBar.prefersLargeTitles = true

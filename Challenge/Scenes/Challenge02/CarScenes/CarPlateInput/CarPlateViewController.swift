@@ -9,10 +9,13 @@ import UIKit
 
 final class CarPlateController: UIViewController {
 	
-	private var customView: CarPlateView?
+	private var customView: CarPlateViewProtocol
 	private var viewModel: CarPlateViewModelProtocol
 	
-	init(viewModel: CarPlateViewModelProtocol) {
+	init(customView: CarPlateViewProtocol,
+		 viewModel: CarPlateViewModelProtocol)
+	{
+		self.customView = customView
 		self.viewModel = viewModel
 		super.init(nibName: nil, bundle: nil)
 	}
@@ -26,27 +29,26 @@ final class CarPlateController: UIViewController {
 		
 		setupView()
 		setupButtonAction()
-		customView?.setTextFieldDelegate(delegate: self)
+		customView.setTextFieldDelegate(delegate: self)
 	}
 	
 	private func setupView() {
 		title = "Rodízio Automotivo SP"
 		
-		customView = CarPlateView()
-		self.view = customView
+		self.view = customView as? UIView
 	}
 	
 	private func setupButtonAction() {
-		customView?.setPlateButtonAction(target: self,
+		customView.setPlateButtonAction(target: self,
 										 action: #selector(didTapPlateButton))
 	}
 	
 	@objc private func didTapPlateButton() {
-		guard let plate = customView?.getPlateInput else { return }
-
+		guard let plate = customView.getPlateInput else { return }
+		
 		viewModel.isInputValid(with: plate, controller: self)
 		viewModel.navigateToCarRotation(with: plate)
-		customView?.cleanPlateField()
+		customView.cleanPlateField()
 	}
 }
 

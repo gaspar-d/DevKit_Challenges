@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol CarRotationViewProtocol: AnyObject {
+	func setRotationDayLabel(with plate: String)
+	func setWeekdayLabel(with weekday: String)
+	func setNewQueryButtonAction(target: Any?, action: Selector)
+}
+
 final class CarRotationView: UIView {
 	
 	private let paddings: CGFloat = 20
@@ -71,8 +77,10 @@ final class CarRotationView: UIView {
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
-	
-	// MARK: - Methods
+}
+
+// MARK: - Methods
+extension CarRotationView: CarRotationViewProtocol {
 	public func setRotationDayLabel(with plate: String) {
 		rotationDayLabel.text = plate
 	}

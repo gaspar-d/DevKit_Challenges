@@ -69,7 +69,6 @@ extension CarRotationViewModel: CarRotationViewModelProtocol {
 			weekDayAsInt = 5
 		case "sexta-feira":
 			weekDayAsInt = 6
-			
 		default:
 			fatalError("ERROR: Can't get a weekday number")
 		}
@@ -77,7 +76,6 @@ extension CarRotationViewModel: CarRotationViewModelProtocol {
 		var rotationDay: String = ""
 		
 		guard var systemWeekday = Calendar.current.dateComponents([.weekday], from: .now).weekday else { return "não pegou o dia de hoje"}
-		
 		
 		if weekDayAsInt == systemWeekday {
 			rotationDay = "Hoje"
@@ -105,10 +103,6 @@ extension CarRotationViewModel: CarRotationViewModelProtocol {
 			if weekDayAsInt == systemWeekday {
 				rotationDay = "Daqui a três dias"
 			}
-		}
-		
-		if weekDayAsInt != systemWeekday {
-			rotationDay = ""
 		}
 		
 		return rotationDay

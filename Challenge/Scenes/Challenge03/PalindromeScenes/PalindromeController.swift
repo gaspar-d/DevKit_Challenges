@@ -9,10 +9,13 @@ import UIKit
 
 final class PalindromeController: UIViewController {
 	
-	private var customView: PalindromeView?
+	private var customView: PalindromeViewProtocol?
 	private let viewModel: PalindromeViewModelProtocol
 
-	init(viewModel: PalindromeViewModelProtocol) {
+	init(customView: PalindromeViewProtocol,
+		 viewModel: PalindromeViewModelProtocol)
+	{
+		self.customView = customView
 		self.viewModel = viewModel
 		super.init(nibName: nil, bundle: nil)
 	}
@@ -29,8 +32,7 @@ final class PalindromeController: UIViewController {
 	}
 	
 	private func setupView() {
-		customView = PalindromeView()
-		self.view = customView
+		self.view = customView as? UIView
 		
 		title = "PALINDROMO"
 		navigationController?.navigationBar.prefersLargeTitles = true

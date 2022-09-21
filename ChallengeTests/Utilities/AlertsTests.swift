@@ -13,17 +13,29 @@ class AlertsTests: XCTestCase {
 	let sutMock = AlertsMock()
 	let sut = Alerts()
 	
-	func test_popup() {
-		
+	func test_popupAssertEmptyString() {
 		XCTAssertNotNil(sut.popup(title: "", message: "", controller: UIViewController()))
+	}
+	
+	func test_popupAssertEmptyMessage() {
+		sutMock.popup(title: "test title", message: "", controller: UIViewController())
 		
-		XCTAssertFalse(sutMock.popup)
+		XCTAssertEqual(sutMock.title, "test title")
+		XCTAssertEqual(sutMock.message, "")
+	}
+	
+	func test_popupAssertEmptyTitle() {
+		sutMock.popup(title: "", message: "test message", controller: UIViewController())
 		
+		XCTAssertEqual(sutMock.title, "")
+		XCTAssertEqual(sutMock.message, "test message")
+	}
+	
+	func test_popupAssertAllFilled() {
 		sutMock.popup(title: "test title", message: "test message", controller: UIViewController())
 		
 		XCTAssertEqual(sutMock.title, "test title")
 		XCTAssertEqual(sutMock.message, "test message")
-		XCTAssertTrue(sutMock.popup)
 	}
 }
 
@@ -32,11 +44,9 @@ class AlertsMock: AlertsProtocol {
 	var title: String? = nil
 	var message: String? = nil
 	var controller: UIViewController? = nil
-	var popup: Bool = false
 	
 	func popup(title: String, message: String, controller: UIViewController) {
 		
-		self.popup = true
 		self.title = title
 		self.message = message
 		self.controller = controller

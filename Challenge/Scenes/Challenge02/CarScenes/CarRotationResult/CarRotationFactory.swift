@@ -13,7 +13,9 @@ enum CarRotationFactory {
 		let vm = CarRotationViewModel()
 		vm.coordinator = coordinator
 		vm.plate = plate
-		let vc = CarRotationController(viewModel: vm)
+		let customView = CarRotationView()
+		let vc = CarRotationController(customView: customView,
+									   viewModel: vm)
 		
 		return vc
 	}

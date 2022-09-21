@@ -9,18 +9,19 @@ import UIKit
 
 final class InputIMCController: UIViewController {
 	
-	private var customView: InputIMCView?
+	private var customView: InputIMCViewProtocol?
 	public var viewModel: InputIMCViewModelProtocol
 	
-	init(viewModel: InputIMCViewModelProtocol) {
+	init(customView: InputIMCViewProtocol,
+		 viewModel: InputIMCViewModelProtocol)
+	{
 		self.viewModel = viewModel
+		self.customView = customView
 		super.init(nibName: nil, bundle: nil)
 	}
 	
 	required init?(coder: NSCoder) {
-		// TODO: - fatal error 
-		return nil
-//		fatalError("init(coder:) has not been implemented")
+		fatalError("init(coder:) has not been implemented")
 	}
 	
 	override func viewDidLoad() {
@@ -31,8 +32,7 @@ final class InputIMCController: UIViewController {
 	}
 	
 	private func setupView() {
-		customView = InputIMCView()
-		view = customView
+		view = customView as? UIView // OK O DOWNCASTING ?
 	}
 	
 	private func setupNavigationBar() {

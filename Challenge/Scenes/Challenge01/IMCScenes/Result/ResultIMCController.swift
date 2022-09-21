@@ -9,10 +9,13 @@ import UIKit
 
 final class ResultIMCController: UIViewController {
 	
-	private var customView: ResultIMCView?
+	private var customView: ResultIMCViewProtocol
 	public var viewModel: ResultIMCViewModelProtocol
 	
-	init(viewModel: ResultIMCViewModelProtocol) {
+	init(customView: ResultIMCViewProtocol,
+		 viewModel: ResultIMCViewModelProtocol)
+	{
+		self.customView = customView
 		self.viewModel = viewModel
 		super.init(nibName: nil, bundle: nil)
 	}
@@ -31,8 +34,7 @@ final class ResultIMCController: UIViewController {
 	}
 	
 	private func setupView() {
-		customView = ResultIMCView()
-		view = customView
+		view = customView as? UIView
 	}
 	
 	private func setupNavigationBar() {
@@ -42,10 +44,10 @@ final class ResultIMCController: UIViewController {
 	}
 	
 	private func setupButtonAction() {
-		customView?.closeButtonAction(target: self,
+		customView.closeButtonAction(target: self,
 									  action: #selector(didTapCloseButton))
 		
-		customView?.recalculateButtonAction(target: self,
+		customView.recalculateButtonAction(target: self,
 											action: #selector( didTaRecalculateButton))
 	}
 	
@@ -64,8 +66,8 @@ final class ResultIMCController: UIViewController {
 			  let text = viewModel.classification
 		else { return }
 		
-		customView?.setImage(image: image, color: color)
-		customView?.setNumberResult(result: result)
-		customView?.setClassificationResult(with: text, and: color)
+		customView.setImage(image: image, color: color)
+		customView.setNumberResult(result: result)
+		customView.setClassificationResult(with: text, and: color)
 	}
 }

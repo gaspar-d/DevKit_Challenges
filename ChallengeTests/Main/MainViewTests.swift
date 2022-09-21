@@ -10,10 +10,10 @@ import XCTest
 
 class MainViewTests: XCTestCase {
 
-	let sut = MainView(coder: NSCoder())
-	
-	func test_InitCoder() {
-		// TODO: - FatalError ???
-		XCTAssertNil(sut)
-	}
+//	let sut = MainView(coder: NSCoder())
+//	
+//	func test_InitCoder() {
+//		// TODO: - FatalError ???
+//		XCTAssertNil(sut)
+//	}
 }

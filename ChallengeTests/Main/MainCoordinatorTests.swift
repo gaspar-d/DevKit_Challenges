@@ -11,36 +11,92 @@ import XCTest
 class MainCoordinatorTests: XCTestCase {
 	
 	var sut: MainController!
-	var coordinator: MainCoordinator!
+	var coordinator: MainCoordinator!	
 	var delegate: TableViewDelegate?
 	
-	var coordinatorMock: MainCoordinatorMock!
-	var navigation: NavigationControllerMock!
+	var spy = NavigationControllerMock()
+	
+	func buildSut() -> MainCoordinator {
+		let sut = MainCoordinator(navigation: spy)
+		
+		return sut
+	}
+	
+	func test_navigateToSceneIndex() {
+		let sut = buildSut()
+		let sceneIndex = 1
+		
+		sut.navigateTo(sceneIndex: sceneIndex)
+		XCTAssertTrue(spy.pushViewControllerTesting)
+	}
+	
+	// MARK: - MainCoordinator
+	let inputCoordinator = InputIMCCoordinator(navigation: NavigationControllerMock())
+	
+	func test_navigateToIndexZero() {
+
+		// Given
+		let scene = 0
+		
+		// When
+		coordinator.navigateTo(sceneIndex: scene)
+		inputCoordinator.start()
+		
+		// Then
+		XCTAssertEqual(spy.pushViewControllerTesting, true)
+	}
+	
+	func test_navigateToIndexOne() {
+		
+		// when
+		let scene = 1
+		
+		// given
+		coordinator.navigateTo(sceneIndex: scene)
+		inputCoordinator.start()
+		
+		// then
+		XCTAssertEqual(spy.pushViewControllerTesting, true)
+		
+	}
+	
+	func test_navigateToIndexTwo() {
+		
+		// when
+		let scene = 2
+		
+		// given
+		coordinator.navigateTo(sceneIndex: scene)
+		inputCoordinator.start()
+		
+		// then
+		XCTAssertEqual(spy.pushViewControllerTesting, true)
+	}
+	
+	func test_navigateToIndexThree() {
+		
+		// when
+		let scene = 3
+		
+		// given
+		coordinator.navigateTo(sceneIndex: scene)
+		inputCoordinator.start()
+		
+		// then
+		XCTAssertEqual(spy.pushViewControllerTesting, true)
+	}
+	
+	// MARK: - Controller
 	
 	override func setUp() {
-		navigation = NavigationControllerMock()
-		coordinator = MainCoordinator(navigation: navigation)
+		spy = NavigationControllerMock()
+		coordinator = MainCoordinator(navigation: spy)
 		sut = MainFactory.make(coordinator: coordinator)
-		coordinatorMock = MainCoordinatorMock(navigation: navigation)
 	}
-
+	
 	func test_pushViewController() {
-		navigation.pushViewController(UIViewController(), animated: false)
-		XCTAssertTrue(navigation.pushViewControllerTesting)
-	}
-	
-	func test_start() {
-		XCTAssertFalse(coordinatorMock.startVC)
-		coordinatorMock.start()
-		XCTAssertTrue(coordinatorMock.startVC)
-	}
-	
-	func test_navigateTo() {
-		XCTAssertFalse(coordinatorMock.navigateTo)
-		coordinatorMock.navigateTo(sceneIndex: 1)
-		
-		XCTAssertEqual(coordinatorMock.sceneIndex, 1)
-		XCTAssertTrue(coordinatorMock.navigateTo)
+		spy.pushViewController(UIViewController(), animated: false)
+		XCTAssertTrue(spy.pushViewControllerTesting)
 	}
 	
 	func test_DidSelectCell() {
@@ -66,39 +122,6 @@ class MainCoordinatorTests: XCTestCase {
 	override func tearDown() {
 		sut = nil
 		coordinator = nil
-	}
-}
-
-// MARK: - Mocks
-
-class MainCoordinatorMock: MainCoordinatorProtocol {
-	
-	var childCoordinators: [Challenge.Coordinator] = []
-	var navigation: UINavigationController
-	var navigateTo = false
-	var startVC = false
-	var sceneIndex: Int?
-	
-	init(navigation: UINavigationController) {
-		self.navigation = navigation
-	}
-	
-	func start() {
-		self.startVC = true
-	}
-	
-	func navigateTo(sceneIndex: Int) {
-		self.sceneIndex = sceneIndex
-		self.navigateTo = true
-	}
-}
-
-class NavigationControllerMock: UINavigationController {
-	var pushViewControllerTesting: Bool = false
-	
-	override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-		
-		pushViewControllerTesting = true
 	}
 }
 

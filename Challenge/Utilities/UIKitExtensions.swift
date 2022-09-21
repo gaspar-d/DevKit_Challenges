@@ -11,7 +11,7 @@ extension String {
 	mutating func applyPatternOnString(pattern: String, replacementCharacter: Character) -> String {
 		
 		for index in 0 ..< pattern.count {
-			guard index < self.count else { return self}
+			guard index < self.count else { return self }
 			
 			let stringIndex = String.Index(utf16Offset: index, in: pattern)
 			let patternCharacter = pattern[stringIndex]

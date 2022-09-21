@@ -15,6 +15,5 @@ class UIKitExtensions: XCTestCase {
 		let result = text.applyPatternOnString(pattern: "# # # # #", replacementCharacter: "#")
 		
 		XCTAssertEqual(result, "a b c d e")
-		
 	}
 }

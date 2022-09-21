@@ -48,8 +48,9 @@
 		EB269E80285D8E2200B91825 /* ResultIMCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E7F285D8E2200B91825 /* ResultIMCViewModel.swift */; };
 		EB269E82285D8F1E00B91825 /* ResultIMCFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269E81285D8F1E00B91825 /* ResultIMCFactory.swift */; };
 		EB2A9E4E28C6927F00ECFBC2 /* TextFieldLimiterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2A9E4D28C6927F00ECFBC2 /* TextFieldLimiterTest.swift */; };
+		EB3044D628D90F140074F321 /* NavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3044D528D90F140074F321 /* NavigationControllerMock.swift */; };
+		EB31159028DA7CC200A0ADD2 /* MainCoordinatorNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB31158F28DA7CC200A0ADD2 /* MainCoordinatorNavigationTests.swift */; };
 		EB34693028B9A7A30019F939 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB34692F28B9A7A30019F939 /* MainView.swift */; };
-		EB34697B28BD58C40019F939 /* MainViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB34697A28BD58C40019F939 /* MainViewTests.swift */; };
 		EB34697F28C034900019F939 /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB34697E28C034900019F939 /* MainViewModelTests.swift */; };
 		EB34698328C2364F0019F939 /* MainCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB34698228C2364F0019F939 /* MainCoordinatorTests.swift */; };
 		EB34698628C252B40019F939 /* InputIMCCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB34698528C252B40019F939 /* InputIMCCoordinatorTests.swift */; };
@@ -72,7 +73,6 @@
 		EBA4235E289AC7C200AF1F52 /* PalindromeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA4235D289AC7C100AF1F52 /* PalindromeController.swift */; };
 		EBA42360289AC84C00AF1F52 /* PalindromeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA4235F289AC84C00AF1F52 /* PalindromeView.swift */; };
 		EBA42364289B55FB00AF1F52 /* PalindromeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA42363289B55FB00AF1F52 /* PalindromeCoordinator.swift */; };
-		EBADAEB028C67D40001B68C9 /* InputIMCControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBADAEAF28C67D40001B68C9 /* InputIMCControllerTests.swift */; };
 		EBADAEB328C6890B001B68C9 /* AlertsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBADAEB228C6890B001B68C9 /* AlertsTests.swift */; };
 		EBB195AA286263C2001BBBDF /* IMCInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB195A9286263C2001BBBDF /* IMCInputValidator.swift */; };
 		EBB195AD286269E9001BBBDF /* IMC_V1.gif in Resources */ = {isa = PBXBuildFile; fileRef = EBB195AC286269E9001BBBDF /* IMC_V1.gif */; };
@@ -136,9 +136,10 @@
 		EB269E7F285D8E2200B91825 /* ResultIMCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultIMCViewModel.swift; sourceTree = "<group>"; };
 		EB269E81285D8F1E00B91825 /* ResultIMCFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultIMCFactory.swift; sourceTree = "<group>"; };
 		EB2A9E4D28C6927F00ECFBC2 /* TextFieldLimiterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLimiterTest.swift; sourceTree = "<group>"; };
+		EB3044D528D90F140074F321 /* NavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerMock.swift; sourceTree = "<group>"; };
+		EB31158F28DA7CC200A0ADD2 /* MainCoordinatorNavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorNavigationTests.swift; sourceTree = "<group>"; };
 		EB34692F28B9A7A30019F939 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EB34697028BD57070019F939 /* ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB34697A28BD58C40019F939 /* MainViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTests.swift; sourceTree = "<group>"; };
 		EB34697E28C034900019F939 /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
 		EB34698228C2364F0019F939 /* MainCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorTests.swift; sourceTree = "<group>"; };
 		EB34698528C252B40019F939 /* InputIMCCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputIMCCoordinatorTests.swift; sourceTree = "<group>"; };
@@ -163,7 +164,6 @@
 		EBA4235D289AC7C100AF1F52 /* PalindromeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromeController.swift; sourceTree = "<group>"; };
 		EBA4235F289AC84C00AF1F52 /* PalindromeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromeView.swift; sourceTree = "<group>"; };
 		EBA42363289B55FB00AF1F52 /* PalindromeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromeCoordinator.swift; sourceTree = "<group>"; };
-		EBADAEAF28C67D40001B68C9 /* InputIMCControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputIMCControllerTests.swift; sourceTree = "<group>"; };
 		EBADAEB228C6890B001B68C9 /* AlertsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsTests.swift; sourceTree = "<group>"; };
 		EBB195A9286263C2001BBBDF /* IMCInputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMCInputValidator.swift; sourceTree = "<group>"; };
 		EBB195AC286269E9001BBBDF /* IMC_V1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IMC_V1.gif; sourceTree = "<group>"; };
@@ -214,13 +214,13 @@
 			isa = PBXGroup;
 			children = (
 				EB14E20B28B21A2700B3548A /* NumbersCoordinator */,
-				EB14E1FF28B152CD00B3548A /* Numbers */,
+				EB14E1FF28B152CD00B3548A /* Scene */,
 				EB14E20028B152E700B3548A /* NumbersModal */,
 			);
 			path = Challenge04;
 			sourceTree = "<group>";
 		};
-		EB14E1FF28B152CD00B3548A /* Numbers */ = {
+		EB14E1FF28B152CD00B3548A /* Scene */ = {
 			isa = PBXGroup;
 			children = (
 				EB14E1F328A44E2500B3548A /* NumbersController.swift */,
@@ -228,7 +228,7 @@
 				EB14E1FD28B14D6300B3548A /* NumbersFactory.swift */,
 				EB14E1F728AF564E00B3548A /* NumbersViewModel.swift */,
 			);
-			path = Numbers;
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		EB14E20028B152E700B3548A /* NumbersModal */ = {
@@ -253,6 +253,7 @@
 		EB15AD2528D144D2002ACC12 /* GlobalMocks */ = {
 			isa = PBXGroup;
 			children = (
+				EB3044D528D90F140074F321 /* NavigationControllerMock.swift */,
 			);
 			path = GlobalMocks;
 			sourceTree = "<group>";
@@ -261,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				EB34698528C252B40019F939 /* InputIMCCoordinatorTests.swift */,
-				EBADAEAF28C67D40001B68C9 /* InputIMCControllerTests.swift */,
 				EB34698A28C263D20019F939 /* InputIMCViewTests.swift */,
 				EB34698C28C2691E0019F939 /* InputIMCViewModelTests.swift */,
 			);
@@ -396,6 +396,17 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		EB3044D728D9103D0074F321 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EB4BC00F284BF17400B6460D /* MainController.swift */,
+				EB34692F28B9A7A30019F939 /* MainView.swift */,
+				EB269E67285CE35700B91825 /* MainFactory.swift */,
+				EBE117F9284E7A0E00326C62 /* MainViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		EB34692E28B9A7510019F939 /* MainCoordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,7 +433,7 @@
 			children = (
 				EB34698228C2364F0019F939 /* MainCoordinatorTests.swift */,
 				EB34698828C25C3B0019F939 /* MainControllerTests.swift */,
-				EB34697A28BD58C40019F939 /* MainViewTests.swift */,
+				EB31158F28DA7CC200A0ADD2 /* MainCoordinatorNavigationTests.swift */,
 				EB34697E28C034900019F939 /* MainViewModelTests.swift */,
 			);
 			path = Main;
@@ -473,10 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				EB34692E28B9A7510019F939 /* MainCoordinator */,
-				EB4BC00F284BF17400B6460D /* MainController.swift */,
-				EB34692F28B9A7A30019F939 /* MainView.swift */,
-				EB269E67285CE35700B91825 /* MainFactory.swift */,
-				EBE117F9284E7A0E00326C62 /* MainViewModel.swift */,
+				EB3044D728D9103D0074F321 /* Main */,
 				EBA140962853C8A500653227 /* Components */,
 			);
 			path = Main;
@@ -732,14 +740,14 @@
 				EB34698B28C263D20019F939 /* InputIMCViewTests.swift in Sources */,
 				EB34697F28C034900019F939 /* MainViewModelTests.swift in Sources */,
 				EB34698628C252B40019F939 /* InputIMCCoordinatorTests.swift in Sources */,
-				EBADAEB028C67D40001B68C9 /* InputIMCControllerTests.swift in Sources */,
 				EB34698928C25C3B0019F939 /* MainControllerTests.swift in Sources */,
+				EB3044D628D90F140074F321 /* NavigationControllerMock.swift in Sources */,
 				EB0A919D28C7DFE30016938C /* UIKitExtensions.swift in Sources */,
-				EB34697B28BD58C40019F939 /* MainViewTests.swift in Sources */,
 				EB15AD2D28D1904D002ACC12 /* ResultIMCViewTests.swift in Sources */,
 				EB34698F28C283410019F939 /* InputValidatorProtocolTests.swift in Sources */,
 				EB0A91A028D046D80016938C /* CarRotationCoordinatorTests.swift in Sources */,
 				EB2A9E4E28C6927F00ECFBC2 /* TextFieldLimiterTest.swift in Sources */,
+				EB31159028DA7CC200A0ADD2 /* MainCoordinatorNavigationTests.swift in Sources */,
 				EB34698D28C2691E0019F939 /* InputIMCViewModelTests.swift in Sources */,
 				EB34698328C2364F0019F939 /* MainCoordinatorTests.swift in Sources */,
 				EB15AD2B28D178EF002ACC12 /* ResultIMCViewModelTests.swift in Sources */,

@@ -8,7 +8,7 @@
 import UIKit
 import SafariServices
 
-protocol PalindromeCoordinatorProtocol: AnyObject {
+protocol PalindromeCoordinatorProtocol: Coordinator {
 	func navigateToPalindromeDescription()
 }
 

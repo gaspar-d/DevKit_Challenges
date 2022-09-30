@@ -50,6 +50,9 @@
 		EB2A9E4E28C6927F00ECFBC2 /* TextFieldLimiterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2A9E4D28C6927F00ECFBC2 /* TextFieldLimiterTest.swift */; };
 		EB3044D628D90F140074F321 /* NavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3044D528D90F140074F321 /* NavigationControllerMock.swift */; };
 		EB31159028DA7CC200A0ADD2 /* MainCoordinatorNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB31158F28DA7CC200A0ADD2 /* MainCoordinatorNavigationTests.swift */; };
+		EB31159228DB759500A0ADD2 /* PalindromeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB31159128DB759500A0ADD2 /* PalindromeViewTests.swift */; };
+		EB31159428DBA01000A0ADD2 /* PalindromeControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB31159328DBA01000A0ADD2 /* PalindromeControllerTests.swift */; };
+		EB31159628DBBF4A00A0ADD2 /* PalindromeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB31159528DBBF4A00A0ADD2 /* PalindromeViewModelTests.swift */; };
 		EB34693028B9A7A30019F939 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB34692F28B9A7A30019F939 /* MainView.swift */; };
 		EB34697F28C034900019F939 /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB34697E28C034900019F939 /* MainViewModelTests.swift */; };
 		EB34698328C2364F0019F939 /* MainCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB34698228C2364F0019F939 /* MainCoordinatorTests.swift */; };
@@ -138,6 +141,9 @@
 		EB2A9E4D28C6927F00ECFBC2 /* TextFieldLimiterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLimiterTest.swift; sourceTree = "<group>"; };
 		EB3044D528D90F140074F321 /* NavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerMock.swift; sourceTree = "<group>"; };
 		EB31158F28DA7CC200A0ADD2 /* MainCoordinatorNavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorNavigationTests.swift; sourceTree = "<group>"; };
+		EB31159128DB759500A0ADD2 /* PalindromeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromeViewTests.swift; sourceTree = "<group>"; };
+		EB31159328DBA01000A0ADD2 /* PalindromeControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromeControllerTests.swift; sourceTree = "<group>"; };
+		EB31159528DBBF4A00A0ADD2 /* PalindromeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromeViewModelTests.swift; sourceTree = "<group>"; };
 		EB34692F28B9A7A30019F939 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EB34697028BD57070019F939 /* ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB34697E28C034900019F939 /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
@@ -206,6 +212,9 @@
 			isa = PBXGroup;
 			children = (
 				EB0A91A228D04A6C0016938C /* PalindromeCoordinatorTests.swift */,
+				EB31159128DB759500A0ADD2 /* PalindromeViewTests.swift */,
+				EB31159328DBA01000A0ADD2 /* PalindromeControllerTests.swift */,
+				EB31159528DBBF4A00A0ADD2 /* PalindromeViewModelTests.swift */,
 			);
 			path = Challenge03;
 			sourceTree = "<group>";
@@ -735,6 +744,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB0A91A328D04A6C0016938C /* PalindromeCoordinatorTests.swift in Sources */,
+				EB31159428DBA01000A0ADD2 /* PalindromeControllerTests.swift in Sources */,
+				EB31159228DB759500A0ADD2 /* PalindromeViewTests.swift in Sources */,
+				EB31159628DBBF4A00A0ADD2 /* PalindromeViewModelTests.swift in Sources */,
 				EBADAEB328C6890B001B68C9 /* AlertsTests.swift in Sources */,
 				EB15AD3028D1A3FA002ACC12 /* CarRotationValidatorTest.swift in Sources */,
 				EB34698B28C263D20019F939 /* InputIMCViewTests.swift in Sources */,

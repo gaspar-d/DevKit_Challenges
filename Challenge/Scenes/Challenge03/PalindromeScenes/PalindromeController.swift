@@ -49,7 +49,7 @@ final class PalindromeController: UIViewController {
 	
 	@objc func setVerifyButtonAction() {
 		
-		guard let inputedText = customView?.getInputedText()?.lowercased() else { return }
+		guard let inputedText = customView?.getInputedText?.lowercased() else { return }
 
 		viewModel.isPalindrome(input: inputedText, controller: self)
 		customView?.cleanInput()

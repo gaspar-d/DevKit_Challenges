@@ -14,7 +14,7 @@ final class MainController: UIViewController {
 	private var tableViewDelegate: TableViewDelegate?
 	private var tableViewDataSource: TableViewDataSource?
 	
-	init(customView: MainViewProtocol,
+	init(customView: MainViewProtocol = MainView(),
 		 viewModel: MainViewModelProtocol)
 	{
 		self.customView = customView
@@ -37,8 +37,7 @@ final class MainController: UIViewController {
 	private func setupView() {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		title = "DevKit Challenges"
-		
-		view = customView as? UIView
+		self.view = customView as? UIView
 	}
 	
 	private func setupTableView() {

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PalindromeViewProtocol: AnyObject {
-	func getInputedText() -> String?
+	var getInputedText: String? { get }
 	func didTapHelpButton(target: Any?, action: Selector)
 	func didTapVerifyButton(target: Any?, action: Selector)
 	func cleanInput()
@@ -33,6 +33,8 @@ final class PalindromeView: UIView {
 		button.translatesAutoresizingMaskIntoConstraints = false
 		button.setTitle("Clique aqui e saiba mais!", for: .normal)
 		button.setTitleColor(UIColor.systemBlue, for: .normal)
+		button.accessibilityIdentifier = "help"
+		button.accessibilityLabel = "help"
 		return button
 	}()
 	
@@ -116,8 +118,8 @@ final class PalindromeView: UIView {
 	// MARK: - Methods
 extension PalindromeView: PalindromeViewProtocol {
 	
-	public func getInputedText() -> String? {
-		return verifyTextField.text!
+	public var getInputedText: String? {
+		verifyTextField.text
 	}
 	
 	public func didTapHelpButton(target: Any?, action: Selector) {

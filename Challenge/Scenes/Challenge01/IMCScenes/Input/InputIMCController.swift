@@ -32,7 +32,7 @@ final class InputIMCController: UIViewController {
 	}
 	
 	private func setupView() {
-		view = customView as? UIView // OK O DOWNCASTING ?
+		view = customView as? UIView
 	}
 	
 	private func setupNavigationBar() {

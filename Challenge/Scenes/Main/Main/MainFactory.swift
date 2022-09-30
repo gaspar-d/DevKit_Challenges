@@ -11,10 +11,9 @@ enum MainFactory {
 	
 	static func make(coordinator: MainCoordinator) -> MainController {
 		let model = ChallengesModel()
-		let customView = MainView()
 		let vm = MainViewModel(model: model)
 		vm.coordinator = coordinator
-		let vc = MainController(customView: customView, viewModel: vm)
+		let vc = MainController(viewModel: vm)
 		
 		return vc
 	}
